@@ -48,7 +48,9 @@ function renderCart() {
     const itemDiv = document.createElement('div');
     itemDiv.className = 'bg-white p-4 rounded-lg shadow-sm flex gap-4 items-center';
     itemDiv.innerHTML = `
-      <img src="${product.image}" alt="${product.name}" class="w-24 h-24 object-cover rounded">
+      <div class="w-24 h-24 bg-white rounded border border-gray-200 flex items-center justify-center shrink-0">
+        <img src="${product.image}" alt="${product.name}" class="max-w-full max-h-full object-contain">
+      </div>
       <div class="flex-grow">
         <h3 class="font-semibold text-lg">${product.name}</h3>
         <p class="text-gray-600 text-sm">${product.price} €</p>
