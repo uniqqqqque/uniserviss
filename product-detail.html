@@ -38,6 +38,7 @@
             <li><a href="faq.html">FAQ</a></li>
             <li><a href="about.html">Par mums</a></li>
             <li><a href="contacts.html">Kontakti</a></li>
+            <li><a href="cart.html">Grozs</a></li>
           </ul>
           <!-- search -->
           <form action="" class="ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
@@ -53,18 +54,6 @@
               />
             </div>
           </form>
-          <!-- 3 buttons -->
-          <div class="ms-auto flex items-center gap-3">
-            <a type="button" href="wishlist.html" class="p-2 rounded-full flex items-center justify-center">
-              <i class="fa-regular fa-heart text-xl"></i>
-            </a>
-            <a type="button" href="cart.html" class="p-2 rounded-full flex items-center justify-center">
-              <i class="fa-solid fa-cart-shopping text-xl"></i>
-            </a>
-            <a type="button" href="profile.html" class="p-2 rounded-full flex items-center justify-center">
-              <i class="fa-regular fa-user text-xl"></i>
-            </a>
-          </div>
         </div>
       </div>
     </nav>
@@ -191,7 +180,7 @@
                     </div>
                     <p class="text-sm text-gray-500 mb-4">Cena iekļauj PVN 21%. Bezmaksas piegāde.</p>
 
-                    <button class="w-full inline-flex items-center justify-center gap-3 py-4 rounded-lg bg-black text-white text-lg font-medium 
+                    <button id="add-to-cart-btn" class="w-full inline-flex items-center justify-center gap-3 py-4 rounded-lg bg-black text-white text-lg font-medium 
                                    shadow-sm hover:opacity-90 transition-all duration-300 hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black cursor-pointer">
                         <i class="fa-solid fa-cart-plus"></i>
                         Pievienot grozam
@@ -278,9 +267,7 @@
     </div>
   </footer>
 
-    <script src="products.js"></script>
-    <script src="storage.js"></script>
-    <script src="detail.js"></script>
+    <script type="module" src="detail.js"></script>
 
 </body>
 </html>

@@ -37,8 +37,9 @@
             <li><a href="index.html">Sākums</a></li>
             <li><a href="shop.html">Veikals</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="about.html" class="border-b-2 border-black pb-1">Par mums</a></li>
+            <li><a href="about.html">Par mums</a></li>
             <li><a href="contacts.html">Kontakti</a></li>
+            <li><a href="cart.html" class="border-b-2 border-black pb-1">Grozs</a></li>
           </ul>
           <!-- search -->
           <form action="" class="ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
@@ -54,26 +55,15 @@
               />
             </div>
           </form>
-          <!-- 3 buttons -->
-          <div class="ms-auto flex items-center gap-3">
-            <a type="button" href="wishlist.html" class="p-2 rounded-full flex items-center justify-center">
-              <i class="fa-regular fa-heart text-xl"></i>
-            </a>
-            <a type="button" href="cart.html" class="p-2 rounded-full flex items-center justify-center">
-              <i class="fa-solid fa-cart-shopping text-xl"></i>
-            </a>
-            <a type="button" href="profile.html" class="p-2 rounded-full flex items-center justify-center">
-              <i class="fa-regular fa-user text-xl"></i>
-            </a>
-          </div>
         </div>
       </div>
     </nav>
   </header>
 
+
     <main class="flex-grow pt-10 pb-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold mb-8 border-b pb-4">Jūsu Grozs (Cart)</h1>
+            <h1 class="text-3xl font-bold mb-8 pb-4">Jūsu Grozs</h1>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 
@@ -84,10 +74,10 @@
 
                 <div class="lg:col-span-1">
                     <div id="cart-summary" class="bg-white p-6 rounded-lg shadow-md sticky top-24">
-                        <h2 class="text-xl font-bold mb-4 border-b pb-3">Kopsavilkums</h2>
+                        <h2 class="text-xl font-bold mb-4 pb-3">Kopsavilkums</h2>
                         
                         <div class="flex justify-between mb-3">
-                            <span class="text-gray-600">Preces (Gabali):</span>
+                            <span class="text-gray-600">Preces:</span>
                             <span id="cart-total-count" class="font-semibold">0</span>
                         </div>
                         
@@ -97,7 +87,7 @@
                         </div>
                         
                         <button class="w-full py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition transform active:scale-[0.98]">
-                            <i class="fa-solid fa-credit-card mr-2"></i> Apmaksāt
+                            <i class="fa-solid fa-credit-card mr-2"></i> Pasūtīt
                         </button>
                     </div>
                 </div>
@@ -114,6 +104,7 @@
 
         </div>
     </main>
+
   <footer class="border-t border-border bg-[#000000] pb-30 mt-auto">
     <div class="mx-auto max-w-7xl px-4">
       <div class="grid md:grid-cols-4 gap-8 py-10 text-accent text-sm font-light">
@@ -163,9 +154,7 @@
   </footer>
 
 
-    <script src="products.js"></script>
-    <script src="storage.js"></script>
-    <script src="cart.js"></script>
+    <script type="module" src="cart.js"></script>
 
 </body>
 </html>

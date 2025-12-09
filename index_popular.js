@@ -41,15 +41,14 @@ function renderPopularProducts(productsArray) {
               <div class="mb-4">
                 ${priceHtml}
               </div>
-              <button class="w-full py-2.5 bg-black text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2">
-                <i class="fa-solid fa-cart-plus"></i> Pievienot Grozam
-              </button>
+              <a href="shop.html" class="w-full py-2.5 bg-black text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2">
+                <i class="fa-solid fa-cart-shopping"></i> Uz veikalu
+              </a>
             </div>
           </div>
         </div>
       </a>
     `;
-
     container.appendChild(card);
   });
 }

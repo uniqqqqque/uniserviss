@@ -1,4 +1,5 @@
 import { products } from './products.js';
+import { addToCart } from './shopToCart.js';
 
 const categoryNames = {
   'pc': 'Datori',
@@ -39,7 +40,7 @@ function renderProductsGrid(productsArray) {
               <div class="mb-4">
                 ${priceHtml}
               </div>
-              <button class="w-full py-2.5 bg-black text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2">
+              <button data-product-id="${product.id}" class="add-to-cart-btn w-full py-2.5 bg-black text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2">
                 <i class="fa-solid fa-cart-plus"></i> Pievienot Grozam
               </button>
             </div>
@@ -196,4 +197,24 @@ document.querySelector('#reset-filters').addEventListener('click', function() {
   
   // Показываем все товары
   renderProductsGrid(products);
+});
+
+// Обработчик добавления в корзину
+document.addEventListener('click', function(e) {
+  if (e.target.closest('.add-to-cart-btn')) {
+    e.preventDefault();
+    e.stopPropagation();
+    const btn = e.target.closest('.add-to-cart-btn');
+    const productId = Number(btn.dataset.productId);
+    addToCart(productId, 1);
+    
+    // Сохраняем оригинальный цвет и текст
+    const originalBg = btn.style.backgroundColor;
+    const originalHTML = btn.innerHTML;
+    
+    // Меняем на зелёный
+    btn.style.backgroundColor = '#43A047';
+    btn.textContent = '✓ Pievienots!';
+
+  }
 });
