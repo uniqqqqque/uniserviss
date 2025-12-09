@@ -46,3 +46,30 @@ export function updateQuantity(productId, newQuantity) {
 export function clearCart() {
   localStorage.removeItem('cart');
 }
+
+// Инициализация слушателей событий для кнопок корзины
+export function initCartListeners() {
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('.add-to-cart-btn')) {
+      e.preventDefault();
+      e.stopPropagation();
+      const btn = e.target.closest('.add-to-cart-btn');
+      const productId = Number(btn.dataset.productId);
+      addToCart(productId, 1);
+      
+      // Сохраняем оригинальный цвет и текст
+      const originalBg = btn.style.backgroundColor;
+      const originalHTML = btn.innerHTML;
+      
+      // Меняем на зелёный
+      btn.style.backgroundColor = '#43A047';
+      btn.textContent = '✓ Pievienots!';
+      
+      // (Опционально) можно вернуть обратно через пару секунд
+      // setTimeout(() => {
+      //   btn.style.backgroundColor = '';
+      //   btn.innerHTML = originalHTML;
+      // }, 2000);
+    }
+  });
+}

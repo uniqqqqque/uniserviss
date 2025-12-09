@@ -1,5 +1,9 @@
 import { products } from './products.js';
-import { addToCart } from './shopToCart.js';
+import { addToCart, initCartListeners } from './shopToCart.js';
+import { renderProductCard } from './ui-utils.js';
+
+// Инициализируем слушатели корзины
+initCartListeners();
 
 const categoryNames = {
   'cpu': 'Procesori',
@@ -20,32 +24,8 @@ function renderProductsGrid(productsArray) {
   container.innerHTML = '';
 
   productsArray.forEach(product => {
-    const priceHtml = `<span class="text-xl font-bold">${product.price} €</span>`;
-    const categoryName = categoryNames[product.category] || product.category;
-
     const card = document.createElement('div');
-    card.innerHTML = `
-      <a href="product-detail.html?id=${product.id}" class="block">
-        <div class="bg-white border border-accent rounded-lg overflow-hidden h-full">
-          <div class="h-56 bg-white flex items-center justify-center">
-            <img src="${product.image}" alt="${product.name}" class="max-w-full max-h-full object-contain transition duration-300">
-          </div>
-          <div class="p-5 border-t border-accent flex flex-col h-full gap-3">
-            <div class="min-h-[70px]">
-              <h3 class="text-base font-medium mb-1">${product.name}</h3>
-              <p class="text-xs text-gray-500">${categoryName}</p>
-            </div>
-            <div class="flex flex-col gap-3">
-              <div>${priceHtml}</div>
-              <button data-product-id="${product.id}" class="add-to-cart-btn w-full py-2.5 bg-black text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2">
-                <i class="fa-solid fa-cart-plus"></i> Pievienot Grozam
-              </button>
-            </div>
-          </div>
-        </div>
-      </a>
-    `;
-
+    card.innerHTML = renderProductCard(product);
     container.appendChild(card);
   });
 }
@@ -196,22 +176,3 @@ document.querySelector('#reset-filters').addEventListener('click', function() {
   renderProductsGrid(products);
 });
 
-// Обработчик добавления в корзину
-document.addEventListener('click', function(e) {
-  if (e.target.closest('.add-to-cart-btn')) {
-    e.preventDefault();
-    e.stopPropagation();
-    const btn = e.target.closest('.add-to-cart-btn');
-    const productId = Number(btn.dataset.productId);
-    addToCart(productId, 1);
-    
-    // Сохраняем оригинальный цвет и текст
-    const originalBg = btn.style.backgroundColor;
-    const originalHTML = btn.innerHTML;
-    
-    // Меняем на зелёный
-    btn.style.backgroundColor = '#43A047';
-    btn.textContent = '✓ Pievienots!';
-
-  }
-});
