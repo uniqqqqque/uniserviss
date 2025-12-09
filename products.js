@@ -6,34 +6,34 @@ export const products = [
     category: "gpu", 
     brand: "asus", 
     price: 949.00, 
-    image: "https://picsum.photos/200/300?random=1",
+    image: "images/ASUS_TUF_RTX_4070_Ti.jpg",
     description: "Jaudīga videokarte ar 12GB GDDR6X atmiņu. Ideāli piemērota spēlēm 4K izšķirtspējā un profesionālam darbam ar grafiku."
   },
   { 
     id: 2, 
-    name: "MSI GeForce RTX 4060 Ti", 
+    name: "GIGABYTE RTX 4060 GAMING OC", 
     category: "gpu", 
-    brand: "msi", 
+    brand: "gigabyte", 
     price: 479.99, 
-    image: "https://picsum.photos/200/300?random=3",
+    image: "images/GIGABYTE_RTX_4060.jpg",
     description: "Vidējas klases videokarte ar izcilu cenas un veiktspējas attiecību. Lieliski piemērota Full HD un 1440p spēlēšanai."
   },
   { 
     id: 3, 
-    name: "Gigabyte Radeon RX 7800 XT", 
+    name: "Gigabyte Radeon RX 7800 XT GAMING OC", 
     category: "gpu", 
     brand: "gigabyte", 
     price: 599.00, 
-    image: "https://picsum.photos/200/300?random=4",
+    image: "images/Gigabyte_Radeon_RX_7800.jpg",
     description: "AMD jaunākā paaudze ar 16GB GDDR6 atmiņu. Izcilas dzesēšanas sistēma un augsta veiktspēja 1440p izšķirtspējā."
   },
   { 
     id: 4, 
-    name: "ASUS ROG Strix RTX 4090", 
+    name: "ASUS ROG Strix RTX 4090 GAMING OC", 
     category: "gpu", 
     brand: "asus", 
     price: 1899.00, 
-    image: "https://picsum.photos/200/300?random=5",
+    image: "images/ASUS_ROG_Strix_RTX_4090.jpg",
     description: "Labākā patērētāju klases videokarte tirgū. 24GB GDDR6X atmiņa, ideāla 4K spēlēšanai un profesionālam darbam."
   },
 
@@ -44,7 +44,7 @@ export const products = [
     category: "cpu", 
     brand: "amd", 
     price: 359.99, 
-    image: "https://picsum.photos/200/300?random=2",
+    image: "images/AMD_Ryzen_7_7800X3D.jpg",
     description: "8 kodolu procesoris ar 3D V-Cache tehnoloģiju. Labākais izvēle spēlētājiem ar izcilu veiktspēju spēlēs."
   },
   { 
@@ -53,7 +53,7 @@ export const products = [
     category: "cpu", 
     brand: "intel", 
     price: 299.00, 
-    image: "https://picsum.photos/200/300?random=6",
+    image: "images/Intel_Core_i5_13600K.jpg",
     description: "14 kodolu procesoris ar hibrīdarhitektūru. Lieliska izvēle gan spēlēm, gan daudzuzdevumu darbam ar izcilu cenas-veiktspējas attiecību."
   },
   { 
@@ -62,7 +62,7 @@ export const products = [
     category: "cpu", 
     brand: "amd", 
     price: 549.99, 
-    image: "https://picsum.photos/200/300?random=7",
+    image: "images/AMD_Ryzen_9_7950X.jpg",
     description: "Flagmanis ar 16 kodoliem un 32 pavedienem. Ideāls profesionālam darbam: video montāža, 3D renderēšana un kompleksas simulācijas."
   },
   { 
@@ -71,7 +71,7 @@ export const products = [
     category: "cpu", 
     brand: "intel", 
     price: 419.00, 
-    image: "https://picsum.photos/200/300?random=8",
+    image: "images/Intel_Core_i7_14700K.jpg",
     description: "Jaunākās 14. paaudzes procesoris ar 20 kodoliem. Augsta veiktspēja gan spēlēs, gan satura veidošanā ar zemu enerģijas patēriņu."
   },
 
@@ -82,7 +82,7 @@ export const products = [
     category: "mbr", 
     brand: "asus", 
     price: 249.99, 
-    image: "https://picsum.photos/200/300?random=9",
+    image: "images/ASUS_ROG_Strix_B650_A.jpg",
     description: "Mātesplate AMD AM5 platformai ar DDR5 atbalstu. Kvalitātīva VRM sistēma, Wi-Fi 6E un RGB apgaismojums spēlētājiem."
   },
   { 
@@ -91,7 +91,7 @@ export const products = [
     category: "mbr", 
     brand: "msi", 
     price: 289.00, 
-    image: "https://picsum.photos/200/300?random=10",
+    image: "images/MSI_MAG_Z790_Tomahawk.png",
     description: "Intel Z790 čipsets ar atbalstu 13. un 14. paaudzes procesoriem. PCIe 5.0 atbalsts, 4x M.2 sloti un uzlabota audio sistēma."
   },
   { 
@@ -100,7 +100,7 @@ export const products = [
     category: "mbr", 
     brand: "gigabyte", 
     price: 129.99, 
-    image: "https://picsum.photos/200/300?random=11",
+    image: "images/Gigabyte_B760M_DS3H.png",
     description: "Budžeta līmeņa mATX mātesplate Intel platformai. Kompakts izmērs, DDR4 atbalsts un visas nepieciešamās funkcijas ikdienas lietošanai."
   },
 
@@ -111,7 +111,7 @@ export const products = [
     category: "ram", 
     brand: "corsair", 
     price: 129.99, 
-    image: "https://picsum.photos/200/300?random=12",
+    image: "images/Corsair_Vengeance_32GB_DDR5.avif",
     description: "DDR5 atmiņa ar 5600MHz frekvenci. 32GB (2x16GB) komplekts ar zemu latenci, ideāli jaunākajām platformām un daudzuzdevumu darbam."
   },
   { 
@@ -120,7 +120,7 @@ export const products = [
     category: "ram", 
     brand: "kingston", 
     price: 54.99, 
-    image: "https://picsum.photos/200/300?random=13",
+    image: "images/Kingston_Fury_Beast_16GB_DDR4.avif",
     description: "Uzticama DDR4 atmiņa 3200MHz frekvencē. 16GB (2x8GB) komplekts ar mūžīgu garantiju, lieliska izvēle budžeta sistēmām."
   },
   { 
@@ -129,7 +129,7 @@ export const products = [
     category: "ram", 
     brand: "gskill", 
     price: 249.00, 
-    image: "https://picsum.photos/200/300?random=14",
+    image: "images/G.Skill_Trident_Z5_64GB_DDR5.webp",
     description: "Augstākās klases DDR5 atmiņa ar 6000MHz+ frekvenci un RGB apgaismojumu. 64GB profesionālam darbam ar video un 3D grafikiem."
   },
 
@@ -140,7 +140,7 @@ export const products = [
     category: "ssd", 
     brand: "samsung", 
     price: 119.99, 
-    image: "https://picsum.photos/200/300?random=15",
+    image: "images/Samsung_980_PRO_1TB_NVMe.jpg",
     description: "Ātrākais PCIe 4.0 NVMe SSD ar līdz 7000MB/s lasīšanas ātrumu. 1TB ietilpība ar 5 gadu garantiju, ideāls operētājsistēmai."
   },
   { 
@@ -149,7 +149,7 @@ export const products = [
     category: "ssd", 
     brand: "western digital", 
     price: 189.00, 
-    image: "https://picsum.photos/200/300?random=16",
+    image: "images/WD_Black_SN850X_2TB_NVMe.avif",
     description: "Augstas veiktspējas 2TB NVMe disks spēlētājiem. Liela ietilpība mūsdienu spēlēm, konsekventas rakstīšanas/lasīšanas ātrums."
   },
   { 
@@ -158,7 +158,7 @@ export const products = [
     category: "ssd", 
     brand: "crucial", 
     price: 49.99, 
-    image: "https://picsum.photos/200/300?random=17",
+    image: "images/Crucial_P3_Plus_500GB.jpg",
     description: "Pieejams PCIe 4.0 SSD ar 500GB ietilpību. Lieliska budžeta izvēle sistēmas diskam ar 5000MB/s+ lasīšanas ātrumu."
   },
 
@@ -169,7 +169,7 @@ export const products = [
     category: "hdd", 
     brand: "seagate", 
     price: 59.99, 
-    image: "https://picsum.photos/200/300?random=18",
+    image: "images/Seagate_BarraCuda_2TB.webp",
     description: "Uzticams 2TB cietā diska disks ar 7200RPM ātrumu. Ideāls failu glabāšanai, datu rezerves kopēšanai un multimedijai."
   },
   { 
@@ -178,7 +178,7 @@ export const products = [
     category: "hdd", 
     brand: "western digital", 
     price: 89.00, 
-    image: "https://picsum.photos/200/300?random=19",
+    image: "images/WD_Blue_4TB.jpg",
     description: "Lielas ietilpības 4TB HDD ikdienas lietošanai. 5400RPM ekonomisks risinājums lielu failu kolekciju uzglabāšanai."
   },
   { 
@@ -187,7 +187,7 @@ export const products = [
     category: "hdd", 
     brand: "toshiba", 
     price: 44.99, 
-    image: "https://picsum.photos/200/300?random=20",
+    image: "images/Toshiba_P300_1TB.jpg",
     description: "Budžeta 1TB disks ar 7200RPM. Piemērots kā papildus disk datu glabāšanai birojs sistemās un mājas datoros."
   },
 
@@ -198,7 +198,7 @@ export const products = [
     category: "psu", 
     brand: "corsair", 
     price: 139.99, 
-    image: "https://picsum.photos/200/300?random=21",
+    image: "images/Corsair_RM850x_850W_80_Gold.avif",
     description: "850W modulārs PSU ar 80+ Gold sertifikātu. Kluss darbība, pilna kabeļu modulāritāte un 10 gadu garantija augstas klases sistēmām."
   },
   { 
@@ -207,7 +207,7 @@ export const products = [
     category: "psu", 
     brand: "evga", 
     price: 119.00, 
-    image: "https://picsum.photos/200/300?random=22",
+    image: "images/EVGA_SuperNOVA_750W_80_Platinum.jpg",
     description: "750W PSU ar izcilu 92% efektivitāti (80+ Platinum). Pilnigi modulārs dizains un uzticama darbība ar 10 gadu garantiju."
   },
   { 
@@ -216,7 +216,7 @@ export const products = [
     category: "psu", 
     brand: "be quiet", 
     price: 79.99, 
-    image: "https://picsum.photos/200/300?random=23",
+    image: "images/be_quiet_Pure_Power_11_600W.jpg",
     description: "600W budžeta PSU ar 80+ Gold efektivitāti. Klusa darbība un uzticama kvalitāte vidējas klases sistēmām ar 5 gadu garantiju."
   },
 
@@ -227,7 +227,7 @@ export const products = [
     category: "case", 
     brand: "nzxt", 
     price: 89.99, 
-    image: "https://picsum.photos/200/300?random=24",
+    image: "images/NZXT_H510_Flow_Mid_Tower.jpg",
     description: "Modern Mid Tower korpuss ar uzlabotu gaisa plūsmu. Tīra kabelu vadīšana, stikla sānu panelis un vieta līdz 6 ventilatoriem."
   },
   { 
@@ -236,7 +236,7 @@ export const products = [
     category: "case", 
     brand: "corsair", 
     price: 104.99, 
-    image: "https://picsum.photos/200/300?random=25",
+    image: "images/Corsair_4000D_Airflow.avif",
     description: "Populārs ATX korpuss ar izcilu ventilāciju. Tērauda konstrukcija, optimāla gaisa plūsma un vieta līdz 360mm radiātoriem."
   },
   { 
@@ -245,7 +245,7 @@ export const products = [
     category: "case", 
     brand: "fractal design", 
     price: 99.00, 
-    image: "https://picsum.photos/200/300?random=26",
+    image: "images/Fractal_Design_Meshify_C.jpeg",
     description: "Kompakts Mid Tower ar agresīvu dizainu. Pilnigs mesh priekšējais panelis maksimālai ventilācijai un modernām komponentēm."
   },
 
@@ -256,54 +256,26 @@ export const products = [
     category: "fan", 
     brand: "noctua", 
     price: 32.99, 
-    image: "https://picsum.photos/200/300?random=27",
+    image: "images/Noctua_NF_A12x25_PWM.avif",
     description: "Labākais 120mm ventilators tirgū. Izcilas performanča, kluss darbība (22.6 dBA) un 6 gadu garantija ar premīcijas kvalitāti."
   },
   { 
     id: 28, 
-    name: "Arctic P12 PWM 5-Pack", 
+    name: "Arctic P12 PWM", 
     category: "fan", 
     brand: "arctic", 
-    price: 29.99, 
-    image: "https://picsum.photos/200/300?random=28",
-    description: "5 gab. 120mm ventilatoru komplekts ar izcilu cenas-kvalitātes attiecību. Labs gaisa spīdiens, PWM kontrole un klusa darbība."
+    price: 19.99, 
+    image: "images/Arctic_P12_PWM.avif",
+    description: "120mm ventilators ar izcilu cenas-kvalitātes attiecību. Labs gaisa spīdiens, PWM kontrole un klusa darbība."
   },
   { 
     id: 29, 
-    name: "Corsair iCUE QL120 RGB 3-Pack", 
+    name: "Corsair iCUE QL120 RGB", 
     category: "fan", 
     brand: "corsair", 
     price: 119.99, 
-    image: "https://picsum.photos/200/300?random=29",
-    description: "Premium RGB ventilatori ar 34 LED uz katra. Divpusējs apgaismojums, iCUE programmatūras kontrole un labs dzesešanas efekts."
+    image: "images/Corsair_iCUE_QL120_RGB.avif",
+    description: "Premium RGB ventilators ar 34 LED. Divpusējs apgaismojums, iCUE programmatūras kontrole un labs dzesešanas efekts."
   },
 
-  // Datori (PC)
-  { 
-    id: 30, 
-    name: "Gaming PC Pro - RTX 4070", 
-    category: "pc", 
-    brand: "custom", 
-    price: 1599.00, 
-    image: "https://picsum.photos/200/300?random=30",
-    description: "Gatavs spēļu dators ar RTX 4070, Ryzen 7 7800X3D, 32GB DDR5 un 1TB NVMe SSD. Ideāls 1440p spēlēšanai ar augstām FPS."
-  },
-  { 
-    id: 31, 
-    name: "Office PC Essential", 
-    category: "pc", 
-    brand: "custom", 
-    price: 599.99, 
-    image: "https://picsum.photos/200/300?random=31",
-    description: "Ekonomisks biroja dators ar Intel Core i3, 16GB DDR4 un 512GB SSD. Piemērots ikdienas uzdevumiem, dārbam ar dokumentiem."
-  },
-  { 
-    id: 32, 
-    name: "Workstation Pro - Ryzen 9", 
-    category: "pc", 
-    brand: "custom", 
-    price: 2299.00, 
-    image: "https://picsum.photos/200/300?random=32",
-    description: "Profesionāla darba stacija ar Ryzen 9 7950X, 64GB DDR5, RTX 4080 un 2TB NVMe. Video montāžai, 3D renderēšanai un simulācijām."
-  }
 ];

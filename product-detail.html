@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="page-title">Prece</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
   </style>
@@ -17,7 +17,12 @@
       --color-black:     #000000;
     }
   </style>
-
+  <style>
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  </style>
+  
 </head>
 
 <body class="antialiased flex flex-col min-h-screen">
@@ -47,7 +52,7 @@
               <input
                 id="search"
                 type="search"
-                placeholder="Meklēt…"
+                placeholder="Meklēt preces..."
                 class="w-full pl-10 pr-4 py-2 text-sm rounded-lg border border-graphite"
                 autocomplete="off"
               />
@@ -65,14 +70,12 @@
         <div id="product-container" class="grid grid-cols-1 lg:grid-cols-12 gap-12">
             
             <div class="lg:col-span-7 space-y-4 h-[600px]">
-                <div class="bg-[#F9F9F9] rounded-xl border border-gray-100 p-0 flex items-center justify-center relative group overflow-hidden h-full">
-
-                    
-                    <img id="product-image" 
-                         src="https://www.rdveikals.lv/images/full/57421f58a741366579b736b42b6a715f.jpg" 
-                         alt="GeForce RTX 4070 Ti Gaming X Trio" 
-                         class="w-full h-full object-cover transform transition duration-500 group-hover:scale-105">
-                </div>
+              <div class="bg-[#F9F9F9] rounded-xl border border-gray-100 p-0 flex items-center justify-center relative group overflow-hidden h-full">
+                <img id="product-image" 
+                   src="" 
+                   alt="image" 
+                   class="max-w-full max-h-full object-contain transform transition duration-500">
+              </div>
             </div>
 
             <div class="lg:col-span-5 flex flex-col h-full">
@@ -85,21 +88,18 @@
                   <h1 id="product-name" class="text-3xl lg:text-4xl font-bold text-black tracking-tight leading-tight mb-2">
                       name
                   </h1>
-
-                    <div class="flex items-center gap-4 mt-2">
-                         <span class="text-sm text-green-600 font-medium flex items-center gap-1">
-                            <i class="fa-solid fa-check"></i> Ir noliktavā
-                         </span>
-                    </div>
                 </div>
 
-                <div id="product-description" class="text-lg">
+                <div id="product-description" class="text-lg mb-8">
                   description
                 </div>
 
                 <div class="mt-auto space-y-4">
-                    <div class="flex items-end gap-3 mb-2">
+                    <div class="flex items-end gap-4 mb-2">
                         <div id="product-price" class="text-4xl font-bold text-black">price</div>
+                            <span class="text-sm text-green-600 font-medium flex items-center gap-2">
+                            <i class="fa-solid fa-check"></i> Ir noliktavā
+                         </span>
                     </div>
                     <p class="text-sm text-gray-500 mb-4">Cena iekļauj PVN 21%. Bezmaksas piegāde.</p>
 
@@ -134,53 +134,52 @@
   </main>
 
   <!-- footer -->
-  <footer class="border-t border-border bg-[#000000] pb-30 mt-auto">
-    <div class="mx-auto max-w-7xl px-4">
-      <div class="grid md:grid-cols-4 gap-8 py-10 text-accent text-sm font-light">
-          <div>
-              <div class="font-bold pb-4">
-                  UniServiss
-              </div>
-              <p class="mt-2 leading-8 pr-10 md:pr-40">
-                  Remonts, datora komplektēšana un datortehnikas tirdzniecība.
-              </p>
-          </div>
-          <div>
-              <div class="font-bold pb-4">
-                  Navigācija
-              </div>
-              <ul class="mt-2 leading-8">
-                  <li><a href="#" class="hover:text-white transition">Katalogs</a></li> 
-                  <li><a href="#" class="hover:text-white transition">Pakalpojumi</a></li>
-                  <li><a href="#" class="hover:text-white transition">Cenas</a></li> 
-                  <li><a href="contacts.html" class="hover:text-white transition">Kontakti</a></li>
-              </ul>
-          </div>
-          <div>
-              <div class="font-bold pb-4">
-                  Atbalsts
-              </div>
-              <ul class="mt-2 leading-8">
-                  <li><a href="#" class="hover:text-white transition">Garantijas</a></li> 
-                  <li><a href="#" class="hover:text-white transition">Sertifikāti</a></li>
-                  <li><a href="faq.html" class="hover:text-white transition">Jautājumi</a></li> 
-                  <li><a href="#" class="hover:text-white transition">Piegāde</a></li>
-                  <li><a href="#" class="hover:text-white transition">Atgriešana</a></li>
-              </ul>
-          </div>
-          <div>
-              <div class="font-bold pb-4">
-                  Saziņa
-              </div>
-              <ul class="mt-2 leading-8">
-                  <li>+371 0000 0000</li> 
-                  <li>info@uniserv.lv</li>
-                  <li>© 2025</li> 
-              </ul>
-          </div>
-      </div>   
-    </div>
-  </footer>
+  <footer class="border-t border-border bg-[#000000] pb-30">
+            <div class="container-center py-10 grid md:grid-cols-4 gap-8 mx-auto max-w-7xl text-accent text-sm font-light">
+                <div>
+                    <div class="font-bold pb-4">
+                        UniServiss
+                    </div>
+                    <p class="mt-2 leading-8 pr-40">
+                        Remonts, datora komplektēšana un datortehnikas tirdzniecība.
+                    </p>
+                </div>
+                <div>
+                    <div class="font-bold pb-4">
+                        Navigācija
+                    </div>
+                    <ul class="mt-2 leading-8">
+                        <li><a href="shop.html">Veikals</a></li> 
+                        <li><a href="faq.html">BUJ</a></li>
+                        <li><a href="about.html">Par mums</a></li> 
+                        <li><a href="contacts.html">Kontakti</a></li>
+                        <li><a href="cart.html">Grozs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="font-bold pb-4">
+                        Atbalsts
+                    </div>
+                    <ul class="mt-2 leading-8">
+                        <li><a href="contacts.html#form-section">Garantijas</a></li> 
+                        <li><a href="contacts.html#form-section">Sertifikāti</a></li>
+                        <li><a href="contacts.html#form-section">Jautājumi</a></li> 
+                        <li><a href="contacts.html#form-section">Piegāde</a></li>
+                        <li><a href="contacts.html#form-section">Atgriešana</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="font-bold pb-4">
+                        Saziņa
+                    </div>
+                    <ul class="mt-2 leading-8">
+                        <li>+371 0000 0000</li> 
+                        <li>info@uniserv.lv</li>
+                        <li>© 2025</li> 
+                    </ul>
+                </div>
+            </div>   
+    </footer>
 
   <script type="module" src="detailToCart.js"></script>
   <script type="module" src="./search.js"></script>
