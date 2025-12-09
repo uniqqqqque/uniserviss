@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniServiss - FAQ</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+  </style>
+  <style type="text/tailwindcss">
+    @theme default  {
+      --color-main:   #FFFFFF;
+      --color-accent: #EBEBEB;
+      --color-graphite:  #4E4E4E;
+      --color-black:     #000000;
+    }
+  </style>
+  <style>
+  body { font-family: 'Inter', sans-serif; }
+  /* Noņemam defaulto trīsstūrīti details elementam */
+  details > summary { list-style: none; }
+  details > summary::-webkit-details-marker { display: none; }
+  </style>
+</head>  
+
+<body class="antialiased flex flex-col min-h-screen">
+  <!-- header -->
+  <header class="sticky top-0 z-50 w-full backdrop-blur border-b">
+    <!-- top navigation -->
+    <nav>
+      <div class="mx-auto w-full max-w-7xl px-4">
+        <div class="flex items-center gap-4 py-6">
+          <a href="main.html" class="text-2xl font-semibold tracking-tight leading-none mr-14">UniServiss</a>
+          <!-- links -->
+          <ul class="flex items-center gap-6 text-lg leading-none">
+            <li><a href="main.html">Sākums</a></li>
+            <li><a href="shop.html">Veikals</a></li>
+            <li><a href="faq.html" class="border-b-2 border-black pb-1">FAQ</a></li>
+            <li><a href="about.html">Par mums</a></li>
+            <li><a href="contacts.html">Kontakti</a></li>
+          </ul>
+          <!-- search -->
+          <form action="" class="ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
+            <div class="relative pr-10 pl-20">
+              <span class="absolute inset-y-0 left-23 flex items-center">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+              <input
+                id="search"
+                type="search"
+                placeholder="Meklēt…"
+                class="w-full pl-10 pr-4 py-2 text-sm rounded-lg border border-graphite"
+              />
+            </div>
+          </form>
+          <!-- 3 buttons -->
+          <div class="ms-auto flex items-center gap-3">
+            <a type="button" href="wishlist.html" class="p-2 rounded-full flex items-center justify-center">
+              <i class="fa-regular fa-heart text-xl"></i>
+            </a>
+            <a type="button" href="cart.html" class="p-2 rounded-full flex items-center justify-center">
+              <i class="fa-solid fa-cart-shopping text-xl"></i>
+            </a>
+            <a type="button" href="profile.html" class="p-2 rounded-full flex items-center justify-center">
+              <i class="fa-regular fa-user text-xl"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- categories -->
+    <div class="border-t bg-graphite text-accent">
+      <div class="mx-auto w-full max-w-7xl px-4">
+        <div class="flex items-center justify-between gap-6 py-2 text-sm">
+        <!-- items -->
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              PC
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              CPU
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              GPU
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              HDD
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              SSD
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              PSU
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    
+    <section class="py-16 mx-auto max-w-3xl px-4">
+        <div class="text-center mb-16">
+            <h1 class="tracking-wider uppercase text-4xl font-light mb-4">Biežāk uzdotie <span class="font-semibold">jautājumi</span></h1>
+            <p class="text-gray-500">Ātras atbildes uz populārākajiem jautājumiem par servisu un veikalu.</p>
+        </div>
+
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-screwdriver-wrench text-graphite"></i> Serviss un Remonts
+        </h2>
+        
+        <div class="space-y-4 mb-12">
+            <details class="group border border-accent rounded-lg bg-[#F9F9F9] open:bg-white open:shadow-md transition-all duration-300">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-lg">
+                    <span>Cik ilgi aizņem datora diagnostika?</span>
+                    <span class="transition group-open:rotate-180">
+                        <i class="fa-solid fa-chevron-down text-sm"></i>
+                    </span>
+                </summary>
+                <div class="text-gray-600 px-5 pb-5 leading-relaxed border-t border-transparent group-open:border-accent pt-2">
+                    Diagnostika parasti tiek veikta 1-2 darba dienu laikā. Steidzamos gadījumos piedāvājam ekspress diagnostiku (3h laikā) par papildu samaksu. Pēc diagnostikas meistars ar jums sazināsies, lai saskaņotu remonta izmaksas.
+                </div>
+            </details>
+
+            <details class="group border border-accent rounded-lg bg-[#F9F9F9] open:bg-white open:shadow-md transition-all duration-300">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-lg">
+                    <span>Vai jūs sniedzat garantiju remontam?</span>
+                    <span class="transition group-open:rotate-180">
+                        <i class="fa-solid fa-chevron-down text-sm"></i>
+                    </span>
+                </summary>
+                <div class="text-gray-600 px-5 pb-5 leading-relaxed border-t border-transparent group-open:border-accent pt-2">
+                    Jā, visiem mūsu veiktajiem remontdarbiem tiek dota 3 līdz 6 mēnešu garantija, atkarībā no remonta sarežģītības. Nomainītajām jaunajām detaļām ir ražotāja noteiktā garantija (parasti 2 gadi).
+                </div>
+            </details>
+        </div>
+
+        <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+            <i class="fa-solid fa-cart-shopping text-graphite"></i> Pasūtījumi un Piegāde
+        </h2>
+
+        <div class="space-y-4">
+            <details class="group border border-accent rounded-lg bg-[#F9F9F9] open:bg-white open:shadow-md transition-all duration-300">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-lg">
+                    <span>Kādi ir piegādes veidi?</span>
+                    <span class="transition group-open:rotate-180">
+                        <i class="fa-solid fa-chevron-down text-sm"></i>
+                    </span>
+                </summary>
+                <div class="text-gray-600 px-5 pb-5 leading-relaxed border-t border-transparent group-open:border-accent pt-2">
+                    Mēs piedāvājam piegādi ar Omniva pakomātiem, kurjeru līdz durvīm vai preču saņemšanu mūsu veikalā Rīgas ielā 123 (bez maksas). Pasūtījumiem virs 200 EUR piegāde ir bezmaksas.
+                </div>
+            </details>
+
+            <details class="group border border-accent rounded-lg bg-[#F9F9F9] open:bg-white open:shadow-md transition-all duration-300">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-lg">
+                    <span>Vai varu iegādāties datoru līzingā?</span>
+                    <span class="transition group-open:rotate-180">
+                        <i class="fa-solid fa-chevron-down text-sm"></i>
+                    </span>
+                </summary>
+                <div class="text-gray-600 px-5 pb-5 leading-relaxed border-t border-transparent group-open:border-accent pt-2">
+                    Jā, sadarbībā ar Inbank un Klix, mēs piedāvājam noformēt līzingu precēm virs 70 EUR. Līgumu var parakstīt attālināti ar Smart-ID vai internetbanku.
+                </div>
+            </details>
+
+             <details class="group border border-accent rounded-lg bg-[#F9F9F9] open:bg-white open:shadow-md transition-all duration-300">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none p-5 text-lg">
+                    <span>Vai jūs pērkat lietotas detaļas?</span>
+                    <span class="transition group-open:rotate-180">
+                        <i class="fa-solid fa-chevron-down text-sm"></i>
+                    </span>
+                </summary>
+                <div class="text-gray-600 px-5 pb-5 leading-relaxed border-t border-transparent group-open:border-accent pt-2">
+                    Mēs piedāvājam "Trade-In" pakalpojumu. Jūs varat atnest savu veco datoru vai komponentes, mēs tās novērtēsim, un šo summu varēsiet izmantot kā atlaidi jauna datora iegādei.
+                </div>
+            </details>
+        </div>
+
+        <div class="mt-16 p-8 bg-accent text-white rounded-xl text-center">
+            <h3 class="text-2xl font-bold mb-2 text-black">Neatradi atbildi?</h3>
+            <p class="text-black mb-6 ">Mūsu komanda ir gatava palīdzēt ar jebkuru jautājumu.</p>
+            <a href="contacts.html#form-section" class="inline-block bg-graphite text-accent px-8 py-3 rounded-lg font-medium hover:bg-black transition">
+                Sazināties ar mums
+            </a>
+        </div>
+
+    </section>
+
+  </main>
+
+  <footer class="border-t border-border bg-[#000000] pb-30 mt-auto">
+    <div class="container-center py-10 grid md:grid-cols-4 gap-8 mx-auto max-w-7xl text-accent text-sm font-light px-4">
+        <div><div class="font-bold pb-4">UniServiss</div><p class="mt-2 leading-8 pr-10">Remonts, datora komplektēšana un datortehnikas tirdzniecība.</p></div>
+        <div><div class="font-bold pb-4">Navigācija</div><ul class="mt-2 leading-8"><li>Katalogs</li><li>Pakalpojumi</li><li>Kontakti</li></ul></div>
+        <div><div class="font-bold pb-4">Atbalsts</div><ul class="mt-2 leading-8"><li>Garantijas</li><li>Jautājumi</li><li>Piegāde</li></ul></div>
+        <div><div class="font-bold pb-4">Saziņa</div><ul class="mt-2 leading-8"><li>+371 0000 0000</li><li>info@uniserv.lv</li><li>© 2025</li></ul></div>
+    </div>   
+  </footer>
+
+</body>
+</html>

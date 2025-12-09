@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniServiss - Par Mums</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+  </style>
+  <style type="text/tailwindcss">
+    @theme default  {
+      --color-main:   #FFFFFF;
+      --color-accent: #EBEBEB;
+      --color-graphite:  #4E4E4E;
+      --color-black:     #000000;
+    }
+  </style>
+  <style>
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  </style>
+</head>
+
+<body class="antialiased">
+  <!-- header -->
+  <header class="sticky top-0 z-50 w-full backdrop-blur border-b">
+    <!-- top navigation -->
+    <nav>
+      <div class="mx-auto w-full max-w-7xl px-4">
+        <div class="flex items-center gap-4 py-6">
+          <a href="main.html" class="text-2xl font-semibold tracking-tight leading-none mr-14">UniServiss</a>
+          <!-- links -->
+          <ul class="flex items-center gap-6 text-lg leading-none">
+            <li><a href="main.html">Sākums</a></li>
+            <li><a href="shop.html">Veikals</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="about.html" class="border-b-2 border-black pb-1">Par mums</a></li>
+            <li><a href="contacts.html">Kontakti</a></li>
+          </ul>
+          <!-- search -->
+          <form action="" class="ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
+            <div class="relative pr-10 pl-20">
+              <span class="absolute inset-y-0 left-23 flex items-center">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+              <input
+                id="search"
+                type="search"
+                placeholder="Meklēt…"
+                class="w-full pl-10 pr-4 py-2 text-sm rounded-lg border border-graphite"
+              />
+            </div>
+          </form>
+          <!-- 3 buttons -->
+          <div class="ms-auto flex items-center gap-3">
+            <a type="button" href="wishlist.html" class="p-2 rounded-full flex items-center justify-center">
+              <i class="fa-regular fa-heart text-xl"></i>
+            </a>
+            <a type="button" href="cart.html" class="p-2 rounded-full flex items-center justify-center">
+              <i class="fa-solid fa-cart-shopping text-xl"></i>
+            </a>
+            <a type="button" href="profile.html" class="p-2 rounded-full flex items-center justify-center">
+              <i class="fa-regular fa-user text-xl"></i>
+            </a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- categories -->
+    <div class="border-t bg-graphite text-accent">
+      <div class="mx-auto w-full max-w-7xl px-4">
+        <div class="flex items-center justify-between gap-6 py-2 text-sm">
+        <!-- items -->
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              PC
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              CPU
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              GPU
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              HDD
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              SSD
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              PSU
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <main>
+
+
+    <main class="flex-grow pt-10 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <h1 class="text-3xl font-extrabold mb-8 text-black border-b pb-4">Mans Profils</h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            
+            <aside class="lg:col-span-1 bg-white p-6 rounded-lg shadow-xl h-fit sticky top-24">
+                <nav class="space-y-2">
+                    <a href="profile.html?tab=info" id="nav-info" class="flex items-center p-3 text-black bg-gray-100 font-semibold rounded-lg transition hover:bg-gray-50 border-l-4 border-black">
+                        <i class="fa-solid fa-user-circle w-5 mr-3"></i>
+                        Profila Informācija
+                    </a>
+                    
+                    <a href="profile.html?tab=orders" id="nav-orders" class="flex items-center p-3 text-gray-700 rounded-lg transition hover:bg-gray-50">
+                        <i class="fa-solid fa-box w-5 mr-3"></i>
+                        Pasūtījumu Vēsture
+                    </a>
+                    
+                    <a href="profile.html?tab=wishlist" id="nav-wishlist" class="flex items-center p-3 text-gray-700 rounded-lg transition hover:bg-gray-50">
+                        <i class="fa-solid fa-heart w-5 mr-3"></i>
+                        Mana Izlase
+                    </a>
+
+                    <a href="profile.html?tab=settings" id="nav-settings" class="flex items-center p-3 text-gray-700 rounded-lg transition hover:bg-gray-50">
+                        <i class="fa-solid fa-cog w-5 mr-3"></i>
+                        Iestatījumi
+                    </a>
+                    
+                    <a href="#" class="flex items-center p-3 text-red-600 rounded-lg transition hover:bg-red-50">
+                        <i class="fa-solid fa-sign-out-alt w-5 mr-3"></i>
+                        Iziet (Logout)
+                    </a>
+                </nav>
+            </aside>
+
+            <section class="lg:col-span-3">
+                
+                <div id="content-info" class="bg-white p-8 rounded-lg shadow-xl">
+                    <h2 class="text-2xl font-bold mb-6 border-b pb-3">Profila Informācija</h2>
+                    
+                    <form>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            
+                            <div>
+                                <label for="full_name" class="block text-sm font-medium text-gray-700 mb-1">Pilns Vārds</label>
+                                <input type="text" id="full_name" name="full_name" value="Jānis Bērziņš" 
+                                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-black focus:border-black transition">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-pasts</label>
+                                <input type="email" id="email" name="email" value="janis.b@example.com" disabled
+                                       class="w-full p-3 border border-gray-300 rounded-lg bg-gray-100 cursor-not-allowed">
+                                <p class="text-xs text-gray-500 mt-1">E-pastu nevar mainīt</p>
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefons</label>
+                                <input type="tel" id="phone" name="phone" value="+371 22 123 456"
+                                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-black focus:border-black transition">
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Piegādes Adrese</label>
+                                <textarea id="address" name="address" rows="3"
+                                          class="w-full p-3 border border-gray-300 rounded-lg focus:ring-black focus:border-black transition">Rīgas iela 1, Daugavpils, LV-5401</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 pt-6 border-t">
+                            <button type="submit" 
+                                    class="py-3 px-8 bg-black text-white font-semibold rounded-lg hover:bg-zinc-800 transition transform active:scale-[0.98]">
+                                <i class="fa-solid fa-save mr-2"></i> Saglabāt Izmaiņas
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="content-orders" class="bg-white p-8 rounded-lg shadow-xl hidden">
+                    <h2 class="text-2xl font-bold mb-6 border-b pb-3">Pasūtījumu Vēsture</h2>
+                    
+                    <div class="border border-accent rounded-lg p-5 mb-4 shadow-sm hover:shadow-md transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg">Pasūtījums #12345</h3>
+                            <span class="text-sm font-semibold text-green-600 bg-green-100 px-3 py-1 rounded-full">Piegādāts</span>
+                        </div>
+                        <p class="text-sm text-gray-500 mb-3">Datums: 2024. gada 15. oktobris</p>
+                        
+                        <ul class="text-gray-700 space-y-1 text-sm border-t pt-3">
+                            <li>**RTX 4070 Ti TUF** x 1</li>
+                            <li>**Corsair Vengeance RAM** x 1</li>
+                        </ul>
+
+                        <div class="flex justify-between items-end mt-4 pt-3 border-t">
+                            <span class="text-xl font-bold">Kopā: 1045.50 €</span>
+                            <a href="#" class="text-black hover:underline font-medium">Skatīt detaļas <i class="fa-solid fa-chevron-right ml-1 text-xs"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="text-center py-10 text-gray-500 border border-dashed rounded-lg mt-8">
+                        <i class="fa-solid fa-list-alt text-4xl mb-3"></i>
+                        <p class="font-medium">Vēl nav veikti citi pasūtījumi.</p>
+                    </div>
+
+                </div>
+                
+                </section>
+        </div>
+
+    </div>
+</main>
+
+
+  </main>
+
+
+  
+  <footer class="border-t border-border bg-[#000000] pb-30 mt-auto">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="grid md:grid-cols-4 gap-8 py-10 text-accent text-sm font-light">
+          <div>
+              <div class="font-bold pb-4">
+                  UniServiss
+              </div>
+              <p class="mt-2 leading-8 pr-10 md:pr-40">
+                  Remonts, datora komplektēšana un datortehnikas tirdzniecība.
+              </p>
+          </div>
+          <div>
+              <div class="font-bold pb-4">
+                  Navigācija
+              </div>
+              <ul class="mt-2 leading-8">
+                  <li><a href="#" class="hover:text-white transition">Katalogs</a></li> 
+                  <li><a href="#" class="hover:text-white transition">Pakalpojumi</a></li>
+                  <li><a href="#" class="hover:text-white transition">Cenas</a></li> 
+                  <li><a href="contacts.html" class="hover:text-white transition">Kontakti</a></li>
+              </ul>
+          </div>
+          <div>
+              <div class="font-bold pb-4">
+                  Atbalsts
+              </div>
+              <ul class="mt-2 leading-8">
+                  <li><a href="#" class="hover:text-white transition">Garantijas</a></li> 
+                  <li><a href="#" class="hover:text-white transition">Sertifikāti</a></li>
+                  <li><a href="faq.html" class="hover:text-white transition">Jautājumi</a></li> 
+                  <li><a href="#" class="hover:text-white transition">Piegāde</a></li>
+                  <li><a href="#" class="hover:text-white transition">Atgriešana</a></li>
+              </ul>
+          </div>
+          <div>
+              <div class="font-bold pb-4">
+                  Saziņa
+              </div>
+              <ul class="mt-2 leading-8">
+                  <li>+371 0000 0000</li> 
+                  <li>info@uniserv.lv</li>
+                  <li>© 2025</li> 
+              </ul>
+          </div>
+      </div>   
+    </div>
+  </footer>
+
+</body>
+</html>

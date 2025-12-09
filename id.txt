@@ -1,0 +1,6 @@
+search
+sorting
+input-min
+input-max
+reset-filters
+product-grid

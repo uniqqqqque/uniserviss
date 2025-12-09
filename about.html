@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniServiss - Par Mums</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+  </style>
+  <style type="text/tailwindcss">
+    @theme default  {
+      --color-main:   #FFFFFF;
+      --color-accent: #EBEBEB;
+      --color-graphite:  #4E4E4E;
+      --color-black:     #000000;
+    }
+  </style>
+  <style>
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  </style>
+</head>
+
+<body class="antialiased">
+  <!-- header -->
+  <header class="sticky top-0 z-50 w-full backdrop-blur border-b">
+    <!-- top navigation -->
+    <nav>
+      <div class="mx-auto w-full max-w-7xl px-4">
+        <div class="flex items-center gap-4 py-6">
+          <a href="main.html" class="text-2xl font-semibold tracking-tight leading-none mr-14">UniServiss</a>
+          <!-- links -->
+          <ul class="flex items-center gap-6 text-lg leading-none">
+            <li><a href="main.html">Sākums</a></li>
+            <li><a href="shop.html">Veikals</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="about.html" class="border-b-2 border-black pb-1">Par mums</a></li>
+            <li><a href="contacts.html">Kontakti</a></li>
+          </ul>
+          <!-- search -->
+          <form action="" class="ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
+            <div class="relative pr-10 pl-20">
+              <span class="absolute inset-y-0 left-23 flex items-center">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </span>
+              <input
+                id="search"
+                type="search"
+                placeholder="Meklēt…"
+                class="w-full pl-10 pr-4 py-2 text-sm rounded-lg border border-graphite"
+              />
+            </div>
+          </form>
+          <!-- 3 buttons -->
+          <div class="ms-auto flex items-center gap-3">
+            <a type="button" href="wishlist.html" class="p-2 rounded-full flex items-center justify-center">
+              <i class="fa-regular fa-heart text-xl"></i>
+            </a>
+            <a type="button" href="cart.html" class="p-2 rounded-full flex items-center justify-center">
+              <i class="fa-solid fa-cart-shopping text-xl"></i>
+            </a>
+            <a type="button" href="profile.html" class="p-2 rounded-full flex items-center justify-center">
+              <i class="fa-regular fa-user text-xl"></i>
+            </a>
+          </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- categories -->
+    <div class="border-t bg-graphite text-accent">
+      <div class="mx-auto w-full max-w-7xl px-4">
+        <div class="flex items-center justify-between gap-6 py-2 text-sm">
+        <!-- items -->
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              PC
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              CPU
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              GPU
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              HDD
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              SSD
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              PSU
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    
+    <section class="relative py-20">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h1 class="tracking-wider uppercase text-5xl font-extralight text-graphite mb-4">
+              Par <span class="font-semibold text-black">Mums</span>
+            </h1>
+            <div class="h-1 w-20 bg-black mb-8"></div>
+            <p class="text-lg text-gray-600 leading-relaxed mb-6">
+              Mēs esam "UniServiss" – vieta, kur tehnoloģijas satiekas ar aizrautību. Kopš 2020. gada mēs nodrošinām augstākās kvalitātes datoru servisu un piedāvājam rūpīgi atlasītas komponentes entuziastiem un profesionāļiem.
+            </p>
+            <p class="text-lg text-gray-600 leading-relaxed">
+              Mūsu mērķis nav tikai pārdot vai salabot. Mūsu mērķis ir nodrošināt, lai jūsu dators strādātu perfekti, neatkarīgi no tā, vai tas ir paredzēts spēlēm, darbam vai mācībām.
+            </p>
+          </div>
+          <div class="relative">
+            <img src="https://images.unsplash.com/photo-1613483187636-c2024013d54a?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                 alt="Datoru servisa darbnīca" 
+                 class="rounded-lg shadow-xl object-cover h-[400px] w-full hover:grayscale-0 transition duration-500">
+            <div class="absolute -bottom-6 -left-6 bg-accent p-6 rounded-lg shadow-lg hidden md:block">
+              <p class="text-4xl font-bold">5+</p>
+              <p class="text-sm font-medium text-graphite">Gadu pieredze</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-accent py-16">
+        <div class="mx-auto max-w-7xl px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-users text-4xl text-graphite mb-2"></i>
+                    <h3 class="text-3xl font-bold">2000+</h3>
+                    <p class="text-sm uppercase tracking-wide">Apkalpoti klienti</p>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-screwdriver-wrench text-4xl text-graphite mb-2"></i>
+                    <h3 class="text-3xl font-bold">1500+</h3>
+                    <p class="text-sm uppercase tracking-wide">Veikti remonti</p>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-microchip text-4xl text-graphite mb-2"></i>
+                    <h3 class="text-3xl font-bold">500+</h3>
+                    <p class="text-sm uppercase tracking-wide">Salikti datori</p>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <i class="fa-solid fa-star text-4xl text-graphite mb-2"></i>
+                    <h3 class="text-3xl font-bold">4.9</h3>
+                    <p class="text-sm uppercase tracking-wide">Vidējais vērtējums</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="mx-auto max-w-7xl px-4">
+            <div class="text-center mb-16">
+                <h2 class="tracking-wide text-3xl font-semibold">Kāpēc izvēlēties mūs?</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="p-8 border border-accent rounded-xl hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-black text-white rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-medal"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Kvalitātes Garantija</h3>
+                    <p class="text-gray-600">Mēs izmantojam tikai pārbaudītas detaļas un sniedzam garantiju visiem veiktajiem darbiem un pārdotajām precēm.</p>
+                </div>
+                <div class="p-8 border border-accent rounded-xl hover:shadow-lg transition duration-300 bg-accent/30">
+                    <div class="w-14 h-14 bg-black text-white rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Ātrs Serviss</h3>
+                    <p class="text-gray-600">Mēs saprotam, cik svarīgs ir dators ikdienā. Lielāko daļu diagnostikas un vienkāršu remontu veicam 24h laikā.</p>
+                </div>
+                <div class="p-8 border border-accent rounded-xl hover:shadow-lg transition duration-300">
+                    <div class="w-14 h-14 bg-black text-white rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Individuāla Pieeja</h3>
+                    <p class="text-gray-600">Nav divu vienādu klientu. Mēs uzklausām jūsu vēlmes un budžetu, lai piedāvātu tieši jums piemērotāko risinājumu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+>
+
+  </main>
+
+  <footer class="border-t border-border bg-[#000000] pb-30 mt-auto">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="grid md:grid-cols-4 gap-8 py-10 text-accent text-sm font-light">
+          <div>
+              <div class="font-bold pb-4">
+                  UniServiss
+              </div>
+              <p class="mt-2 leading-8 pr-10 md:pr-40">
+                  Remonts, datora komplektēšana un datortehnikas tirdzniecība.
+              </p>
+          </div>
+          <div>
+              <div class="font-bold pb-4">
+                  Navigācija
+              </div>
+              <ul class="mt-2 leading-8">
+                  <li><a href="#" class="hover:text-white transition">Katalogs</a></li> 
+                  <li><a href="#" class="hover:text-white transition">Pakalpojumi</a></li>
+                  <li><a href="#" class="hover:text-white transition">Cenas</a></li> 
+                  <li><a href="contacts.html" class="hover:text-white transition">Kontakti</a></li>
+              </ul>
+          </div>
+          <div>
+              <div class="font-bold pb-4">
+                  Atbalsts
+              </div>
+              <ul class="mt-2 leading-8">
+                  <li><a href="#" class="hover:text-white transition">Garantijas</a></li> 
+                  <li><a href="#" class="hover:text-white transition">Sertifikāti</a></li>
+                  <li><a href="faq.html" class="hover:text-white transition">Jautājumi</a></li> 
+                  <li><a href="#" class="hover:text-white transition">Piegāde</a></li>
+                  <li><a href="#" class="hover:text-white transition">Atgriešana</a></li>
+              </ul>
+          </div>
+          <div>
+              <div class="font-bold pb-4">
+                  Saziņa
+              </div>
+              <ul class="mt-2 leading-8">
+                  <li>+371 0000 0000</li> 
+                  <li>info@uniserv.lv</li>
+                  <li>© 2025</li> 
+              </ul>
+          </div>
+      </div>   
+    </div>
+  </footer>
+
+</body>
+</html>
