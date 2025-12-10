@@ -68,7 +68,7 @@
         <div class="grid md:grid-cols-2 gap-0 border-1 border-graphite shadow-2xl rounded-2xl overflow-hidden bg-white">
             
             <div class="p-12 flex flex-col justify-center">
-                <h2 class="tracking-tight text-4xl font-light uppercase mb-8">Kur mūs <span class="font-bold">atrast</span></h2>
+                <h1 class="tracking-wider uppercase text-4xl font-extralight mb-8">Kur mūs <span class="font-semibold">atrast</span></h1>
                 
                 <div class="space-y-8">
                     <div class="flex items-start gap-4">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
 
-                <a href="#form-section" class="mt-10 inline-flex justify-center items-center w-full md:w-auto px-8 py-3 bg-graphite text-white text-sm font-medium rounded-lg hover:bg-black transition duration-300">
+                <a href="#form-section" class="mt-10 inline-flex justify-center items-center w-full md:w-auto px-8 py-4 bg-graphite text-white font-medium rounded-lg hover:bg-black transition duration-300">
                     Rakstīt mums
                 </a>
             </div>
@@ -137,7 +137,7 @@
                 <h3 class="tracking-tight text-4xl font-light uppercase mb-2">Nosūtīt <span class="font-bold">ziņu</span></h3>
                 <p class="text-gray-500 mb-8">Atbildēsim 24 stundu laikā.</p>
                 
-                <form action="#" class="space-y-5">
+                <form id="contact-form" action="#" class="space-y-5">
                     <div class="grid grid-cols-2 gap-5">
                         <div class="flex flex-col gap-2">
                             <label for="name" class="text-sm font-medium">Vārds</label>
@@ -169,7 +169,7 @@
                         <textarea id="message" rows="4" placeholder="Kā mēs varam palīdzēt?" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black focus:ring-1 focus:ring-black bg-white transition resize-none"></textarea>
                     </div>
 
-                    <button type="button" class="w-full py-4 bg-graphite text-white rounded-lg font-medium hover:bg-black transition transform duration-200 active:scale-[0.98]">
+                    <button type="submit" id="submit-btn" class="w-full py-4 bg-graphite text-white rounded-lg font-medium hover:bg-black transition transform duration-200 cursor-pointer">
                         Nosūtīt ziņu
                     </button>
                 </form>
@@ -239,6 +239,68 @@
             </div>   
     </footer>
 
-</body>
 <script type="module" src="./search.js"></script>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name');
+    const surname = document.getElementById('surname');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+    const btn = document.getElementById('submit-btn');
+    
+    let isValid = true;
+    const inputs = [name, surname, email, message];
+    
+    // Сброс стилей ошибок
+    inputs.forEach(input => {
+      input.classList.remove('border-red-500', 'ring-1', 'ring-red-500');
+      input.classList.add('border-gray-300');
+    });
+
+    // Простая валидация
+    if (!name.value.trim()) {
+      markError(name);
+      isValid = false;
+    }
+    if (!surname.value.trim()) {
+      markError(surname);
+      isValid = false;
+    }
+    if (!email.value.trim() || !email.value.includes('@')) {
+      markError(email);
+      isValid = false;
+    }
+    if (!message.value.trim()) {
+      markError(message);
+      isValid = false;
+    }
+
+    if (isValid) {
+      // Имитация отправки
+      const originalText = btn.textContent;
+      const originalBg = btn.className; // сохраняем классы
+      
+      btn.disabled = true;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sūta...';
+      
+      setTimeout(() => {
+        btn.className = "w-full py-4 bg-[#43A047] text-white rounded-lg font-medium transition transform duration-200 scale-100 cursor-default";
+        btn.innerHTML = '<i class="fa-solid fa-check"></i> Nosūtīts!';
+        
+        // Очистка формы
+        this.reset();
+        
+      }, 1000);
+    }
+
+    function markError(element) {
+      element.classList.remove('border-gray-300');
+      element.classList.add('border-red-500', 'ring-1', 'ring-red-500');
+    }
+  });
+</script>
+</body>
 </html>

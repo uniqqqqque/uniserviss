@@ -61,12 +61,12 @@
 
 <main class="flex-grow bg-[#F9F9F9]">
   <section class="mx-auto max-w-7xl px-4 py-10">
-    <h1 class="text-4xl font-light mb-2">Datoru <span class="font-bold">komponentes</span></h1>
+    <h1 class="tracking-wider uppercase text-4xl font-extralight mb-2">Datoru <span class="font-semibold">komponentes</span></h1>
     <p class="text-gray-600 mb-8">Atrodiet perfektās komponentes savam datoram</p>
 
     <div class="grid grid-cols-12 gap-8">
 
-      <aside class="col-span-3 space-y-6 lg:sticky lg:top-28 self-start">
+      <aside class="col-span-3 space-y-6 lg:sticky lg:top-28 self-start lg:max-h-[850px] lg:overflow-y-auto pr-2">
 
         <!-- Kārtot pēc -->
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 p-4 bg-white rounded-lg border border-accent">
@@ -127,8 +127,14 @@
             <ul class="space-y-2 pt-3 text-sm text-gray-700">
               <li>
                 <label class="inline-flex items-center">
-                  <input id="brand-intel" type="checkbox" value="intel" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Intel</span>
+                  <input id="brand-asus" type="checkbox" value="asus" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>ASUS</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-gigabyte" type="checkbox" value="gigabyte" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>Gigabyte</span>
                 </label>
               </li>
               <li>
@@ -139,14 +145,8 @@
               </li>
               <li>
                 <label class="inline-flex items-center">
-                  <input id="brand-nvidia" type="checkbox" value="nvidia" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Nvidia</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-asus" type="checkbox" value="asus" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>ASUS</span>
+                  <input id="brand-intel" type="checkbox" value="intel" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>Intel</span>
                 </label>
               </li>
               <li>
@@ -157,8 +157,86 @@
               </li>
               <li>
                 <label class="inline-flex items-center">
-                  <input id="brand-gigabyte" type="checkbox" value="gigabyte" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Gigabyte</span>
+                  <input id="brand-corsair" type="checkbox" value="corsair" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>Corsair</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-kingston" type="checkbox" value="kingston" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>Kingston</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-gskill" type="checkbox" value="gskill" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>G.Skill</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-samsung" type="checkbox" value="samsung" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>Samsung</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-western-digital" type="checkbox" value="western digital" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>Western Digital</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-crucial" type="checkbox" value="crucial" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>Crucial</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-seagate" type="checkbox" value="seagate" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>Seagate</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-toshiba" type="checkbox" value="toshiba" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>Toshiba</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-evga" type="checkbox" value="evga" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>EVGA</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-be-quiet" type="checkbox" value="be quiet" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>be quiet!</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-nzxt" type="checkbox" value="nzxt" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>NZXT</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-fractal-design" type="checkbox" value="fractal design" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>Fractal Design</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-noctua" type="checkbox" value="noctua" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>Noctua</span>
+                </label>
+              </li>
+              <li>
+                <label class="inline-flex items-center">
+                  <input id="brand-arctic" type="checkbox" value="arctic" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
+                  <span>Arctic</span>
                 </label>
               </li>
             </ul>
