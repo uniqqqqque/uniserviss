@@ -54,7 +54,7 @@ function showResults(results) {
   
   // if no res
   if (results.length === 0) {
-    resultsDiv.innerHTML = '<div style="padding: 10px; color: #999;">Товаров не найдено</div>';
+    resultsDiv.innerHTML = '<div style="padding: 10px; color: #999;">Preces nav atrastas</div>';
     return;
   }
   

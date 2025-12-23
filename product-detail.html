@@ -32,10 +32,10 @@
     <!-- top navigation -->
     <nav>
       <div class="mx-auto w-full max-w-7xl px-4">
-        <div class="flex items-center gap-4 py-6">
-          <a href="index.html" class="text-2xl font-semibold tracking-tight leading-none mr-14">UniServiss</a>
+        <div class="flex items-center gap-4 py-4 lg:py-6">
+          <a href="index.html" class="text-xl lg:text-2xl font-semibold tracking-tight leading-none lg:mr-14">UniServiss</a>
           <!-- links -->
-          <ul class="flex items-center gap-6 text-lg leading-none">
+          <ul class="hidden lg:flex items-center gap-6 text-lg leading-none">
             <li><a href="index.html">Sākums</a></li>
             <li><a href="shop.html">Veikals</a></li>
             <li><a href="faq.html">FAQ</a></li>
@@ -43,10 +43,31 @@
             <li><a href="contacts.html">Kontakti</a></li>
             <li><a href="cart.html">Grozs</a></li>
           </ul>
+          <!-- mobile menu button -->
+          <button id="burger-btn" class="lg:hidden ms-auto text-2xl p-2">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <!-- mobile menu -->
+          <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-white/90 backdrop-blur-md z-50 h-screen w-screen">
+            <div class="flex items-center justify-between p-4 border-b">
+              <a href="index.html" class="text-xl font-semibold">UniServiss</a>
+              <button id="close-menu-btn" class="text-2xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <ul class="flex flex-col p-4 gap-4 text-lg">
+              <li><a href="index.html" class="block py-2">Sākums</a></li>
+              <li><a href="shop.html" class="block py-2">Veikals</a></li>
+              <li><a href="faq.html" class="block py-2">FAQ</a></li>
+              <li><a href="about.html" class="block py-2">Par mums</a></li>
+              <li><a href="contacts.html" class="block py-2">Kontakti</a></li>
+              <li><a href="cart.html" class="block py-2">Grozs</a></li>
+            </ul>
+          </div>
           <!-- search -->
-          <form action="" class="ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
-            <div class="relative pr-10 pl-20">
-              <span class="absolute inset-y-0 left-23 flex items-center">
+          <form action="" class="hidden lg:block ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
+            <div class="relative">
+              <span class="absolute inset-y-0 left-4 flex items-center">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </span>
               <input
@@ -65,9 +86,9 @@
   
 
 
-  <main class="flex-grow py-12 mb-32">
+  <main class="flex-grow py-8 md:py-12 lg:py-12 mb-32">
     <div class="mx-auto w-full max-w-7xl px-4">
-        <div id="product-container" class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div id="product-container" class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             
             <div class="lg:col-span-7 space-y-4 h-[600px]">
               <div class="bg-[#F9F9F9] rounded-xl border border-gray-100 p-0 flex items-center justify-center relative group overflow-hidden h-full">
@@ -134,52 +155,96 @@
   </main>
 
   <!-- footer -->
-  <footer class="border-t border-border bg-[#000000] pb-30">
-            <div class="container-center py-10 grid md:grid-cols-4 gap-8 mx-auto max-w-7xl text-accent text-sm font-light">
-                <div>
-                    <div class="font-bold pb-4">
-                        UniServiss
-                    </div>
-                    <p class="mt-2 leading-8 pr-40">
-                        Remonts, datora komplektēšana un datortehnikas tirdzniecība.
-                    </p>
-                </div>
-                <div>
-                    <div class="font-bold pb-4">
-                        Navigācija
-                    </div>
-                    <ul class="mt-2 leading-8">
-                        <li><a href="shop.html">Veikals</a></li> 
-                        <li><a href="faq.html">BUJ</a></li>
-                        <li><a href="about.html">Par mums</a></li> 
-                        <li><a href="contacts.html">Kontakti</a></li>
-                        <li><a href="cart.html">Grozs</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="font-bold pb-4">
-                        Atbalsts
-                    </div>
-                    <ul class="mt-2 leading-8">
-                        <li><a href="contacts.html#form-section">Garantijas</a></li> 
-                        <li><a href="contacts.html#form-section">Sertifikāti</a></li>
-                        <li><a href="contacts.html#form-section">Jautājumi</a></li> 
-                        <li><a href="contacts.html#form-section">Piegāde</a></li>
-                        <li><a href="contacts.html#form-section">Atgriešana</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="font-bold pb-4">
-                        Saziņa
-                    </div>
-                    <ul class="mt-2 leading-8">
-                        <li>+371 0000 0000</li> 
-                        <li>info@uniserv.lv</li>
-                        <li>© 2025</li> 
-                    </ul>
-                </div>
-            </div>   
-    </footer>
+<!-- footer -->
+  <footer class="bg-black text-white">
+    <div class="mx-auto max-w-7xl px-4 py-12 lg:py-16">
+      <!-- main grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        
+        <!-- logo  -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <a href="index.html" class="text-2xl font-bold">UniServiss</a>
+          <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+            Remonts, datora komplektēšana un datortehnikas tirdzniecība.
+          </p>
+          <div class="flex gap-4 mt-6">
+            <a href="https://www.facebook.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- navigation -->
+        <div>
+          <h3 class="font-semibold mb-4">Navigācija</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="shop.html" class="hover:text-white transition">Veikals</a></li>
+            <li><a href="faq.html" class="hover:text-white transition">BUJ</a></li>
+            <li><a href="about.html" class="hover:text-white transition">Par mums</a></li>
+            <li><a href="contacts.html" class="hover:text-white transition">Kontakti</a></li>
+            <li><a href="cart.html" class="hover:text-white transition">Grozs</a></li>
+          </ul>
+        </div>
+
+        <!-- support -->
+        <div>
+          <h3 class="font-semibold mb-4">Atbalsts</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="contacts.html#form-section" class="hover:text-white transition">Garantijas</a></li>
+            <li><a href="contacts.html#form-section" class="hover:text-white transition">Piegāde</a></li>
+            <li><a href="contacts.html#form-section" class="hover:text-white transition">Atgriešana</a></li>
+            <li><a href="faq.html" class="hover:text-white transition">Jautājumi</a></li>
+          </ul>
+        </div>
+
+        <!-- contact -->
+        <div>
+          <h3 class="font-semibold mb-4">Saziņa</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-xs"></i>
+              +371 2000 0000
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-xs"></i>
+              info@uniserviss.lv
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-xs"></i>
+              Braslas iela 16, Rīga
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- bottom heart -->
+      <div class="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row justify-center items-center gap-4 text-sm text-gray-500">
+        <p>Izstrādāts ar ❤️ Latvijā</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // burger menu
+    const burgerBtn = document.getElementById('burger-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    burgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  </script>
 
   <script type="module" src="product-detail.js"></script>
   <script type="module" src="./search.js"></script>

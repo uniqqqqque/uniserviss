@@ -107,8 +107,9 @@ function applyFilters() {
     }
   });
   
-  // apply sort
-  const sortValue = document.querySelector('#sorting').value;
+  // apply sort 
+  let sortValue = sortingSelect.value;
+  if (sortingSelectMobile) sortValue = sortingSelectMobile.value;
   
   if (sortValue === 'low-high') {
     result.sort((a, b) => a.price - b.price);
@@ -120,8 +121,6 @@ function applyFilters() {
   renderProductsGrid(result);
 }
 
-
-// filter
 
 // cat click
 document.querySelectorAll('.filter-category').forEach(button => {

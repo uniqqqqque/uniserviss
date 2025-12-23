@@ -1,3 +1,4 @@
+//import
 import { products } from './products.js';
 import { addToCart } from './shopToCart.js';
 import { categoryNames } from './ui-utils.js';
@@ -10,7 +11,7 @@ if (product) {
   // update title
   document.title = `${product.name} | UniServiss`;
   const pageTitle = document.getElementById('page-title');
-  if (pageTitle) pageTitle.textContent = `${product.name} — UniServiss`;
+  if (pageTitle) pageTitle.textContent = `${product.name} - UniServiss`;
 
   // update content
   document.getElementById('product-name').textContent = product.name;

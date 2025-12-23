@@ -104,6 +104,44 @@ document.addEventListener('click', function(e) {
       renderCart(); // refresh cart
     }
   }
+  
+  // click order btn
+  if (e.target.closest('button:has(i.fa-credit-card)')) {
+    const cartItems = getCartItems();
+    
+    if (cartItems.length === 0) {
+      alert('Grozs ir tukšs!');
+      return;
+    }
+    
+    // show success window
+    const modal = document.createElement('div');
+    modal.className = 'fixed inset-0 bg-black/50 flex items-center justify-center z-50';
+    modal.innerHTML = `
+      <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+        <div class="text-center">
+          <i class="fa-solid fa-check-circle text-green-600 text-6xl mb-4"></i>
+          <h2 class="text-2xl font-bold mb-4">Pasūtījums nosūtīts!</h2>
+          <p class="text-gray-600 mb-6">Pasūtījuma numurs: #${Math.floor(100000 + Math.random() * 900000)}</p>
+          <button class="w-full py-3 bg-black text-white rounded-lg hover:bg-zinc-800">
+            Aizvērt
+          </button>
+        </div>
+      </div>
+    `;
+    
+    document.body.appendChild(modal);
+    
+    // close window
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal || e.target.closest('button')) {
+        modal.remove();
+        // clear cart
+        localStorage.removeItem('cart');
+        renderCart();
+      }
+    });
+  }
 });
 
 renderCart();

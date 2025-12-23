@@ -31,10 +31,10 @@
     <!-- top navigation -->
     <nav>
       <div class="mx-auto w-full max-w-7xl px-4">
-        <div class="flex items-center gap-4 py-6">
-          <a href="index.html" class="text-2xl font-semibold tracking-tight leading-none mr-14">UniServiss</a>
+        <div class="flex items-center gap-4 py-4 lg:py-6">
+          <a href="index.html" class="text-xl lg:text-2xl font-semibold tracking-tight leading-none lg:mr-14">UniServiss</a>
           <!-- links -->
-          <ul class="flex items-center gap-6 text-lg leading-none">
+          <ul class="hidden lg:flex items-center gap-6 text-lg leading-none">
             <li><a href="index.html">Sākums</a></li>
             <li><a href="shop.html">Veikals</a></li>
             <li><a href="faq.html" class="border-b-2 border-black pb-1">FAQ</a></li>
@@ -42,10 +42,31 @@
             <li><a href="contacts.html">Kontakti</a></li>
             <li><a href="cart.html">Grozs</a></li>
           </ul>
+          <!-- mobile menu button -->
+          <button id="burger-btn" class="lg:hidden ms-auto text-2xl p-2">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <!-- mobile menu -->
+          <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-white/90 backdrop-blur-md z-50 h-screen w-screen">
+            <div class="flex items-center justify-between p-4 border-b">
+              <a href="index.html" class="text-xl font-semibold">UniServiss</a>
+              <button id="close-menu-btn" class="text-2xl p-2">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <ul class="flex flex-col p-4 gap-4 text-lg">
+              <li><a href="index.html" class="block py-2">Sākums</a></li>
+              <li><a href="shop.html" class="block py-2">Veikals</a></li>
+              <li><a href="faq.html" class="block py-2">FAQ</a></li>
+              <li><a href="about.html" class="block py-2">Par mums</a></li>
+              <li><a href="contacts.html" class="block py-2">Kontakti</a></li>
+              <li><a href="cart.html" class="block py-2">Grozs</a></li>
+            </ul>
+          </div>
           <!-- search -->
-          <form action="" class="ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
-            <div class="relative pr-10 pl-20">
-              <span class="absolute inset-y-0 left-23 flex items-center">
+          <form action="" class="hidden lg:block ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
+            <div class="relative">
+              <span class="absolute inset-y-0 left-4 flex items-center">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </span>
               <input
@@ -64,13 +85,13 @@
 
   <main class="flex-grow ">
     
-    <section class="py-16 mx-auto max-w-3xl px-4">
-        <div class="text-center mb-16">
-            <h1 class="tracking-wider uppercase text-4xl font-extralight mb-4">Biežāk uzdotie <span class="font-semibold">jautājumi</span></h1>
-            <p class="text-gray-500">Ātras atbildes uz populārākajiem jautājumiem par servisu un veikalu.</p>
+    <section class="py-12 md:py-16 lg:py-20 mx-auto max-w-3xl px-4">
+        <div class="text-center mb-12 md:mb-16">
+            <h1 class="tracking-wider uppercase text-3xl md:text-4xl lg:text-5xl font-extralight mb-4">Biežāk uzdotie <span class="font-semibold">jautājumi</span></h1>
+            <p class="text-sm md:text-base text-gray-500">Te atradīsi atbildes uz visbiežāk uzdotajiem jautājumiem.</p>
         </div>
 
-        <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+        <h2 class="text-lg md:text-xl font-bold mb-6 flex items-center gap-2">
             <i class="fa-solid fa-screwdriver-wrench text-graphite"></i> Serviss un Remonts
         </h2>
         
@@ -83,7 +104,7 @@
                     </span>
                 </summary>
                 <div class="text-gray-600 px-5 pb-5 leading-relaxed border-t border-transparent group-open:border-accent pt-2">
-                    Diagnostika parasti tiek veikta 1-2 darba dienu laikā. Steidzamos gadījumos piedāvājam ekspress diagnostiku (3h laikā) par papildu samaksu. Pēc diagnostikas meistars ar jums sazināsies, lai saskaņotu remonta izmaksas.
+                    Parasti diagnostika aizņem kādas 1-2 dienas. Ja steidzas, varam to izdarīt 3 stundu laikā - tikai par to būs papildu maksa. Kad būsim pārbaudījuši, meistars piezvanīs un pateiks, cik maksās remonts.
                 </div>
             </details>
 
@@ -95,7 +116,7 @@
                     </span>
                 </summary>
                 <div class="text-gray-600 px-5 pb-5 leading-relaxed border-t border-transparent group-open:border-accent pt-2">
-                    Jā, visiem mūsu veiktajiem remontdarbiem tiek dota 3 līdz 6 mēnešu garantija, atkarībā no remonta sarežģītības. Nomainītajām jaunajām detaļām ir ražotāja noteiktā garantija (parasti 2 gadi).
+                    Jā! Uz darbu dodam 3-6 mēnešu garantiju. Cik ilga būs, ir atkarīgs no tā, cik sarežģīts remonts. Jaunajām detaļām ir ražotāja garantija - parasti 2 gadi.
                 </div>
             </details>
         </div>
@@ -113,7 +134,7 @@
                     </span>
                 </summary>
                 <div class="text-gray-600 px-5 pb-5 leading-relaxed border-t border-transparent group-open:border-accent pt-2">
-                    Mēs piedāvājam piegādi ar Omniva pakomātiem, kurjeru līdz durvīm vai preču saņemšanu mūsu veikalā Rīgas ielā 123 (bez maksas). Pasūtījumiem virs 200 EUR piegāde ir bezmaksas.
+                    Vari izvēlēties: Omniva pakomāts, kurjers līdz mājas durvīm, vai brauc pakaļ uz veikalu (tas ir bez maksas). Ja pasūti virs 200 EUR, piegāde neko nemaksā.
                 </div>
             </details>
 
@@ -125,7 +146,7 @@
                     </span>
                 </summary>
                 <div class="text-gray-600 px-5 pb-5 leading-relaxed border-t border-transparent group-open:border-accent pt-2">
-                    Jā, sadarbībā ar Inbank un Klix, mēs piedāvājam noformēt līzingu precēm virs 70 EUR. Līgumu var parakstīt attālināti ar Smart-ID vai internetbanku.
+                    Protams! Strādājam kopā ar Inbank un Klix. Var ņemt līzingā, ja prece maksā virs 70 eiro. Visu var nokārtot attālināti - ar Smart-ID vai internetbanku.
                 </div>
             </details>
 
@@ -137,7 +158,7 @@
                     </span>
                 </summary>
                 <div class="text-gray-600 px-5 pb-5 leading-relaxed border-t border-transparent group-open:border-accent pt-2">
-                    Mēs piedāvājam "Trade-In" pakalpojumu. Jūs varat atnest savu veco datoru vai komponentes, mēs tās novērtēsim, un šo summu varēsiet izmantot kā atlaidi jauna datora iegādei.
+                    Jā, ir Trade-In. Atnes savu veco datoru vai detaļas, mēs apskatīsimies un piedāvāsim cenu. To naudu vari izmantot kā atlaidi jaunam datoram.
                 </div>
             </details>
         </div>
@@ -154,52 +175,96 @@
 
   </main>
 
-  <footer class="border-t border-border bg-[#000000] pb-30">
-            <div class="container-center py-10 grid md:grid-cols-4 gap-8 mx-auto max-w-7xl text-accent text-sm font-light">
-                <div>
-                    <div class="font-bold pb-4">
-                        UniServiss
-                    </div>
-                    <p class="mt-2 leading-8 pr-40">
-                        Remonts, datora komplektēšana un datortehnikas tirdzniecība.
-                    </p>
-                </div>
-                <div>
-                    <div class="font-bold pb-4">
-                        Navigācija
-                    </div>
-                    <ul class="mt-2 leading-8">
-                        <li><a href="shop.html">Veikals</a></li> 
-                        <li><a href="faq.html">BUJ</a></li>
-                        <li><a href="about.html">Par mums</a></li> 
-                        <li><a href="contacts.html">Kontakti</a></li>
-                        <li><a href="cart.html">Grozs</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="font-bold pb-4">
-                        Atbalsts
-                    </div>
-                    <ul class="mt-2 leading-8">
-                        <li><a href="contacts.html#form-section">Garantijas</a></li> 
-                        <li><a href="contacts.html#form-section">Sertifikāti</a></li>
-                        <li><a href="contacts.html#form-section">Jautājumi</a></li> 
-                        <li><a href="contacts.html#form-section">Piegāde</a></li>
-                        <li><a href="contacts.html#form-section">Atgriešana</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <div class="font-bold pb-4">
-                        Saziņa
-                    </div>
-                    <ul class="mt-2 leading-8">
-                        <li>+371 0000 0000</li> 
-                        <li>info@uniserv.lv</li>
-                        <li>© 2025</li> 
-                    </ul>
-                </div>
-            </div>   
-    </footer>
+<!-- footer -->
+  <footer class="bg-black text-white">
+    <div class="mx-auto max-w-7xl px-4 py-12 lg:py-16">
+      <!-- main grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        
+        <!-- logo  -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <a href="index.html" class="text-2xl font-bold">UniServiss</a>
+          <p class="mt-4 text-gray-400 text-sm leading-relaxed">
+            Remonts, datora komplektēšana un datortehnikas tirdzniecība.
+          </p>
+          <div class="flex gap-4 mt-6">
+            <a href="https://www.facebook.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- navigation -->
+        <div>
+          <h3 class="font-semibold mb-4">Navigācija</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="shop.html" class="hover:text-white transition">Veikals</a></li>
+            <li><a href="faq.html" class="hover:text-white transition">BUJ</a></li>
+            <li><a href="about.html" class="hover:text-white transition">Par mums</a></li>
+            <li><a href="contacts.html" class="hover:text-white transition">Kontakti</a></li>
+            <li><a href="cart.html" class="hover:text-white transition">Grozs</a></li>
+          </ul>
+        </div>
+
+        <!-- support -->
+        <div>
+          <h3 class="font-semibold mb-4">Atbalsts</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="contacts.html#form-section" class="hover:text-white transition">Garantijas</a></li>
+            <li><a href="contacts.html#form-section" class="hover:text-white transition">Piegāde</a></li>
+            <li><a href="contacts.html#form-section" class="hover:text-white transition">Atgriešana</a></li>
+            <li><a href="faq.html" class="hover:text-white transition">Jautājumi</a></li>
+          </ul>
+        </div>
+
+        <!-- contact -->
+        <div>
+          <h3 class="font-semibold mb-4">Saziņa</h3>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-phone text-xs"></i>
+              +371 2000 0000
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-envelope text-xs"></i>
+              info@uniserviss.lv
+            </li>
+            <li class="flex items-center gap-2">
+              <i class="fa-solid fa-location-dot text-xs"></i>
+              Braslas iela 16, Rīga
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- bottom heart -->
+      <div class="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row justify-center items-center gap-4 text-sm text-gray-500">
+        <p>Izstrādāts ar ❤️ Latvijā</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // burger menu
+    const burgerBtn = document.getElementById('burger-btn');
+    const closeBtn = document.getElementById('close-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    burgerBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  </script>
 
 </body>
 <script type="module" src="./search.js"></script>
