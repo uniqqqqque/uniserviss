@@ -10,7 +10,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
   </style>
   <style type="text/tailwindcss">
-    @theme default  {
+    @theme {
       --color-main:   #FFFFFF;
       --color-accent: #EBEBEB;
       --color-graphite:  #4E4E4E;
@@ -32,34 +32,87 @@
     <nav>
       <div class="mx-auto w-full max-w-7xl px-4">
         <div class="flex items-center gap-4 py-6">
-          <a href="index.html" class="text-2xl font-semibold tracking-tight leading-none mr-14">UniServiss</a>
+          <a href="#" class="text-2xl font-semibold tracking-tight leading-none mr-12">UniServiss</a>
           <!-- links -->
           <ul class="flex items-center gap-6 text-lg leading-none">
-            <li><a href="index.html" class="border-b-2 border-black pb-1">Sākums</a></li>
-            <li><a href="shop.html">Veikals</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="about.html">Par mums</a></li>
-            <li><a href="contacts.html">Kontakti</a></li>
-            <li><a href="cart.html">Grozs</a></li>
+            <li><a href="#">Sākums</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Par mums</a></li>
+            <li><a href="#">Kontakti</a></li>
           </ul>
           <!-- search -->
-          <form action="" class="ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
-            <div class="relative">
-              <span class="absolute inset-y-0 left-3 flex items-center">
+          <form action="" class="ms-auto w-full max-w-xl" role="search" aria-label="Meklēšana">
+            <div class="relative pr-10 pl-20">
+              <span class="absolute inset-y-0 left-23 flex items-center">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </span>
               <input
                 id="search"
                 type="search"
-                placeholder="Meklēt preces..."
+                placeholder="Meklēt…"
                 class="w-full pl-10 pr-4 py-2 text-sm rounded-lg border border-graphite"
-                autocomplete="off"
               />
             </div>
           </form>
+          <!-- 3 buttons -->
+          <div class="ms-auto flex items-center gap-3">
+            <button type="button" class="p-2 rounded-full flex items-center justify-center">
+              <i class="fa-regular fa-heart text-xl"></i>
+            </button>
+            <button type="button" class="p-2 rounded-full flex items-center justify-center">
+              <i class="fa-solid fa-cart-shopping text-xl"></i>
+            </button>
+            <button type="button" class="p-2 rounded-full flex items-center justify-center">
+              <i class="fa-regular fa-user text-xl"></i>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
+
+    <!-- categories -->
+    <div class="border-t bg-graphite text-accent">
+      <div class="mx-auto w-full max-w-7xl px-4">
+        <div class="flex items-center justify-between gap-6 py-2 text-sm">
+        <!-- items -->
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              PC
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              CPU
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              GPU
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              HDD
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              SSD
+            </span>
+          </a>
+          <i class="fa-solid fa-minus rotate-90"></i>
+          <a href="#" class="flex items-center gap-2 px-2 py-1 rounded-full">
+            <span class="grid h-6 w-6 place-content-center rounded">
+              PSU
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -77,13 +130,13 @@
                 Serviss
               </p>
               <p class="mt-5 pl-60 opacity-75">
-                Daram visu, lai ierīce atkal strādātu stabili un bez problēmām.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor sit amet consectetur adipisicing elit quisque faucibus.
               </p>
-              <a href="contacts.html#form-section" class="inline-flex justify-center w-[240px] h-[50px] items-center text-center gap-2 mt-6 rounded-lg border
+              <a href="#" class="inline-flex justify-center w-[240px] h-[50px] items-center text-center gap-2 mt-6 rounded-lg border
                bg-white px-5 py-2.5 text-lg font-medium hover:bg-zinc-900 hover:text-white focus:outline-none focus-visible:ring-2
                 focus-visible:ring-zinc-900 duration-300">Pieteikties Tagad</a>
             </div>
-            <img src="images/index_02.jpg" 
+            <img src="https://tpucdn.com/gpu-specs/images-new/c/3889-back-large.jpg" 
                  alt=""
                  class="pointer-events-none absolute -left-150 bottom-30 w-[1200] rotate-[30deg]"
                  >
@@ -98,13 +151,13 @@
                 Veikals
               </p>
               <p class="mt-5 pr-60 opacity-75">
-                Izvēlēsimies atbilstošu datoru tieši Jums, un par saprātīgu cenu.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor sit amet consectetur adipisicing elit quisque faucibus.
               </p>
-              <a href="shop.html" class="inline-flex justify-center w-[240px] h-[50px] items-center text-center gap-2 mt-6 rounded-lg border
+              <a href="#" class="inline-flex justify-center w-[240px] h-[50px] items-center text-center gap-2 mt-6 rounded-lg border
                bg-white px-5 py-2.5 text-lg font-medium hover:bg-zinc-900 hover:text-white focus:outline-none focus-visible:ring-2
                 focus-visible:ring-zinc-900 duration-300">Pirkt Tagad</a>
             </div>
-            <img src="images/index_02.jpg" 
+            <img src="https://tpucdn.com/gpu-specs/images-new/c/3889-back-large.jpg" 
                  alt=""
                  class="pointer-events-none absolute -right-150 bottom-10 w-[1200] rotate-[30deg]"
                  >
@@ -121,6 +174,10 @@
           <h2 class="tracking-wide text-3xl font-semibold">
             Ko mēs daram?
           </h2>
+          <div class="flex items-center gap-4 text-2xl">
+            <i class="fa-solid fa-angle-left"></i>
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
 
         </div>
         <!--ikonas un teksts-->
@@ -160,11 +217,167 @@
     <section class="container-center mt-12">
       <div class="mx-auto max-w-7xl px-4">
         <h2 class="tracking-wide text-3xl font-semibold mb-8">
-          Tagad ir populārs
+          Tagad ir populārs 
         </h2>
-        <div id="popular-products" class="grid grid-cols-4 gap-12 mb-12 mt-12"></div>
+          <div class="grid grid-cols-4 gap-12 mb-12 mt-12">
+            <!-- card -->
+            
+              <div class="flex flex-col relative max-w-xs w-full p-5 bg-accent rounded-lg transform transition-transform duration-300 hover:scale-102 
+              hover:shadow-xl">
+      
+                  <!-- heart -->
+                  <button id="favBtn"
+                          aria-label="Favorīts"
+                          class="absolute top-3 right-3 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white">
+                    <i class="fa-regular fa-heart text-lg"></i>
+                  </button>
 
+                  <!-- img -->
+                  <div class="p-6 pt-8 flex justify-center">
+                    <img src="https://www.rdveikals.lv/images/full/cb32b1478725a3c38a9ef5c7e32b3afc.jpg"
+                         alt="AMD Ryzen 7 7800X3D"
+                         class="w-40 h-40 object-contain rounded-lg" />
+                  </div>
+
+                  <!-- text -->
+                  <div class="px-6 pb-6 text-center">
+                    <h2 class="text-sm text-gray-500">AMD Ryzen 7</h2>
+                    <p class="mt-1 text-base font-medium text-gray-800">7800X3D</p>
+
+                    <div class="mt-4">
+                      <span class="text-xl font-extrabold text-gray-900 leading-none">317.99 €</span>
+                    </div>
+
+                    <!-- button -->
+                    <button class="mt-5 w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg bg-black text-white text-sm font-medium 
+                    shadow-sm hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black/60"
+                            type="button" aria-label="Pirkt Tagad">
+                      Pirkt Tagad
+                    </button>
+                  
+                </div>
+              </div>
+
+
+
+              <!-- card -->
+            
+              <div class="flex flex-col relative max-w-xs w-full p-5 bg-accent rounded-lg transform transition-transform duration-300 hover:scale-102 
+              hover:shadow-xl">
+      
+                  <!-- heart -->
+                  <button id="favBtn"
+                          aria-label="Favorīts"
+                          class="absolute top-3 right-3 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white">
+                    <i class="fa-regular fa-heart text-lg"></i>
+                  </button>
+
+                  <!-- img -->
+                  <div class="p-6 pt-8 flex justify-center">
+                    <img src="https://www.rdveikals.lv/images/midi/c6d074643db3bad1da3e7aa8d6e2e4f0.jpg"
+                         alt="AMD Ryzen 7 7800X3D"
+                         class="w-40 h-40 object-contain rounded-lg" />
+                  </div>
+
+                  <!-- text -->
+                  <div class="px-6 pb-6 text-center">
+                    <h2 class="text-sm text-gray-500">Gigabyte Windforce</h2>
+                    <p class="mt-1 text-base font-medium text-gray-800">RTX 5070</p>
+
+                    <div class="mt-4">
+                      <span class="text-xl font-extrabold text-gray-900 leading-none">317.99 €</span>
+                    </div>
+
+                    <!-- button -->
+                    <button class="mt-5 w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg bg-black text-white text-sm font-medium 
+                    shadow-sm hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black/60"
+                            type="button" aria-label="Pirkt Tagad">
+                      Pirkt Tagad
+                    </button>
+                  
+                </div>
+          </div>
+
+
+              <!-- card -->
+            
+              <div class="flex flex-col relative max-w-xs w-full p-5 bg-accent rounded-lg transform transition-transform duration-300 hover:scale-102 
+              hover:shadow-xl">
+      
+                  <!-- heart -->
+                  <button id="favBtn"
+                          aria-label="Favorīts"
+                          class="absolute top-3 right-3 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white">
+                    <i class="fa-regular fa-heart text-lg"></i>
+                  </button>
+
+                  <!-- img -->
+                  <div class="p-6 pt-8 flex justify-center">
+                    <img src="https://www.rdveikals.lv/images/midi/fec6cd383e51486b0209c2e009c0249b.jpg"
+                         alt="AMD Ryzen 7 7800X3D"
+                         class="w-40 h-40 object-contain rounded-lg" />
+                  </div>
+
+                  <!-- text -->
+                  <div class="px-6 pb-6 text-center">
+                    <h2 class="text-sm text-gray-500">Gigabyte Aorus Elite</h2>
+                    <p class="mt-1 text-base font-medium text-gray-800">B550M</p>
+
+                    <div class="mt-4">
+                      <span class="text-xl font-extrabold text-gray-900 leading-none">317.99 €</span>
+                    </div>
+
+                    <!-- button -->
+                    <button class="mt-5 w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg bg-black text-white text-sm font-medium 
+                    shadow-sm hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black/60"
+                            type="button" aria-label="Pirkt Tagad">
+                      Pirkt Tagad
+                    </button>
+                  
+                </div>
+          </div>
+
+
+
+              <!-- card -->
+            
+              <div class="flex flex-col relative max-w-xs w-full p-5 bg-accent rounded-lg transform transition-transform duration-300 hover:scale-102 
+              hover:shadow-xl">
+      
+                  <!-- heart -->
+                  <button id="favBtn"
+                          aria-label="Favorīts"
+                          class="absolute top-3 right-3 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white">
+                    <i class="fa-regular fa-heart text-lg"></i>
+                  </button>
+
+                  <!-- img -->
+                  <div class="p-6 pt-8 flex justify-center">
+                    <img src="https://www.rdveikals.lv/images/midi/20af599d9a57cd101f7323842cf1d85d.jpg"
+                         alt="AMD Ryzen 7 7800X3D"
+                         class="w-40 h-40 object-contain rounded-lg" />
+                  </div>
+
+                  <!-- text -->
+                  <div class="px-6 pb-6 text-center">
+                    <h2 class="text-sm text-gray-500">Samsung 1TB</h2>
+                    <p class="mt-1 text-base font-medium text-gray-800">Evo 870</p>
+
+                    <div class="mt-4">
+                      <span class="text-xl font-extrabold text-gray-900 leading-none">317.99 €</span>
+                    </div>
+
+                    <!-- button -->
+                    <button class="mt-5 w-full inline-flex items-center justify-center gap-2 py-3 rounded-lg bg-black text-white text-sm font-medium
+                     shadow-sm hover:opacity-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-black/60"
+                            type="button" aria-label="Pirkt Tagad">
+                      Pirkt Tagad
+                    </button>
+              </div>
     </section>
+
+
+
 
     <section class="container-center m-24">
       <div class="mx-auto max-w-7xl px-4">
@@ -185,7 +398,7 @@
                     <h3 class="text-4xl text-gray-900">Izvēlies, ko vēlies</h3>
 
                     <div class="mt-4">
-                      <p class="text-sm text-gray-500">Izvēlies komponentus, kas atbilst tavām vajadzībām - spēlēm, darbam vai ikdienas lietošanai.</p>
+                      <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur maiores, aliquid!</p>
                     </div>
                 </div>
               </div>
@@ -203,7 +416,7 @@
                     <h3 class="text-4xl text-gray-900">Pārbaudi savienojamību</h3>
 
                     <div class="mt-4">
-                      <p class="text-sm text-gray-500">Mēs pārbaudīsim, vai visi izvēlētie komponenti strādās kopā bez problēmām.</p>
+                      <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur maiores, aliquid!</p>
                     </div>
                 </div>
               </div>
@@ -221,7 +434,7 @@
                     <h3 class="text-4xl text-gray-900 ">Apmaksā un pasūtī</h3>
 
                     <div class="mt-4">
-                      <p class="text-sm text-gray-500">Veic drošu maksājumu un apstiprini savu pasūtījumu - ar karti vai skaidrā.</p>
+                      <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur maiores, aliquid!</p>
                     </div>
                 </div>
               </div>
@@ -240,7 +453,7 @@
                     <h3 class="text-4xl text-gray-900 ">Saņem un baudo</h3>
 
                     <div class="mt-4">
-                      <p class="text-sm text-gray-500">Saņem gatavo datoru un sāc izmantot to pilnībā sagatavotu un gatavu darbam vai izklaidei.</p>
+                      <p class="text-sm text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur maiores, aliquid!</p>
                     </div>
                 </div>
               </div>
@@ -248,6 +461,7 @@
 
           </div>
     </section>
+
 
 <section class="relative bg-accent py-36">
   <div class="mx-auto max-w-7xl px-4 text-center">
@@ -258,16 +472,18 @@
       Salikšana — bezmaksas!  
     </h2>
     <!-- button -->
-    <a class="mt-5 w-50 h-15 inline-flex items-center justify-center gap-2 py-3 rounded-lg 
+    <button class="mt-5 w-50 h-15 inline-flex items-center justify-center gap-2 py-3 rounded-lg 
                bg-black text-white text-lg font-medium shadow-sm 
                transform transition duration-300 hover:scale-105 hover:shadow-lg"
-      type="button" aria-label="Gribu!" href="shop.html">
+      type="button" aria-label="Gribu!">
       Gribu!
-    </a>
+    </button>
   </div>
 </section>
 </main>
 
+
+    <!-- footer -->
 <footer class="border-t border-border bg-[#000000] pb-30">
             <div class="container-center py-10 grid md:grid-cols-4 gap-8 mx-auto max-w-7xl text-accent text-sm font-light">
                 <div>
@@ -283,11 +499,10 @@
                         Navigācija
                     </div>
                     <ul class="mt-2 leading-8">
-                        <li><a href="shop.html">Veikals</a></li> 
-                        <li><a href="faq.html">BUJ</a></li>
-                        <li><a href="about.html">Par mums</a></li> 
-                        <li><a href="contacts.html">Kontakti</a></li>
-                        <li><a href="cart.html">Grozs</a></li>
+                        <li>Katalogs</li> 
+                        <li>Pakalpojumi</li>
+                        <li>Cenas</li> 
+                        <li>Kontakti</li>
                     </ul>
                 </div>
                 <div>
@@ -295,11 +510,11 @@
                         Atbalsts
                     </div>
                     <ul class="mt-2 leading-8">
-                        <li><a href="contacts.html#form-section">Garantijas</a></li> 
-                        <li><a href="contacts.html#form-section">Sertifikāti</a></li>
-                        <li><a href="contacts.html#form-section">Jautājumi</a></li> 
-                        <li><a href="contacts.html#form-section">Piegāde</a></li>
-                        <li><a href="contacts.html#form-section">Atgriešana</a></li>
+                        <li>Garantijas</li> 
+                        <li>Sertifikāti</li>
+                        <li>Jautājumi</li> 
+                        <li>Piegāde</li>
+                        <li>Atgriešana</li>
                     </ul>
                 </div>
                 <div>
@@ -315,7 +530,17 @@
             </div>   
     </footer>
 
-    </body>
-    <script type="module" src="./index_popular.js"></script>
-    <script type="module" src="./search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
 </html>

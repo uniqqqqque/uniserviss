@@ -1,16 +1,16 @@
-// Импортируем данные о товарах и функции для работы с корзиной
+// import
 import { products } from './products.js';
 import { getCartItems, removeFromCart, updateQuantity } from './shopToCart.js';
 
-// Функция которая рисует корзину на странице
+// render cart
 function renderCart() {
-  // Получаем список товаров из корзины (из localStorage)
+  // get items
   const cartItems = getCartItems();
   
-  // Находим контейнер где будем показывать товары
+  // find container
   const container = document.getElementById('cart-items-container');
   
-  // Если корзина пустая - показываем сообщение
+  // if empty
   if (cartItems.length === 0) {
     container.innerHTML = `
       <div class="text-center py-16">
@@ -23,28 +23,28 @@ function renderCart() {
     `;
     document.getElementById('cart-total-count').textContent = '0';
     document.getElementById('cart-total-price').textContent = '0.00 €';
-    return; // Останавливаем функцию
+    return; // stop
   }
   
-  // Переменные для подсчета общей суммы
+  // sum
   let total = 0;
   let totalItems = 0;
   
-  // Очищаем контейнер перед рисованием
+  // clear container
   container.innerHTML = '';
   
-  // Проходимся по каждому товару в корзине
+  // search 4 every
   cartItems.forEach(cartItem => {
-    // Ищем полную информацию о товаре по его ID
+    // find all by id
     const product = products.find(p => p.id === cartItem.id);
-    if (!product) return; // Если товар не найден - пропускаем
+    if (!product) return; // skip if no
     
-    // Считаем сумму за этот товар (цена × количество)
+    // sum
     const itemTotal = product.price * cartItem.quantity;
-    total += itemTotal; // Добавляем к общей сумме
-    totalItems += cartItem.quantity; // Добавляем к общему количеству
+    total += itemTotal; // add sum
+    totalItems += cartItem.quantity; // add count
     
-    // Создаем HTML для одного товара в корзине
+    // html
     const itemDiv = document.createElement('div');
     itemDiv.className = 'bg-white p-4 rounded-lg shadow-sm flex gap-4 items-center';
     itemDiv.innerHTML = `
@@ -68,43 +68,42 @@ function renderCart() {
       </div>
     `;
     
-    // Добавляем товар в контейнер
+    // add item
     container.appendChild(itemDiv);
   });
   
-  // Обновляем итоговые цифры
+  // refresh nums
   document.getElementById('cart-total-count').textContent = totalItems;
   document.getElementById('cart-total-price').textContent = `${total.toFixed(2)} €`;
 }
 
-// Слушаем клики по всей странице
+// clicks
 document.addEventListener('click', function(e) {
-  // Если кликнули по кнопке удаления
+  // click remove
   if (e.target.closest('.remove-btn')) {
     const id = Number(e.target.closest('.remove-btn').dataset.productId);
-    removeFromCart(id); // Удаляем товар
-    renderCart(); // Перерисовываем корзину
+    removeFromCart(id); // delete item
+    renderCart(); // refresh cart
   }
   
-  // Если кликнули по кнопке + или −
+  // bttns
   if (e.target.closest('.qty-btn')) {
     const btn = e.target.closest('.qty-btn');
     const id = Number(btn.dataset.productId);
-    const action = btn.dataset.action; // "increase" или "decrease"
+    const action = btn.dataset.action; 
     
     const cartItems = getCartItems();
     const item = cartItems.find(i => i.id === id);
     
     if (item) {
       if (action === 'increase') {
-        updateQuantity(id, item.quantity + 1); // Увеличиваем на 1
+        updateQuantity(id, item.quantity + 1); 
       } else if (action === 'decrease' && item.quantity > 1) {
-        updateQuantity(id, item.quantity - 1); // Уменьшаем на 1 (но не меньше 1)
+        updateQuantity(id, item.quantity - 1); 
       }
-      renderCart(); // Перерисовываем корзину
+      renderCart(); // refresh cart
     }
   }
 });
 
-// Вызываем функцию при загрузке страницы
 renderCart();

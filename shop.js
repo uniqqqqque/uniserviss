@@ -1,8 +1,8 @@
+// import
 import { products } from './products.js';
 import { addToCart, initCartListeners } from './shopToCart.js';
 import { renderProductCard } from './ui-utils.js';
 
-// Инициализируем слушатели корзины
 initCartListeners();
 
 const categoryNames = {
@@ -33,27 +33,25 @@ function renderProductsGrid(productsArray) {
 renderProductsGrid(products);
 
 
-// ======= СОРТИРОВКА =======
+// sorting
 
-// 1. Найти выпадающий список
+// find
 const sortingSelect = document.querySelector('#sorting');
 
-// 2. Слушать когда пользователь выбирает другой вариант
+// listen
 sortingSelect.addEventListener('change', function() {
-  // При изменении сортировки просто применяем фильтры заново
+
   applyFilters();
 });
 
 
-// ======= ФИЛЬТРАЦИЯ =======
+// filtring
 
-// Главная функция фильтрации
 function applyFilters() {
-  let result = []; // Сюда будем складывать подходящие товары
+  let result = []; //var 4 storage
   
-  // 1. Читаем что выбрал пользователь
   
-  // Категория (находим кнопку с классом font-bold)
+  // category
   let selectedCategory = 'all';
   document.querySelectorAll('.filter-category').forEach(btn => {
     if (btn.classList.contains('font-bold')) {
@@ -61,11 +59,11 @@ function applyFilters() {
     }
   });
   
-  // Цены
+  // price
   let minPrice = Number(document.querySelector('#input-min').value);
   let maxPrice = Number(document.querySelector('#input-max').value);
   
-  // Производители (собираем все отмеченные чекбоксы)
+  // brand
   let selectedBrands = [];
   document.querySelectorAll('.filter-brand').forEach(checkbox => {
     if (checkbox.checked) {
@@ -73,43 +71,43 @@ function applyFilters() {
     }
   });
   
-  // 2. Проверяем каждый товар
+  // check every item
   products.forEach(product => {
-    // Проверка категории
+    // check cat
     let categoryOk = false;
     if (selectedCategory === 'all') {
-      categoryOk = true; // Если выбрано "все" - подходит любой
+      categoryOk = true; // all
     } else if (product.category === selectedCategory) {
-      categoryOk = true; // Категория совпадает
+      categoryOk = true; 
     }
     
-    // Проверка цены
+    // check price
     let priceOk = false;
     if (product.price >= minPrice && product.price <= maxPrice) {
       priceOk = true;
     }
     
-    // Проверка производителя
+    // check brand
     let brandOk = false;
     if (selectedBrands.length === 0) {
-      brandOk = true; // Если ничего не выбрано - подходит любой
+      brandOk = true; 
     } else {
-      // Проверяем есть ли производитель товара в списке выбранных
+      // check if exists
       for (let i = 0; i < selectedBrands.length; i++) {
         if (product.brand === selectedBrands[i]) {
           brandOk = true;
-          break; // Нашли совпадение - можно остановиться
+          break; 
         }
       }
     }
     
-    // 3. Если все проверки пройдены - добавляем товар
+    // add if ok
     if (categoryOk && priceOk && brandOk) {
       result.push(product);
     }
   });
   
-  // 4. Применяем сортировку к отфильтрованным товарам
+  // apply sort
   const sortValue = document.querySelector('#sorting').value;
   
   if (sortValue === 'low-high') {
@@ -118,28 +116,27 @@ function applyFilters() {
     result.sort((a, b) => b.price - a.price);
   }
   
-  // 5. Показываем отфильтрованные и отсортированные товары
+  // render
   renderProductsGrid(result);
 }
 
 
-// Подключаем фильтры
+// filter
 
-// Клик по категории
+// cat click
 document.querySelectorAll('.filter-category').forEach(button => {
   button.addEventListener('click', function() {
-    // Убираем выделение со всех
+
     document.querySelectorAll('.filter-category').forEach(b => {
       b.classList.remove('font-bold');
     });
-    // Выделяем нажатую
+  
     this.classList.add('font-bold');
-    // Применяем фильтры
     applyFilters();
   });
 });
 
-// Изменение цены
+// price
 document.querySelector('#input-min').addEventListener('input', function() {
   applyFilters();
 });
@@ -148,31 +145,31 @@ document.querySelector('#input-max').addEventListener('input', function() {
   applyFilters();
 });
 
-// Клик по чекбоксу производителя
+// brand
 document.querySelectorAll('.filter-brand').forEach(checkbox => {
   checkbox.addEventListener('change', function() {
     applyFilters();
   });
 });
 
-// Кнопка сброса
+// reset bttn 
 document.querySelector('#reset-filters').addEventListener('click', function() {
-  // Сбрасываем категорию
+  // reset cat
   document.querySelectorAll('.filter-category').forEach(b => {
     b.classList.remove('font-bold');
   });
   document.querySelector('[data-category="all"]').classList.add('font-bold');
   
-  // Сбрасываем цены
+  // reset proce
   document.querySelector('#input-min').value = 0;
   document.querySelector('#input-max').value = 2500;
   
-  // Снимаем чекбоксы
+  // reset checkbox
   document.querySelectorAll('.filter-brand').forEach(checkbox => {
     checkbox.checked = false;
   });
   
-  // Показываем все товары
+  // show all
   renderProductsGrid(products);
 });
 

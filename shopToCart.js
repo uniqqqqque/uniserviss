@@ -1,53 +1,53 @@
-// Получить список товаров из корзины
+// import
 export function getCartItems() {
-  // Читаем из localStorage строку 'cart', если её нет - берём пустой массив '[]'
-  // JSON.parse превращает строку обратно в массив
+  // read ls 
+  // string to array
   return JSON.parse(localStorage.getItem('cart') || '[]');
 }
 
-// Добавить товар в корзину
+// add to cart
 export function addToCart(productId, quantity = 1) {
-  const cart = getCartItems(); // Получаем текущую корзину
+  const cart = getCartItems(); 
   
-  // Ищем, есть ли уже этот товар в корзине
+  // find mb already in
   const existing = cart.find(item => item.id === productId);
   
   if (existing) {
-    // Если товар уже есть - увеличиваем количество
+    // if yes +1
     existing.quantity += quantity;
   } else {
-    // Если товара нет - добавляем новый
+    // if no -add
     cart.push({ id: productId, quantity: quantity });
   }
   
-  // Сохраняем обратно в localStorage (превращаем массив в строку)
+  // save to ls
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Удалить товар из корзины
+// delete
 export function removeFromCart(productId) {
-  // Берём все товары кроме того, который нужно удалить
+
   const cart = getCartItems().filter(item => item.id !== productId);
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Изменить количество товара
+// change +-
 export function updateQuantity(productId, newQuantity) {
   const cart = getCartItems();
   const item = cart.find(item => item.id === productId);
   
   if (item && newQuantity > 0) {
-    item.quantity = newQuantity; // Устанавливаем новое количество
+    item.quantity = newQuantity; 
     localStorage.setItem('cart', JSON.stringify(cart));
   }
 }
 
-// Очистить всю корзину
+// clear all
 export function clearCart() {
   localStorage.removeItem('cart');
 }
 
-// Инициализация слушателей событий для кнопок корзины
+// bttns
 export function initCartListeners() {
   document.addEventListener('click', function(e) {
     if (e.target.closest('.add-to-cart-btn')) {
@@ -57,19 +57,15 @@ export function initCartListeners() {
       const productId = Number(btn.dataset.productId);
       addToCart(productId, 1);
       
-      // Сохраняем оригинальный цвет и текст
+      // save style
       const originalBg = btn.style.backgroundColor;
       const originalHTML = btn.innerHTML;
       
-      // Меняем на зелёный
+      // green
       btn.style.backgroundColor = '#43A047';
       btn.textContent = '✓ Pievienots!';
       
-      // (Опционально) можно вернуть обратно через пару секунд
-      // setTimeout(() => {
-      //   btn.style.backgroundColor = '';
-      //   btn.innerHTML = originalHTML;
-      // }, 2000);
+      
     }
   });
 }

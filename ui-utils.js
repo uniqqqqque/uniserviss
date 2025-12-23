@@ -1,5 +1,5 @@
+// cat mapping
 export const categoryNames = {
-  'pc': 'Datori',
   'cpu': 'Procesori',
   'gpu': 'Videokartes',
   'mbr': 'Mātesplates',
@@ -10,6 +10,8 @@ export const categoryNames = {
   'case': 'Korpusi',
   'fan': 'Ventilatori'
 };
+
+// cards
 
 export function renderProductCard(product) {
   const priceHtml = `<span class="text-xl font-bold">${product.price} €</span>`;

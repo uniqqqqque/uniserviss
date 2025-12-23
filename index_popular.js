@@ -2,7 +2,6 @@ import { products } from './products.js';
 import { renderProductCard } from './ui-utils.js';
 import { initCartListeners } from './shopToCart.js';
 
-// Инициализируем слушатели корзины
 initCartListeners();
 
 function renderPopularProducts(productsArray) {

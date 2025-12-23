@@ -239,6 +239,8 @@
             </div>   
     </footer>
 
+
+    <!-- form validator -->
 <script type="module" src="./search.js"></script>
 
 <script>
@@ -254,13 +256,13 @@
     let isValid = true;
     const inputs = [name, surname, email, message];
     
-    // Сброс стилей ошибок
+    // remove errors
     inputs.forEach(input => {
       input.classList.remove('border-red-500', 'ring-1', 'ring-red-500');
       input.classList.add('border-gray-300');
     });
 
-    // Простая валидация
+    // valid
     if (!name.value.trim()) {
       markError(name);
       isValid = false;
@@ -279,9 +281,9 @@
     }
 
     if (isValid) {
-      // Имитация отправки
+      // send
       const originalText = btn.textContent;
-      const originalBg = btn.className; // сохраняем классы
+      const originalBg = btn.className; 
       
       btn.disabled = true;
       btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sūta...';
@@ -290,7 +292,7 @@
         btn.className = "w-full py-4 bg-[#43A047] text-white rounded-lg font-medium transition transform duration-200 scale-100 cursor-default";
         btn.innerHTML = '<i class="fa-solid fa-check"></i> Nosūtīts!';
         
-        // Очистка формы
+        // clear form
         this.reset();
         
       }, 1000);

@@ -1,18 +1,18 @@
-// Импортируем список всех товаров
+// import
 import { products } from './products.js';
 
-// Находим инпут где пользователь печатает поиск
+// find input bar
 const searchInput = document.querySelector('#search');
 
-// Слушаем когда пользователь что-то печатает
+// typing listen
 searchInput?.addEventListener('input', function(e) {
-  // Получаем текст что написал пользователь
+  // get text
   const query = e.target.value.toLowerCase();
 
   
-  // Ищем товары которые совпадают с поиском
+  // find item
   const results = products.filter(product => {
-    // Проверяем совпадает ли в названии, категории или бренде
+    // check 4 name
     return (
       product.name.toLowerCase().includes(query) ||
       product.category.toLowerCase().includes(query) ||
@@ -20,20 +20,20 @@ searchInput?.addEventListener('input', function(e) {
     );
   });
   
-  // Показываем результаты
+  // show res
   showResults(results);
 });
 
-// Функция для показа результатов поиска
+// show res
 function showResults(results) {
-  // Находим контейнер для результатов (или создаём если нет)
+  // new container
   let resultsDiv = document.querySelector('#search-results');
   
   if (!resultsDiv) {
-    // Создаём контейнер
+    // creation
     resultsDiv = document.createElement('div');
     resultsDiv.id = 'search-results';
-    // Добавляем стили: позиция, фон, граница
+    // html
     resultsDiv.style.cssText = `
       position: absolute;
       top: 100%;
@@ -47,18 +47,18 @@ function showResults(results) {
       overflow-y: auto;
       z-index: 1000;
     `;
-    // Добавляем контейнер в родителя инпута
+    // add to input bar
     searchInput.parentElement.style.position = 'relative';
     searchInput.parentElement.appendChild(resultsDiv);
   }
   
-  // Если нет результатов
+  // if no res
   if (results.length === 0) {
     resultsDiv.innerHTML = '<div style="padding: 10px; color: #999;">Товаров не найдено</div>';
     return;
   }
   
-  // Рисуем каждый результат
+  // render all
   resultsDiv.innerHTML = results.map(product => `
     <a href="product-detail.html?id=${product.id}" style="
       display: block;
@@ -72,14 +72,14 @@ function showResults(results) {
   `).join('');
 }
 
-// Закрываем результаты когда кликнули где-то вне поиска
+// close if click
 document.addEventListener('click', function(e) {
-  // Находим форму поиска
+  // finf
   const searchForm = document.querySelector('form[role="search"]');
   
-  // Если кликнули вне формы
+  // if click
   if (!searchForm?.contains(e.target)) {
-    // Очищаем результаты
+    // clear
     const resultsDiv = document.querySelector('#search-results');
     if (resultsDiv) {
       resultsDiv.innerHTML = '';
