@@ -25,8 +25,19 @@ function renderProductsGrid(productsArray) {
 
   productsArray.forEach(product => {
     const card = document.createElement('div');
+    card.className = 'product-card opacity-0 -translate-y-2 transition-all duration-300 data-[show=true]:opacity-100 data-[show=true]:translate-y-0';
     card.innerHTML = renderProductCard(product);
     container.appendChild(card);
+  });
+
+  // animate in with slight stagger
+  requestAnimationFrame(() => {
+    const cards = container.querySelectorAll('.product-card');
+    cards.forEach((el, i) => {
+      setTimeout(() => {
+        el.dataset.show = 'true';
+      }, i * 30);
+    });
   });
 }
 
@@ -108,8 +119,7 @@ function applyFilters() {
   });
   
   // apply sort 
-  let sortValue = sortingSelect.value;
-  if (sortingSelectMobile) sortValue = sortingSelectMobile.value;
+  const sortValue = sortingSelect ? sortingSelect.value : 'default';
   
   if (sortValue === 'low-high') {
     result.sort((a, b) => a.price - b.price);

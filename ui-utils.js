@@ -18,10 +18,10 @@ export function renderProductCard(product) {
   const categoryName = categoryNames[product.category] || product.category;
 
   return `
-    <a href="product-detail.html?id=${product.id}" class="block">
+    <a href="product-detail.html?id=${product.id}" class="block group">
       <div class="bg-white border border-accent rounded-lg overflow-hidden h-full">
         <div class="h-56 bg-white flex items-center justify-center">
-          <img src="${product.image}" alt="${product.name}" class="max-w-full max-h-full object-contain transition duration-300">
+          <img src="${product.image}" alt="${product.name}" class="max-w-full max-h-full object-contain motion-safe:transition-transform motion-safe:duration-300 group-hover:scale-105">
         </div>
         <div class="p-5 border-t border-accent flex flex-col h-full gap-3">
           <div class="min-h-[70px]">
