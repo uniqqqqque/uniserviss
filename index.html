@@ -1,400 +1,569 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="lv">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UniServiss</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-  </style>
-  <style type="text/tailwindcss">
-    @theme {
-      --color-main:   #FFFFFF;
-      --color-accent: #EBEBEB;
-      --color-graphite:  #4E4E4E;
-      --color-black:     #000000;
-    }
-  </style>
-  <style>
-  body {
-    font-family: 'Inter', sans-serif;
-  }
-  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniServiss</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
 
-</head>
+    <script type="module" src="./global-animations.js"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-main: #ffffff;
+        --color-accent: #ebebeb;
+        --color-graphite: #4e4e4e;
+        --color-black: #000000;
+      }
+    </style>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
 
-<body class="antialiased">
-  <!-- header -->
-  <header class="sticky top-0 z-50 w-full backdrop-blur border-b">
-    <!-- top navigation -->
-    <nav>
-      <div class="mx-auto w-full max-w-7xl px-4">
-        <div class="flex items-center gap-4 py-4 lg:py-6">
-          <a href="index.html" class="lg:mr-14 inline-flex items-center" aria-label="UniServiss">
-            <img src="images/logo.png" alt="UniServiss" class="h-6 lg:h-5 w-auto" />
-          </a>
-          <!-- links -->
-          <ul class="hidden lg:flex items-center gap-6 text-lg leading-none">
-            <li><a href="index.html" class="border-b-2 border-black pb-1">Sākums</a></li>
-            <li><a href="shop.html">Veikals</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="about.html">Par mums</a></li>
-            <li><a href="contacts.html">Kontakti</a></li>
-            <li><a href="cart.html">Grozs</a></li>
-          </ul>
-          <!-- mobile menu button -->
-          <button id="burger-btn" class="lg:hidden ms-auto text-2xl p-2">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <!-- mobile menu -->
-          <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-white/90 backdrop-blur-md z-50 h-screen w-screen">
-            <div class="flex items-center justify-between p-4 border-b">
-              <a href="index.html" class="inline-flex items-center" aria-label="UniServiss">
-                <img src="images/logo.png" alt="UniServiss" class="h-6 w-auto" />
-              </a>
-              <button id="close-menu-btn" class="text-2xl p-2">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
+  <body
+    class="antialiased opacity-0 transition-opacity duration-300 ease-out data-[loaded=true]:opacity-100"
+  >
+    <!-- header -->
+    <header class="sticky top-0 z-50 w-full border-b backdrop-blur">
+      <!-- top navigation -->
+      <nav>
+        <div class="mx-auto w-full max-w-7xl px-4">
+          <div class="flex items-center gap-4 py-4 lg:py-6">
+            <a
+              href="index.html"
+              class="inline-flex items-center lg:mr-14"
+              aria-label="UniServiss"
+            >
+              <img
+                src="images/logo.png"
+                alt="UniServiss"
+                class="h-6 w-auto lg:h-5"
+              />
+            </a>
+            <!-- links -->
+            <ul class="hidden items-center gap-6 text-lg leading-none lg:flex">
+              <li>
+                <a href="index.html" class="border-b-2 border-black pb-1"
+                  >Sākums</a
+                >
+              </li>
+              <li><a href="shop.html">Veikals</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="about.html">Par mums</a></li>
+              <li><a href="contacts.html">Kontakti</a></li>
+              <li><a href="cart.html">Grozs</a></li>
+            </ul>
+            <!-- mobile menu button -->
+            <button id="burger-btn" class="ms-auto p-2 text-2xl lg:hidden">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- mobile menu -->
+            <div
+              id="mobile-menu"
+              class="fixed inset-0 z-50 hidden h-screen w-screen bg-white/90 backdrop-blur-md lg:hidden"
+            >
+              <div class="flex items-center justify-between border-b p-4">
+                <a
+                  href="index.html"
+                  class="inline-flex items-center"
+                  aria-label="UniServiss"
+                >
+                  <img
+                    src="images/logo.png"
+                    alt="UniServiss"
+                    class="h-6 w-auto"
+                  />
+                </a>
+                <button id="close-menu-btn" class="p-2 text-2xl">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <ul class="flex flex-col gap-4 p-4 text-lg">
+                <li><a href="index.html" class="block py-2">Sākums</a></li>
+                <li><a href="shop.html" class="block py-2">Veikals</a></li>
+                <li><a href="faq.html" class="block py-2">FAQ</a></li>
+                <li><a href="about.html" class="block py-2">Par mums</a></li>
+                <li><a href="contacts.html" class="block py-2">Kontakti</a></li>
+                <li><a href="cart.html" class="block py-2">Grozs</a></li>
+              </ul>
             </div>
-            <ul class="flex flex-col p-4 gap-4 text-lg">
-              <li><a href="index.html" class="block py-2">Sākums</a></li>
-              <li><a href="shop.html" class="block py-2">Veikals</a></li>
-              <li><a href="faq.html" class="block py-2">FAQ</a></li>
-              <li><a href="about.html" class="block py-2">Par mums</a></li>
-              <li><a href="contacts.html" class="block py-2">Kontakti</a></li>
-              <li><a href="cart.html" class="block py-2">Grozs</a></li>
+            <!-- search -->
+            <form
+              action=""
+              class="ms-auto hidden w-full max-w-120 lg:block"
+              role="search"
+              aria-label="Meklēšana"
+            >
+              <div class="relative">
+                <span class="absolute inset-y-0 left-4 flex items-center">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input
+                  id="search"
+                  type="search"
+                  placeholder="Meklēt preces..."
+                  class="border-graphite w-full rounded-lg border py-2 pr-4 pl-10 text-sm"
+                  autocomplete="off"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- hero -->
+      <section class="relative overflow-hidden">
+        <div class="mx-auto max-w-7xl px-4">
+          <div
+            class="grid grid-cols-1 gap-8 py-8 lg:grid-cols-2 lg:gap-30 lg:py-12"
+          >
+            <!-- left block -->
+            <article
+              class="relative translate-y-4 opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+              data-reveal
+            >
+              <div class="relative z-10 p-4 text-center lg:p-8 lg:text-right">
+                <h1
+                  class="text-4xl font-extralight tracking-wider uppercase md:text-5xl lg:text-6xl"
+                >
+                  Datoru
+                </h1>
+                <p class="mt-2 text-4xl font-semibold md:text-5xl lg:text-6xl">
+                  Serviss
+                </p>
+                <p
+                  class="mt-4 text-sm opacity-75 lg:mt-5 lg:pl-60 lg:text-base"
+                >
+                  Ātra datoru diagnostika un problēmu risināšana, ar garantiju!
+                </p>
+                <a
+                  href="contacts.html#form-section"
+                  class="mt-6 inline-flex h-[50px] w-full items-center justify-center gap-2 rounded-lg border bg-white px-5 py-2.5 text-center text-base font-medium duration-300 hover:bg-zinc-900 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 sm:w-[240px] lg:text-lg"
+                  >Pieteikties Tagad</a
+                >
+              </div>
+              <img
+                src="images/index_02.jpg"
+                alt=""
+                class="pointer-events-none absolute bottom-10 -left-150 hidden w-[1200] rotate-[30deg] lg:block"
+              />
+            </article>
+            <!-- right block -->
+            <article
+              class="relative translate-y-4 opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+              data-reveal
+            >
+              <div class="relative z-10 p-4 text-center lg:p-8 lg:text-left">
+                <h1
+                  class="text-4xl font-extralight tracking-wider uppercase md:text-5xl lg:text-6xl"
+                >
+                  Datoru
+                </h1>
+                <p class="mt-2 text-4xl font-semibold md:text-5xl lg:text-6xl">
+                  Veikals
+                </p>
+                <p
+                  class="mt-4 text-sm opacity-75 lg:mt-5 lg:pr-60 lg:text-base"
+                >
+                  Augstākās kvalitātes komponentes par izcilām cenam!
+                </p>
+                <a
+                  href="shop.html"
+                  class="mt-6 inline-flex h-[50px] w-full items-center justify-center gap-2 rounded-lg border bg-white px-5 py-2.5 text-center text-base font-medium duration-300 hover:bg-zinc-900 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-zinc-900 sm:w-[240px] lg:text-lg"
+                  >Pirkt Tagad</a
+                >
+              </div>
+              <img
+                src="images/index_02.jpg"
+                alt=""
+                class="pointer-events-none absolute -right-150 -bottom-10 hidden w-[1200] rotate-[30deg] lg:block"
+              />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!--pakalpojumi-->
+      <section class="bg-accent relative my-12 lg:my-24">
+        <div class="mx-auto max-w-7xl px-4">
+          <!--nosaukums-->
+          <div
+            class="flex translate-y-3 items-center justify-between py-8 opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 lg:py-12"
+            data-reveal
+          >
+            <h2 class="text-2xl font-semibold tracking-wide lg:text-3xl">
+              Ko mēs daram?
+            </h2>
+            <div class="hidden items-center gap-4 text-2xl lg:flex">
+              <i class="fa-solid fa-angle-left"></i>
+              <i class="fa-solid fa-angle-right"></i>
+            </div>
+          </div>
+          <!--ikonas un teksts-->
+          <div
+            class="grid grid-cols-2 gap-6 pb-8 sm:grid-cols-3 lg:grid-cols-6 lg:gap-12 lg:pb-12"
+          >
+            <div
+              class="flex translate-y-3 flex-col items-center gap-3 text-center opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+              data-reveal
+            >
+              <i class="fa-solid fa-magnifying-glass text-4xl"></i>
+              <p class="font-medium">Diagnostika</p>
+            </div>
+            <div
+              class="flex translate-y-3 flex-col items-center gap-3 text-center opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+              data-reveal
+            >
+              <i class="fa-solid fa-screwdriver-wrench text-4xl"></i>
+              <p class="font-medium">Datoru remonts</p>
+            </div>
+            <div
+              class="flex translate-y-3 flex-col items-center gap-3 text-center opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+              data-reveal
+            >
+              <i class="fa-solid fa-computer text-4xl"></i>
+              <p class="font-medium">Datoru montāža</p>
+            </div>
+            <div
+              class="flex translate-y-3 flex-col items-center gap-3 text-center opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+              data-reveal
+            >
+              <i class="fa-brands fa-windows text-4xl"></i>
+              <p class="font-medium">OS uzstādīšana</p>
+            </div>
+            <div
+              class="flex translate-y-3 flex-col items-center gap-3 text-center opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+              data-reveal
+            >
+              <i class="fa-solid fa-broom text-4xl"></i>
+              <p class="font-medium">Tīrīšana</p>
+            </div>
+            <div
+              class="flex translate-y-3 flex-col items-center gap-3 text-center opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+              data-reveal
+            >
+              <i class="fa-solid fa-gear text-4xl"></i>
+              <p class="font-medium">Optimizācija</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--popularakas preces from js-->
+      <section class="container-center mt-8 lg:mt-12">
+        <div class="mx-auto max-w-7xl px-4">
+          <h2
+            class="mb-6 translate-y-3 text-2xl font-semibold tracking-wide opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 lg:mb-8 lg:text-3xl"
+            data-reveal
+          >
+            Tagad ir populārs
+          </h2>
+          <div
+            id="popular-products"
+            class="mt-8 mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-12 lg:mb-12 lg:grid-cols-4 lg:gap-12"
+          ></div>
+        </div>
+      </section>
+
+      <section class="container-center mx-4 my-12 lg:m-24">
+        <div class="mx-auto max-w-7xl px-4">
+          <h2
+            class="mb-6 text-2xl font-semibold tracking-wide lg:mb-8 lg:text-3xl"
+          >
+            Datora izveide sākas šeit
+          </h2>
+          <div
+            class="mt-8 mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-12 lg:mb-12 lg:grid-cols-4 lg:gap-0"
+          >
+            <!-- card -->
+            <div
+              class="relative flex w-full max-w-full translate-y-4 flex-col bg-[#F9F9F9] p-4 opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 lg:max-w-xs lg:p-5"
+              data-reveal
+            >
+              <!-- img -->
+              <div
+                class="justify-left flex p-4 pt-6 text-6xl lg:p-6 lg:pt-8 lg:text-9xl"
+              >
+                <i class="fa-solid fa-1"></i>
+              </div>
+
+              <!-- text -->
+              <div class="px-4 pb-4 text-left lg:px-6 lg:pb-6">
+                <h3 class="text-2xl text-gray-900 lg:text-4xl">
+                  Izvēlies, ko vēlies
+                </h3>
+
+                <div class="mt-3 lg:mt-4">
+                  <p class="text-sm text-gray-500">
+                    Pārlūkojiet mūsu plašo katalogu un atrodiet perfektās
+                    komponentes savam datoram.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- card -->
+            <div
+              class="relative flex w-full max-w-full translate-y-4 flex-col bg-[#EAEAEA] p-4 opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 lg:max-w-xs lg:p-5"
+              data-reveal
+            >
+              <!-- img -->
+              <div
+                class="justify-left flex p-4 pt-6 text-6xl lg:p-6 lg:pt-8 lg:text-9xl"
+              >
+                <i class="fa-solid fa-2"></i>
+              </div>
+
+              <!-- text -->
+              <div class="px-4 pb-4 text-left lg:px-6 lg:pb-6">
+                <h3 class="text-2xl text-gray-900 lg:text-4xl">
+                  Pārbaudi savienojamību
+                </h3>
+
+                <div class="mt-3 lg:mt-4">
+                  <p class="text-sm text-gray-500">
+                    Sazināties ar mūsu meistaru un pārliecinieties, ka visas
+                    komponentes ir saderīgas.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- card -->
+            <div
+              class="relative flex w-full max-w-full translate-y-4 flex-col bg-[#dbdbdb] p-4 opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 lg:max-w-xs lg:p-5"
+              data-reveal
+            >
+              <!-- img -->
+              <div
+                class="justify-left flex p-4 pt-6 text-6xl lg:p-6 lg:pt-8 lg:text-9xl"
+              >
+                <i class="fa-solid fa-3"></i>
+              </div>
+
+              <!-- text -->
+              <div class="px-4 pb-4 text-left lg:px-6 lg:pb-6">
+                <h3 class="text-2xl text-gray-900 lg:text-4xl">
+                  Apmaksā un pasūtī
+                </h3>
+
+                <div class="mt-3 lg:mt-4">
+                  <p class="text-sm text-gray-500">
+                    Mēs pieņemam visas populārākās maksājuma metodes. Jūsu dati
+                    ir pilnībā aizsargāti.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- card -->
+            <div
+              class="relative flex w-full max-w-full translate-y-4 flex-col bg-[#cecece] p-4 opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100 lg:max-w-xs lg:p-5"
+              data-reveal
+            >
+              <!-- img -->
+              <div
+                class="justify-left flex p-4 pt-6 text-6xl lg:p-6 lg:pt-8 lg:text-9xl"
+              >
+                <i class="fa-solid fa-4"></i>
+              </div>
+
+              <!-- text -->
+              <div class="px-4 pb-4 text-left lg:px-6 lg:pb-6">
+                <h3 class="text-2xl text-gray-900 lg:text-4xl">
+                  Saņem un baudo
+                </h3>
+
+                <div class="mt-3 lg:mt-4">
+                  <p class="text-sm text-gray-500">
+                    Pasūtījumi tiek piegādāti 2-5 dienas laikā. Rūpīgi iepakoti,
+                    lai droši nonāktu pie Jums.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-accent relative py-16 lg:py-36">
+        <div
+          class="mx-auto max-w-7xl translate-y-4 px-4 text-center opacity-0 transition-all duration-500 ease-out data-[visible=true]:translate-y-0 data-[visible=true]:opacity-100"
+          data-reveal
+        >
+          <h2 class="text-3xl font-bold tracking-tight md:text-4xl lg:text-6xl">
+            Pērkot komponentes
+          </h2>
+          <h2
+            class="mt-2 pb-2 text-3xl font-extrabold tracking-tight text-black/70 md:text-4xl lg:text-6xl"
+          >
+            Salikšana — bezmaksas!
+          </h2>
+          <!-- button -->
+          <a
+            href="shop.html"
+            class="mt-5 inline-flex h-15 w-50 transform items-center justify-center gap-2 rounded-lg bg-black py-3 text-lg font-medium text-white shadow-sm transition duration-300 hover:scale-105 hover:shadow-lg"
+            aria-label="Gribu!"
+          >
+            Gribu!
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-black text-white">
+      <div class="mx-auto max-w-7xl px-4 py-12 lg:py-16">
+        <!-- main grid -->
+        <div
+          class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12"
+        >
+          <!-- logo  -->
+          <div class="sm:col-span-2 lg:col-span-1">
+            <a href="index.html" class="text-2xl font-bold">UniServiss</a>
+            <p class="mt-4 text-sm leading-relaxed text-gray-400">
+              Remonts, datora komplektēšana un datortehnikas tirdzniecība.
+            </p>
+            <div class="mt-6 flex gap-4">
+              <a
+                href="https://www.facebook.com"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.instagram.com"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+              >
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- navigation -->
+          <div>
+            <h3 class="mb-4 font-semibold">Navigācija</h3>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li>
+                <a href="shop.html" class="transition hover:text-white"
+                  >Veikals</a
+                >
+              </li>
+              <li>
+                <a href="faq.html" class="transition hover:text-white">BUJ</a>
+              </li>
+              <li>
+                <a href="about.html" class="transition hover:text-white"
+                  >Par mums</a
+                >
+              </li>
+              <li>
+                <a href="contacts.html" class="transition hover:text-white"
+                  >Kontakti</a
+                >
+              </li>
+              <li>
+                <a href="cart.html" class="transition hover:text-white"
+                  >Grozs</a
+                >
+              </li>
             </ul>
           </div>
-          <!-- search -->
-          <form action="" class="hidden lg:block ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
-            <div class="relative">
-              <span class="absolute inset-y-0 left-4 flex items-center">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </span>
-              <input
-                id="search"
-                type="search"
-                placeholder="Meklēt preces..."
-                class="w-full pl-10 pr-4 py-2 text-sm rounded-lg border border-graphite"
-                autocomplete="off"
-              />
-            </div>
-          </form>
+
+          <!-- support -->
+          <div>
+            <h3 class="mb-4 font-semibold">Atbalsts</h3>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li>
+                <a
+                  href="contacts.html#form-section"
+                  class="transition hover:text-white"
+                  >Garantijas</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contacts.html#form-section"
+                  class="transition hover:text-white"
+                  >Piegāde</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contacts.html#form-section"
+                  class="transition hover:text-white"
+                  >Atgriešana</a
+                >
+              </li>
+              <li>
+                <a href="faq.html" class="transition hover:text-white"
+                  >Jautājumi</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- contact -->
+          <div>
+            <h3 class="mb-4 font-semibold">Saziņa</h3>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-xs"></i>
+                +371 2000 0000
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-xs"></i>
+                info@uniserviss.lv
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-xs"></i>
+                Braslas iela 16, Rīga
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- bottom heart -->
+        <div
+          class="mt-10 flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-6 text-sm text-gray-500 sm:flex-row"
+        >
+          <p>Izstrādāts ar ❤️ Latvijā</p>
         </div>
       </div>
-    </nav>
-  </header>
+    </footer>
 
-  <main>
-    <!-- hero -->
-    <section class="relative overflow-hidden">
-      <div class="mx-auto max-w-7xl px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-30 py-8 lg:py-12">
-          <!-- left block -->
-          <article class="relative">
-            <div class="relative z-10 p-4 lg:p-8 text-center lg:text-right">
-              <h1 class="tracking-wider uppercase text-4xl md:text-5xl lg:text-6xl font-extralight">
-                Datoru
-              </h1>
-              <p class="mt-2 text-4xl md:text-5xl lg:text-6xl font-semibold">
-                Serviss
-              </p>
-              <p class="mt-4 lg:mt-5 lg:pl-60 opacity-75 text-sm lg:text-base">
-                Ātra datoru diagnostika un problēmu risināšana, ar garantiju!
-              </p>
-              <a href="contacts.html#form-section" class="inline-flex justify-center w-full sm:w-[240px] h-[50px] items-center text-center gap-2 mt-6 rounded-lg border
-               bg-white px-5 py-2.5 text-base lg:text-lg font-medium hover:bg-zinc-900 hover:text-white focus:outline-none focus-visible:ring-2
-                focus-visible:ring-zinc-900 duration-300">Pieteikties Tagad</a>
-            </div>
-            <img src="images/index_02.jpg" 
-                 alt=""
-                 class="pointer-events-none absolute -left-150 bottom-10 w-[1200] rotate-[30deg] hidden lg:block"
-                 >
-          </article>
-          <!-- right block -->
-          <article class="relative">
-            <div class="relative z-10 p-4 lg:p-8 text-center lg:text-left">
-              <h1 class="tracking-wider uppercase text-4xl md:text-5xl lg:text-6xl font-extralight">
-                Datoru
-              </h1>
-              <p class="mt-2 text-4xl md:text-5xl lg:text-6xl font-semibold">
-                Veikals
-              </p>
-              <p class="mt-4 lg:mt-5 lg:pr-60 opacity-75 text-sm lg:text-base">
-                Augstākās kvalitātes komponentes par izcilām cenam!
-              </p>
-              <a href="shop.html" class="inline-flex justify-center w-full sm:w-[240px] h-[50px] items-center text-center gap-2 mt-6 rounded-lg border
-               bg-white px-5 py-2.5 text-base lg:text-lg font-medium hover:bg-zinc-900 hover:text-white focus:outline-none focus-visible:ring-2
-                focus-visible:ring-zinc-900 duration-300">Pirkt Tagad</a>
-            </div>
-            <img src="images/index_02.jpg" 
-                 alt=""
-                 class="pointer-events-none absolute -right-150 -bottom-10 w-[1200] rotate-[30deg] hidden lg:block"
-                 >
-          </article>
-        </div>
-     </div>
-    </section>
+    <script type="module" src="search.js"></script>
+    <script type="module" src="index_popular.js"></script>
+    <script>
+      // burger menu
+      const burgerBtn = document.getElementById("burger-btn");
+      const closeBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-    <!--pakalpojumi-->
-    <section class="relative bg-accent my-12 lg:my-24">
-      <div class="mx-auto max-w-7xl px-4">
-        <!--nosaukums-->
-        <div class="flex items-center justify-between py-8 lg:py-12">
-          <h2 class="tracking-wide text-2xl lg:text-3xl font-semibold">
-            Ko mēs daram?
-          </h2>
-          <div class="hidden lg:flex items-center gap-4 text-2xl">
-            <i class="fa-solid fa-angle-left"></i>
-            <i class="fa-solid fa-angle-right"></i>
-          </div>
+      burgerBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("hidden");
+      });
 
-        </div>
-        <!--ikonas un teksts-->
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-12 pb-8 lg:pb-12">
-
-          <div class="flex flex-col items-center text-center gap-3">
-            <i class="fa-solid fa-magnifying-glass text-4xl"></i>
-            <p class="font-medium">Diagnostika</p>
-          </div>
-          <div class="flex flex-col items-center text-center gap-3">
-            <i class="fa-solid fa-screwdriver-wrench text-4xl"></i>
-            <p class="font-medium">Datoru remonts</p>
-          </div>
-          <div class="flex flex-col items-center text-center gap-3">
-            <i class="fa-solid fa-computer text-4xl"></i>
-            <p class="font-medium">Datoru montāža</p>
-          </div>
-          <div class="flex flex-col items-center text-center gap-3">
-            <i class="fa-brands  fa-windows text-4xl"></i>
-            <p class="font-medium">OS uzstādīšana</p>
-          </div>
-          <div class="flex flex-col items-center text-center gap-3">
-            <i class="fa-solid fa-broom text-4xl"></i>
-            <p class="font-medium">Tīrīšana</p>
-          </div>
-          <div class="flex flex-col items-center text-center gap-3">
-            <i class="fa-solid fa-gear text-4xl"></i>
-            <p class="font-medium">Optimizācija</p>
-          </div>
-         
-        </div>
-      </div>
-
-    </section>
-
-    <!--popularakas preces from js-->
-    <section class="container-center mt-8 lg:mt-12">
-      <div class="mx-auto max-w-7xl px-4">
-        <h2 class="tracking-wide text-2xl lg:text-3xl font-semibold mb-6 lg:mb-8">
-          Tagad ir populārs 
-        </h2>
-        <div id="popular-products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12 mb-8 lg:mb-12 mt-8 lg:mt-12">
-        </div>
-      </div>
-    </section>
-
-
-
-
-    <section class="container-center mx-4 my-12 lg:m-24">
-      <div class="mx-auto max-w-7xl px-4">
-        <h2 class="tracking-wide text-2xl lg:text-3xl font-semibold mb-6 lg:mb-8">
-          Datora izveide sākas šeit
-        </h2>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 mb-8 lg:mb-12 mt-8 lg:mt-12">
-            <!-- card -->
-              <div class="flex flex-col relative max-w-full lg:max-w-xs w-full p-4 lg:p-5 bg-[#F9F9F9]">     
-
-                  <!-- img -->
-                  <div class="p-4 lg:p-6 pt-6 lg:pt-8 flex justify-left text-6xl lg:text-9xl">
-                    <i class="fa-solid fa-1"></i>
-                  </div>
-
-                  <!-- text -->
-                  <div class="px-4 lg:px-6 pb-4 lg:pb-6 text-left">
-                    <h3 class="text-2xl lg:text-4xl text-gray-900">Izvēlies, ko vēlies</h3>
-
-                    <div class="mt-3 lg:mt-4">
-                      <p class="text-sm text-gray-500">Pārlūkojiet mūsu plašo katalogu un atrodiet perfektās komponentes savam datoram.</p>
-                    </div>
-                </div>
-              </div>
-
-            <!-- card -->
-              <div class="flex flex-col relative max-w-full lg:max-w-xs w-full p-4 lg:p-5 bg-[#EAEAEA]">     
-
-                  <!-- img -->
-                  <div class="p-4 lg:p-6 pt-6 lg:pt-8 flex justify-left text-6xl lg:text-9xl">
-                    <i class="fa-solid fa-2"></i>
-                  </div>
-
-                  <!-- text -->
-                  <div class="px-4 lg:px-6 pb-4 lg:pb-6 text-left">
-                    <h3 class="text-2xl lg:text-4xl text-gray-900">Pārbaudi savienojamību</h3>
-
-                    <div class="mt-3 lg:mt-4">
-                      <p class="text-sm text-gray-500">Sazināties ar mūsu meistaru un pārliecinieties, ka visas komponentes ir saderīgas.</p>
-                    </div>
-                </div>
-              </div>
-
-            <!-- card -->
-              <div class="flex flex-col relative max-w-full lg:max-w-xs w-full p-4 lg:p-5 bg-[#dbdbdb]">     
-
-                  <!-- img -->
-                  <div class="p-4 lg:p-6 pt-6 lg:pt-8 flex justify-left text-6xl lg:text-9xl">
-                    <i class="fa-solid fa-3"></i>
-                  </div>
-
-                  <!-- text -->
-                  <div class="px-4 lg:px-6 pb-4 lg:pb-6 text-left">
-                    <h3 class="text-2xl lg:text-4xl text-gray-900 ">Apmaksā un pasūtī</h3>
-
-                    <div class="mt-3 lg:mt-4">
-                      <p class="text-sm text-gray-500">Mēs pieņemam visas populārākās maksājuma metodes. Jūsu dati ir pilnībā aizsargāti.</p>
-                    </div>
-                </div>
-              </div>
-
-
-            <!-- card -->
-              <div class="flex flex-col relative max-w-full lg:max-w-xs w-full p-4 lg:p-5 bg-[#cecece]">     
-
-                  <!-- img -->
-                  <div class="p-4 lg:p-6 pt-6 lg:pt-8 flex justify-left text-6xl lg:text-9xl">
-                    <i class="fa-solid fa-4"></i>
-                  </div>
-
-                  <!-- text -->
-                  <div class="px-4 lg:px-6 pb-4 lg:pb-6 text-left">
-                    <h3 class="text-2xl lg:text-4xl text-gray-900 ">Saņem un baudo</h3>
-
-                    <div class="mt-3 lg:mt-4">
-                      <p class="text-sm text-gray-500">Pasūtījumi tiek piegādāti 2-5 dienas laikā. Rūpīgi iepakoti, lai droši nonāktu pie Jums.</p>
-                    </div>
-                </div>
-              </div>
-
-
-          </div>
-    </section>
-
-
-<section class="relative bg-accent py-16 lg:py-36">
-  <div class="mx-auto max-w-7xl px-4 text-center">
-    <h2 class="tracking-tight text-3xl md:text-4xl lg:text-6xl font-bold">
-      Pērkot komponentes
-    </h2>
-    <h2 class="tracking-tight text-3xl md:text-4xl lg:text-6xl font-extrabold text-black/70 mt-2 pb-2">
-      Salikšana — bezmaksas!  
-    </h2>
-    <!-- button -->
-    <a href="shop.html" class="mt-5 w-50 h-15 inline-flex items-center justify-center gap-2 py-3 rounded-lg 
-               bg-black text-white text-lg font-medium shadow-sm 
-               transform transition duration-300 hover:scale-105 hover:shadow-lg"
-      aria-label="Gribu!">
-      Gribu!
-    </a>
-  </div>
-</section>
-</main>
-
-<!-- footer -->
-  <footer class="bg-black text-white">
-    <div class="mx-auto max-w-7xl px-4 py-12 lg:py-16">
-      <!-- main grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-        
-        <!-- logo  -->
-        <div class="sm:col-span-2 lg:col-span-1">
-          <a href="index.html" class="text-2xl font-bold">UniServiss</a>
-          <p class="mt-4 text-gray-400 text-sm leading-relaxed">
-            Remonts, datora komplektēšana un datortehnikas tirdzniecība.
-          </p>
-          <div class="flex gap-4 mt-6">
-            <a href="https://www.facebook.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-              <i class="fa-brands fa-tiktok"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- navigation -->
-        <div>
-          <h3 class="font-semibold mb-4">Navigācija</h3>
-          <ul class="space-y-3 text-sm text-gray-400">
-            <li><a href="shop.html" class="hover:text-white transition">Veikals</a></li>
-            <li><a href="faq.html" class="hover:text-white transition">BUJ</a></li>
-            <li><a href="about.html" class="hover:text-white transition">Par mums</a></li>
-            <li><a href="contacts.html" class="hover:text-white transition">Kontakti</a></li>
-            <li><a href="cart.html" class="hover:text-white transition">Grozs</a></li>
-          </ul>
-        </div>
-
-        <!-- support -->
-        <div>
-          <h3 class="font-semibold mb-4">Atbalsts</h3>
-          <ul class="space-y-3 text-sm text-gray-400">
-            <li><a href="contacts.html#form-section" class="hover:text-white transition">Garantijas</a></li>
-            <li><a href="contacts.html#form-section" class="hover:text-white transition">Piegāde</a></li>
-            <li><a href="contacts.html#form-section" class="hover:text-white transition">Atgriešana</a></li>
-            <li><a href="faq.html" class="hover:text-white transition">Jautājumi</a></li>
-          </ul>
-        </div>
-
-        <!-- contact -->
-        <div>
-          <h3 class="font-semibold mb-4">Saziņa</h3>
-          <ul class="space-y-3 text-sm text-gray-400">
-            <li class="flex items-center gap-2">
-              <i class="fa-solid fa-phone text-xs"></i>
-              +371 2000 0000
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fa-solid fa-envelope text-xs"></i>
-              info@uniserviss.lv
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fa-solid fa-location-dot text-xs"></i>
-              Braslas iela 16, Rīga
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- bottom heart -->
-      <div class="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row justify-center items-center gap-4 text-sm text-gray-500">
-        <p>Izstrādāts ar ❤️ Latvijā</p>
-      </div>
-    </div>
-  </footer>
-
-
-  <script type="module" src="search.js"></script>
-  <script type="module" src="index_popular.js"></script>
-  <script>
-    // burger menu
-    const burgerBtn = document.getElementById('burger-btn');
-    const closeBtn = document.getElementById('close-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    burgerBtn.addEventListener('click', () => {
-      mobileMenu.classList.remove('hidden');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-    });
-  </script>
-
-</body>
+      closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    </script>
+  </body>
 </html>

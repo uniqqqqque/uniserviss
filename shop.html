@@ -1,381 +1,657 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="lv">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UniServiss</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-  </style>
-  <style type="text/tailwindcss">
-    @theme default  {
-      --color-main:   #FFFFFF;
-      --color-accent: #EBEBEB;
-      --color-graphite:  #4E4E4E;
-      --color-black:     #000000;
-    }
-  body {
-    font-family: 'Inter', sans-serif;
-  }
-  </style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniServiss</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
+    <style type="text/tailwindcss">
+      @theme default {
+        --color-main: #ffffff;
+        --color-accent: #ebebeb;
+        --color-graphite: #4e4e4e;
+        --color-black: #000000;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
 
-<script type="module" src="shop.js"></script>
-<script type="module" src="./search.js"></script>
+    <script type="module" src="shop.js"></script>
+    <script type="module" src="./search.js"></script>
+  </head>
 
-</head>
-
-<body class="antialiased flex flex-col min-h-screen">
-  <header class="sticky top-0 z-50 w-full backdrop-blur border-b">
-    <!-- top navigation -->
-    <nav>
-      <div class="mx-auto w-full max-w-7xl px-4">
-        <div class="flex items-center gap-4 py-4 lg:py-6">
-          <a href="index.html" class="lg:mr-14 inline-flex items-center" aria-label="UniServiss">
-            <img src="images/logo.png" alt="UniServiss" class="h-6 lg:h-5 w-auto" />
-          </a>
-          <!-- links -->
-          <ul class="hidden lg:flex items-center gap-6 text-lg leading-none">
-            <li><a href="index.html">Sākums</a></li>
-            <li><a href="shop.html" class="border-b-2 border-black pb-1">Veikals</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="about.html">Par mums</a></li>
-            <li><a href="contacts.html">Kontakti</a></li>
-            <li><a href="cart.html">Grozs</a></li>
-          </ul>
-          <!-- mobile menu button -->
-          <button id="burger-btn" class="lg:hidden ms-auto text-2xl p-2">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <!-- mobile menu -->
-          <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-white/90 backdrop-blur-md z-50 h-screen w-screen">
-            <div class="flex items-center justify-between p-4 border-b">
-              <a href="index.html" class="inline-flex items-center" aria-label="UniServiss">
-                <img src="images/logo.png" alt="UniServiss" class="h-6 w-auto" />
-              </a>
-              <button id="close-menu-btn" class="text-2xl p-2">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
-            </div>
-            <ul class="flex flex-col p-4 gap-4 text-lg">
-              <li><a href="index.html" class="block py-2">Sākums</a></li>
-              <li><a href="shop.html" class="block py-2">Veikals</a></li>
-              <li><a href="faq.html" class="block py-2">FAQ</a></li>
-              <li><a href="about.html" class="block py-2">Par mums</a></li>
-              <li><a href="contacts.html" class="block py-2">Kontakti</a></li>
-              <li><a href="cart.html" class="block py-2">Grozs</a></li>
-            </ul>
-          </div>
-          <!-- search -->
-          <form action="" class="hidden lg:block ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
-            <div class="relative">
-              <span class="absolute inset-y-0 left-4 flex items-center">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </span>
-              <input
-                id="search"
-                type="search"
-                placeholder="Meklēt preces..."
-                class="w-full pl-10 pr-4 py-2 text-sm rounded-lg border border-graphite"
-                autocomplete="off"
+  <body class="flex min-h-screen flex-col antialiased">
+    <header class="sticky top-0 z-50 w-full border-b backdrop-blur">
+      <!-- top navigation -->
+      <nav>
+        <div class="mx-auto w-full max-w-7xl px-4">
+          <div class="flex items-center gap-4 py-4 lg:py-6">
+            <a
+              href="index.html"
+              class="inline-flex items-center lg:mr-14"
+              aria-label="UniServiss"
+            >
+              <img
+                src="images/logo.png"
+                alt="UniServiss"
+                class="h-6 w-auto lg:h-5"
               />
+            </a>
+            <!-- links -->
+            <ul class="hidden items-center gap-6 text-lg leading-none lg:flex">
+              <li><a href="index.html">Sākums</a></li>
+              <li>
+                <a href="shop.html" class="border-b-2 border-black pb-1"
+                  >Veikals</a
+                >
+              </li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="about.html">Par mums</a></li>
+              <li><a href="contacts.html">Kontakti</a></li>
+              <li><a href="cart.html">Grozs</a></li>
+            </ul>
+            <!-- mobile menu button -->
+            <button id="burger-btn" class="ms-auto p-2 text-2xl lg:hidden">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- mobile menu -->
+            <div
+              id="mobile-menu"
+              class="fixed inset-0 z-50 hidden h-screen w-screen bg-white/90 backdrop-blur-md lg:hidden"
+            >
+              <div class="flex items-center justify-between border-b p-4">
+                <a
+                  href="index.html"
+                  class="inline-flex items-center"
+                  aria-label="UniServiss"
+                >
+                  <img
+                    src="images/logo.png"
+                    alt="UniServiss"
+                    class="h-6 w-auto"
+                  />
+                </a>
+                <button id="close-menu-btn" class="p-2 text-2xl">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <ul class="flex flex-col gap-4 p-4 text-lg">
+                <li><a href="index.html" class="block py-2">Sākums</a></li>
+                <li><a href="shop.html" class="block py-2">Veikals</a></li>
+                <li><a href="faq.html" class="block py-2">FAQ</a></li>
+                <li><a href="about.html" class="block py-2">Par mums</a></li>
+                <li><a href="contacts.html" class="block py-2">Kontakti</a></li>
+                <li><a href="cart.html" class="block py-2">Grozs</a></li>
+              </ul>
             </div>
-          </form>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-<main class="flex-grow bg-[#F9F9F9]">
-  <section class="mx-auto max-w-7xl px-4 py-8 lg:py-12">
-    <h1 class="tracking-wider uppercase text-3xl md:text-4xl lg:text-5xl font-extralight mb-2">Datoru <span class="font-semibold">komponentes</span></h1>
-    <p class="text-sm md:text-base text-gray-600 mb-8">Atrodiet perfektās komponentes savam datoram</p>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-8">
-
-      <aside class="col-span-1 sm:col-span-2 lg:col-span-3 space-y-6 lg:sticky lg:top-28 self-start lg:max-h-[850px] lg:overflow-y-auto pr-2">
-
-        <!-- Kārtot pēc -->
-        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 p-4 bg-white rounded-lg border border-accent">
-          <div class="flex items-center gap-4">
-            <span class="text-sm text-gray-600">Kārtot pēc:</span>
-            <select id="sorting" class="p-2 border border-accent rounded-lg text-sm bg-white cursor-pointer focus:outline-none">
-              <option value="default">Populārākie</option>
-              <option value="low-high">Cena: Augoši</option>
-              <option value="high-low">Cena: Dilstoši</option>
-            </select>
+            <!-- search -->
+            <form
+              action=""
+              class="ms-auto hidden w-full max-w-120 lg:block"
+              role="search"
+              aria-label="Meklēšana"
+            >
+              <div class="relative">
+                <span class="absolute inset-y-0 left-4 flex items-center">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input
+                  id="search"
+                  type="search"
+                  placeholder="Meklēt preces..."
+                  class="border-graphite w-full rounded-lg border py-2 pr-4 pl-10 text-sm"
+                  autocomplete="off"
+                />
+              </div>
+            </form>
           </div>
         </div>
+      </nav>
+    </header>
 
-        <!-- Produkta veids -->
-        <details open class="group bg-white rounded-lg border border-accent shadow-sm">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-4 text-sm">
-            <span>Produkta veids</span>
-            <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-xs"></i></span>
-          </summary>
-          <div class="p-4 pt-0 border-t border-accent">
-            <ul class="space-y-2 text-sm text-gray-700 cursor-pointer pt-3">
-              <li class="hover:text-black font-bold filter-category" data-category="all">Visi</li>
-              <li class="hover:text-black filter-category" data-category="cpu">Procesori</li>
-              <li class="hover:text-black filter-category" data-category="gpu">Videokartes</li>
-              <li class="hover:text-black filter-category" data-category="mbr">Mātesplates</li>
-              <li class="hover:text-black filter-category" data-category="ram">Operatīvā atmiņa</li>
-              <li class="hover:text-black filter-category" data-category="hdd">HDD</li>
-              <li class="hover:text-black filter-category" data-category="ssd">SSD</li>
-              <li class="hover:text-black filter-category" data-category="psu">Barošanas bloki</li>
-              <li class="hover:text-black filter-category" data-category="case">Korpusi</li>
-              <li class="hover:text-black filter-category" data-category="fan">Ventilatori</li>
+    <main class="flex-grow bg-[#F9F9F9]">
+      <section class="mx-auto max-w-7xl px-4 py-8 lg:py-12">
+        <h1
+          class="mb-2 text-3xl font-extralight tracking-wider uppercase md:text-4xl lg:text-5xl"
+        >
+          Datoru <span class="font-semibold">komponentes</span>
+        </h1>
+        <p class="mb-8 text-sm text-gray-600 md:text-base">
+          Atrodiet perfektās komponentes savam datoram
+        </p>
+
+        <div
+          class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8"
+        >
+          <aside
+            class="col-span-1 space-y-6 self-start pr-2 sm:col-span-2 lg:sticky lg:top-28 lg:col-span-3 lg:max-h-[850px] lg:overflow-y-auto"
+          >
+            <!-- Kārtot pēc -->
+            <div
+              class="border-accent mb-6 flex flex-col items-start justify-between gap-4 rounded-lg border bg-white p-4 sm:flex-row sm:items-center"
+            >
+              <div class="flex items-center gap-4">
+                <span class="text-sm text-gray-600">Kārtot pēc:</span>
+                <select
+                  id="sorting"
+                  class="border-accent cursor-pointer rounded-lg border bg-white p-2 text-sm focus:outline-none"
+                >
+                  <option value="default">Populārākie</option>
+                  <option value="low-high">Cena: Augoši</option>
+                  <option value="high-low">Cena: Dilstoši</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Produkta veids -->
+            <details
+              open
+              class="group border-accent rounded-lg border bg-white shadow-sm"
+            >
+              <summary
+                class="flex cursor-pointer list-none items-center justify-between p-4 text-sm font-semibold"
+              >
+                <span>Produkta veids</span>
+                <span class="transition group-open:rotate-180"
+                  ><i class="fa-solid fa-chevron-down text-xs"></i
+                ></span>
+              </summary>
+              <div class="border-accent border-t p-4 pt-0">
+                <ul class="cursor-pointer space-y-2 pt-3 text-sm text-gray-700">
+                  <li
+                    class="filter-category font-bold hover:text-black"
+                    data-category="all"
+                  >
+                    Visi
+                  </li>
+                  <li
+                    class="filter-category hover:text-black"
+                    data-category="cpu"
+                  >
+                    Procesori
+                  </li>
+                  <li
+                    class="filter-category hover:text-black"
+                    data-category="gpu"
+                  >
+                    Videokartes
+                  </li>
+                  <li
+                    class="filter-category hover:text-black"
+                    data-category="mbr"
+                  >
+                    Mātesplates
+                  </li>
+                  <li
+                    class="filter-category hover:text-black"
+                    data-category="ram"
+                  >
+                    Operatīvā atmiņa
+                  </li>
+                  <li
+                    class="filter-category hover:text-black"
+                    data-category="hdd"
+                  >
+                    HDD
+                  </li>
+                  <li
+                    class="filter-category hover:text-black"
+                    data-category="ssd"
+                  >
+                    SSD
+                  </li>
+                  <li
+                    class="filter-category hover:text-black"
+                    data-category="psu"
+                  >
+                    Barošanas bloki
+                  </li>
+                  <li
+                    class="filter-category hover:text-black"
+                    data-category="case"
+                  >
+                    Korpusi
+                  </li>
+                  <li
+                    class="filter-category hover:text-black"
+                    data-category="fan"
+                  >
+                    Ventilatori
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <!-- Cenas diapazons -->
+            <details
+              open
+              class="group border-accent rounded-lg border bg-white shadow-sm"
+            >
+              <summary
+                class="flex cursor-pointer list-none items-center justify-between p-4 text-sm font-semibold"
+              >
+                <span>Cenas diapazons</span>
+                <span class="transition group-open:rotate-180"
+                  ><i class="fa-solid fa-chevron-down text-xs"></i
+                ></span>
+              </summary>
+              <div class="border-accent border-t p-4 pt-0">
+                <div class="mb-4 flex items-center gap-2 pt-6">
+                  <input
+                    type="number"
+                    id="input-min"
+                    value="0"
+                    min="0"
+                    max="2500"
+                    class="border-accent w-full rounded border p-2 text-center text-sm focus:border-black focus:outline-none"
+                  />
+                  <span class="text-gray-400">-</span>
+                  <input
+                    type="number"
+                    id="input-max"
+                    value="2500"
+                    min="0"
+                    max="2500"
+                    class="border-accent w-full rounded border p-2 text-center text-sm focus:border-black focus:outline-none"
+                  />
+                </div>
+              </div>
+            </details>
+
+            <!-- Ražotājs -->
+            <details
+              open
+              class="group border-accent rounded-lg border bg-white shadow-sm"
+            >
+              <summary
+                class="flex cursor-pointer list-none items-center justify-between p-4 text-sm font-semibold"
+              >
+                <span>Ražotājs</span>
+                <span class="transition group-open:rotate-180"
+                  ><i class="fa-solid fa-chevron-down text-xs"></i
+                ></span>
+              </summary>
+              <div class="border-accent border-t p-4 pt-0">
+                <ul class="space-y-2 pt-3 text-sm text-gray-700">
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-asus"
+                        type="checkbox"
+                        value="asus"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>ASUS</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-gigabyte"
+                        type="checkbox"
+                        value="gigabyte"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>Gigabyte</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-amd"
+                        type="checkbox"
+                        value="amd"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>AMD</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-intel"
+                        type="checkbox"
+                        value="intel"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>Intel</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-msi"
+                        type="checkbox"
+                        value="msi"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>MSI</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-corsair"
+                        type="checkbox"
+                        value="corsair"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>Corsair</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-kingston"
+                        type="checkbox"
+                        value="kingston"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>Kingston</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-gskill"
+                        type="checkbox"
+                        value="gskill"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>G.Skill</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-samsung"
+                        type="checkbox"
+                        value="samsung"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>Samsung</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-western-digital"
+                        type="checkbox"
+                        value="western digital"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>Western Digital</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-crucial"
+                        type="checkbox"
+                        value="crucial"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>Crucial</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-seagate"
+                        type="checkbox"
+                        value="seagate"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>Seagate</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-toshiba"
+                        type="checkbox"
+                        value="toshiba"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>Toshiba</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-evga"
+                        type="checkbox"
+                        value="evga"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>EVGA</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-be-quiet"
+                        type="checkbox"
+                        value="be quiet"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>be quiet!</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-nzxt"
+                        type="checkbox"
+                        value="nzxt"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>NZXT</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-fractal-design"
+                        type="checkbox"
+                        value="fractal design"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>Fractal Design</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-noctua"
+                        type="checkbox"
+                        value="noctua"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>Noctua</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="inline-flex items-center">
+                      <input
+                        id="brand-arctic"
+                        type="checkbox"
+                        value="arctic"
+                        class="filter-brand mr-2 rounded-sm text-black focus:ring-black"
+                      />
+                      <span>Arctic</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <button
+              id="reset-filters"
+              type="button"
+              class="bg-graphite w-full rounded-lg py-3 font-medium text-white transition hover:bg-zinc-800"
+            >
+              Notīrīt filtrus
+            </button>
+          </aside>
+
+          <!-- Products Grid -->
+          <div
+            class="col-span-1 grid grid-cols-1 gap-6 sm:col-span-1 sm:grid-cols-2 lg:col-span-9 lg:grid-cols-3"
+            id="product-grid"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-black text-white">
+      <div class="mx-auto max-w-7xl px-4 py-12 lg:py-16">
+        <!-- main grid -->
+        <div
+          class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12"
+        >
+          <!-- logo  -->
+          <div class="sm:col-span-2 lg:col-span-1">
+            <a href="index.html" class="text-2xl font-bold">UniServiss</a>
+            <p class="mt-4 text-sm leading-relaxed text-gray-400">
+              Remonts, datora komplektēšana un datortehnikas tirdzniecība.
+            </p>
+            <div class="mt-6 flex gap-4">
+              <a
+                href="https://www.facebook.com"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.instagram.com"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+              >
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- navigation -->
+          <div>
+            <h3 class="mb-4 font-semibold">Navigācija</h3>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li>
+                <a href="shop.html" class="transition hover:text-white"
+                  >Veikals</a
+                >
+              </li>
+              <li>
+                <a href="faq.html" class="transition hover:text-white">BUJ</a>
+              </li>
+              <li>
+                <a href="about.html" class="transition hover:text-white"
+                  >Par mums</a
+                >
+              </li>
+              <li>
+                <a href="contacts.html" class="transition hover:text-white"
+                  >Kontakti</a
+                >
+              </li>
+              <li>
+                <a href="cart.html" class="transition hover:text-white"
+                  >Grozs</a
+                >
+              </li>
             </ul>
           </div>
-        </details>
 
-        <!-- Cenas diapazons -->
-        <details open class="group bg-white rounded-lg border border-accent shadow-sm">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-4 text-sm">
-            <span>Cenas diapazons</span>
-            <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-xs"></i></span>
-          </summary>
-          <div class="p-4 pt-0 border-t border-accent">
-            <div class="flex items-center gap-2 mb-4 pt-6">
-              <input type="number" id="input-min" value="0" min="0" max="2500" class="w-full p-2 text-sm border border-accent rounded text-center focus:outline-none focus:border-black">
-              <span class="text-gray-400">-</span>
-              <input type="number" id="input-max" value="2500" min="0" max="2500" class="w-full p-2 text-sm border border-accent rounded text-center focus:outline-none focus:border-black">
-            </div>
-          </div>
-        </details>
-
-        <!-- Ražotājs -->
-        <details open class="group bg-white rounded-lg border border-accent shadow-sm">
-          <summary class="flex justify-between items-center font-semibold cursor-pointer list-none p-4 text-sm">
-            <span>Ražotājs</span>
-            <span class="transition group-open:rotate-180"><i class="fa-solid fa-chevron-down text-xs"></i></span>
-          </summary>
-          <div class="p-4 pt-0 border-t border-accent">
-            <ul class="space-y-2 pt-3 text-sm text-gray-700">
+          <!-- support -->
+          <div>
+            <h3 class="mb-4 font-semibold">Atbalsts</h3>
+            <ul class="space-y-3 text-sm text-gray-400">
               <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-asus" type="checkbox" value="asus" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>ASUS</span>
-                </label>
+                <a
+                  href="contacts.html#form-section"
+                  class="transition hover:text-white"
+                  >Garantijas</a
+                >
               </li>
               <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-gigabyte" type="checkbox" value="gigabyte" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Gigabyte</span>
-                </label>
+                <a
+                  href="contacts.html#form-section"
+                  class="transition hover:text-white"
+                  >Piegāde</a
+                >
               </li>
               <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-amd" type="checkbox" value="amd" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>AMD</span>
-                </label>
+                <a
+                  href="contacts.html#form-section"
+                  class="transition hover:text-white"
+                  >Atgriešana</a
+                >
               </li>
               <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-intel" type="checkbox" value="intel" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Intel</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-msi" type="checkbox" value="msi" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>MSI</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-corsair" type="checkbox" value="corsair" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Corsair</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-kingston" type="checkbox" value="kingston" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Kingston</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-gskill" type="checkbox" value="gskill" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>G.Skill</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-samsung" type="checkbox" value="samsung" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Samsung</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-western-digital" type="checkbox" value="western digital" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Western Digital</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-crucial" type="checkbox" value="crucial" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Crucial</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-seagate" type="checkbox" value="seagate" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Seagate</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-toshiba" type="checkbox" value="toshiba" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Toshiba</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-evga" type="checkbox" value="evga" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>EVGA</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-be-quiet" type="checkbox" value="be quiet" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>be quiet!</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-nzxt" type="checkbox" value="nzxt" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>NZXT</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-fractal-design" type="checkbox" value="fractal design" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Fractal Design</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-noctua" type="checkbox" value="noctua" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Noctua</span>
-                </label>
-              </li>
-              <li>
-                <label class="inline-flex items-center">
-                  <input id="brand-arctic" type="checkbox" value="arctic" class="filter-brand mr-2 rounded-sm text-black focus:ring-black">
-                  <span>Arctic</span>
-                </label>
+                <a href="faq.html" class="transition hover:text-white"
+                  >Jautājumi</a
+                >
               </li>
             </ul>
           </div>
-        </details>
 
-        <button id="reset-filters" type="button" class="w-full py-3 bg-graphite text-white rounded-lg font-medium hover:bg-zinc-800 transition">
-          Notīrīt filtrus
-        </button>
-
-      </aside>
-
-      <!-- Products Grid -->
-      <div class="col-span-1 sm:col-span-1 lg:col-span-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid"> 
-      </div>
-
-    </div> 
-  </section>
-</main>
-
-
-<!-- footer -->
-  <footer class="bg-black text-white">
-    <div class="mx-auto max-w-7xl px-4 py-12 lg:py-16">
-      <!-- main grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-        
-        <!-- logo  -->
-        <div class="sm:col-span-2 lg:col-span-1">
-          <a href="index.html" class="text-2xl font-bold">UniServiss</a>
-          <p class="mt-4 text-gray-400 text-sm leading-relaxed">
-            Remonts, datora komplektēšana un datortehnikas tirdzniecība.
-          </p>
-          <div class="flex gap-4 mt-6">
-            <a href="https://www.facebook.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-              <i class="fa-brands fa-tiktok"></i>
-            </a>
+          <!-- contact -->
+          <div>
+            <h3 class="mb-4 font-semibold">Saziņa</h3>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-xs"></i>
+                +371 2000 0000
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-xs"></i>
+                info@uniserviss.lv
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-xs"></i>
+                Braslas iela 16, Rīga
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- navigation -->
-        <div>
-          <h3 class="font-semibold mb-4">Navigācija</h3>
-          <ul class="space-y-3 text-sm text-gray-400">
-            <li><a href="shop.html" class="hover:text-white transition">Veikals</a></li>
-            <li><a href="faq.html" class="hover:text-white transition">BUJ</a></li>
-            <li><a href="about.html" class="hover:text-white transition">Par mums</a></li>
-            <li><a href="contacts.html" class="hover:text-white transition">Kontakti</a></li>
-            <li><a href="cart.html" class="hover:text-white transition">Grozs</a></li>
-          </ul>
+        <!-- bottom heart -->
+        <div
+          class="mt-10 flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-6 text-sm text-gray-500 sm:flex-row"
+        >
+          <p>Izstrādāts ar ❤️ Latvijā</p>
         </div>
-
-        <!-- support -->
-        <div>
-          <h3 class="font-semibold mb-4">Atbalsts</h3>
-          <ul class="space-y-3 text-sm text-gray-400">
-            <li><a href="contacts.html#form-section" class="hover:text-white transition">Garantijas</a></li>
-            <li><a href="contacts.html#form-section" class="hover:text-white transition">Piegāde</a></li>
-            <li><a href="contacts.html#form-section" class="hover:text-white transition">Atgriešana</a></li>
-            <li><a href="faq.html" class="hover:text-white transition">Jautājumi</a></li>
-          </ul>
-        </div>
-
-        <!-- contact -->
-        <div>
-          <h3 class="font-semibold mb-4">Saziņa</h3>
-          <ul class="space-y-3 text-sm text-gray-400">
-            <li class="flex items-center gap-2">
-              <i class="fa-solid fa-phone text-xs"></i>
-              +371 2000 0000
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fa-solid fa-envelope text-xs"></i>
-              info@uniserviss.lv
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fa-solid fa-location-dot text-xs"></i>
-              Braslas iela 16, Rīga
-            </li>
-          </ul>
-        </div>
-
       </div>
+    </footer>
 
-      <!-- bottom heart -->
-      <div class="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row justify-center items-center gap-4 text-sm text-gray-500">
-        <p>Izstrādāts ar ❤️ Latvijā</p>
-      </div>
-    </div>
-  </footer>
+    <script>
+      // burger menu
+      const burgerBtn = document.getElementById("burger-btn");
+      const closeBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-  <script>
-    // burger menu
-    const burgerBtn = document.getElementById('burger-btn');
-    const closeBtn = document.getElementById('close-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
+      burgerBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("hidden");
+      });
 
-    burgerBtn.addEventListener('click', () => {
-      mobileMenu.classList.remove('hidden');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-    });
-  </script>
-
-</body>
+      closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    </script>
+  </body>
 </html>

@@ -1,375 +1,530 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="lv">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UniServiss - Kontakti</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-  </style>
-  <style type="text/tailwindcss">
-    @theme default  {
-      --color-main:   #FFFFFF;
-      --color-accent: #EBEBEB;
-      --color-graphite:  #4E4E4E;
-      --color-black:     #000000;
-    }
-  </style>
-  <style>
-  body { font-family: 'Inter', sans-serif; }
-  </style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniServiss - Kontakti</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
+    <style type="text/tailwindcss">
+      @theme default {
+        --color-main: #ffffff;
+        --color-accent: #ebebeb;
+        --color-graphite: #4e4e4e;
+        --color-black: #000000;
+      }
+    </style>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+    <script type="module" src="./global-animations.js"></script>
+  </head>
 
-<body class="antialiased flex flex-col min-h-screen">
-
-  <!-- header -->
-  <header class="sticky top-0 z-50 w-full backdrop-blur border-b">
-    <!-- top navigation -->
-    <nav>
-      <div class="mx-auto w-full max-w-7xl px-4">
-        <div class="flex items-center gap-4 py-4 lg:py-6">
-          <a href="index.html" class="lg:mr-14 inline-flex items-center" aria-label="UniServiss">
-            <img src="images/logo.png" alt="UniServiss" class="h-6 lg:h-5 w-auto" />
-          </a>
-          <!-- links -->
-          <ul class="hidden lg:flex items-center gap-6 text-lg leading-none">
-            <li><a href="index.html">Sākums</a></li>
-            <li><a href="shop.html">Veikals</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="about.html">Par mums</a></li>
-            <li><a href="contacts.html" class="border-b-2 border-black pb-1">Kontakti</a></li>
-            <li><a href="cart.html">Grozs</a></li>
-          </ul>
-          <!-- mobile menu button -->
-          <button id="burger-btn" class="lg:hidden ms-auto text-2xl p-2">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-          <!-- mobile menu -->
-          <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 bg-white/90 backdrop-blur-md z-50 h-screen w-screen">
-            <div class="flex items-center justify-between p-4 border-b">
-              <a href="index.html" class="inline-flex items-center" aria-label="UniServiss">
-                <img src="images/logo.png" alt="UniServiss" class="h-6 w-auto" />
-              </a>
-              <button id="close-menu-btn" class="text-2xl p-2">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
+  <body
+    class="flex min-h-screen flex-col antialiased opacity-0 transition-opacity duration-300 ease-out data-[loaded=true]:opacity-100"
+  >
+    <!-- header -->
+    <header class="sticky top-0 z-50 w-full border-b backdrop-blur">
+      <!-- top navigation -->
+      <nav>
+        <div class="mx-auto w-full max-w-7xl px-4">
+          <div class="flex items-center gap-4 py-4 lg:py-6">
+            <a
+              href="index.html"
+              class="inline-flex items-center lg:mr-14"
+              aria-label="UniServiss"
+            >
+              <img
+                src="images/logo.png"
+                alt="UniServiss"
+                class="h-6 w-auto lg:h-5"
+              />
+            </a>
+            <!-- links -->
+            <ul class="hidden items-center gap-6 text-lg leading-none lg:flex">
+              <li><a href="index.html">Sākums</a></li>
+              <li><a href="shop.html">Veikals</a></li>
+              <li><a href="faq.html">FAQ</a></li>
+              <li><a href="about.html">Par mums</a></li>
+              <li>
+                <a href="contacts.html" class="border-b-2 border-black pb-1"
+                  >Kontakti</a
+                >
+              </li>
+              <li><a href="cart.html">Grozs</a></li>
+            </ul>
+            <!-- mobile menu button -->
+            <button id="burger-btn" class="ms-auto p-2 text-2xl lg:hidden">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+            <!-- mobile menu -->
+            <div
+              id="mobile-menu"
+              class="fixed inset-0 z-50 hidden h-screen w-screen bg-white/90 backdrop-blur-md lg:hidden"
+            >
+              <div class="flex items-center justify-between border-b p-4">
+                <a
+                  href="index.html"
+                  class="inline-flex items-center"
+                  aria-label="UniServiss"
+                >
+                  <img
+                    src="images/logo.png"
+                    alt="UniServiss"
+                    class="h-6 w-auto"
+                  />
+                </a>
+                <button id="close-menu-btn" class="p-2 text-2xl">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
+              <ul class="flex flex-col gap-4 p-4 text-lg">
+                <li><a href="index.html" class="block py-2">Sākums</a></li>
+                <li><a href="shop.html" class="block py-2">Veikals</a></li>
+                <li><a href="faq.html" class="block py-2">FAQ</a></li>
+                <li><a href="about.html" class="block py-2">Par mums</a></li>
+                <li><a href="contacts.html" class="block py-2">Kontakti</a></li>
+                <li><a href="cart.html" class="block py-2">Grozs</a></li>
+              </ul>
             </div>
-            <ul class="flex flex-col p-4 gap-4 text-lg">
-              <li><a href="index.html" class="block py-2">Sākums</a></li>
-              <li><a href="shop.html" class="block py-2">Veikals</a></li>
-              <li><a href="faq.html" class="block py-2">FAQ</a></li>
-              <li><a href="about.html" class="block py-2">Par mums</a></li>
-              <li><a href="contacts.html" class="block py-2">Kontakti</a></li>
-              <li><a href="cart.html" class="block py-2">Grozs</a></li>
+            <!-- search -->
+            <form
+              action=""
+              class="ms-auto hidden w-full max-w-120 lg:block"
+              role="search"
+              aria-label="Meklēšana"
+            >
+              <div class="relative">
+                <span class="absolute inset-y-0 left-4 flex items-center">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+                <input
+                  id="search"
+                  type="search"
+                  placeholder="Meklēt preces..."
+                  class="border-graphite w-full rounded-lg border py-2 pr-4 pl-10 text-sm"
+                  autocomplete="off"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-grow">
+      <section class="pt-12 pb-2 md:pt-16 lg:pt-20">
+        <div class="mx-auto max-w-7xl px-4">
+          <div
+            class="border-graphite grid grid-cols-1 gap-0 overflow-hidden rounded-2xl border-1 bg-white shadow-2xl md:grid-cols-2"
+          >
+            <div class="flex flex-col justify-center p-6 md:p-8 lg:p-12">
+              <h1
+                class="mb-8 text-3xl font-extralight tracking-wider uppercase md:text-4xl lg:text-5xl"
+              >
+                Kur mūs <span class="font-semibold">atrast</span>
+              </h1>
+
+              <div class="space-y-8">
+                <div class="flex items-start gap-4">
+                  <div class="text-graphite mt-1 text-2xl">
+                    <i class="fa-solid fa-location-dot"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-bold">Adrese</h4>
+                    <p class="text-gray-600">Rīga, Braslas iela 16, LV-1084</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="text-graphite mt-1 text-2xl">
+                    <i class="fa-regular fa-clock"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-bold">Darba laiks</h4>
+                    <ul class="mt-1 space-y-1 text-sm text-gray-600">
+                      <li class="flex w-40 justify-between">
+                        <span>P. - Pk.:</span>
+                        <span class="font-medium">9:00 - 18:00</span>
+                      </li>
+                      <li class="flex w-40 justify-between">
+                        <span>S.:</span>
+                        <span class="font-medium">9:00 - 16:00</span>
+                      </li>
+                      <li class="flex w-40 justify-between">
+                        <span>Sv.:</span>
+                        <span class="font-medium">Slēgts</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="text-graphite mt-1 text-2xl">
+                    <i class="fa-solid fa-phone"></i>
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-bold">Saziņa</h4>
+                    <p class="text-gray-600">+371 2000 0000</p>
+                    <p class="text-gray-600">info@uniserviss.lv</p>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="#form-section"
+                class="bg-graphite mt-10 inline-flex w-full items-center justify-center rounded-lg px-8 py-4 font-medium text-white transition duration-300 hover:bg-black md:w-auto"
+              >
+                Rakstīt mums
+              </a>
+            </div>
+
+            <div
+              class="relative h-[300px] w-full bg-gray-200 sm:h-[400px] md:h-auto"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2175.1379883865534!2d24.161513977528223!3d56.963568773556304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eece45b3f988e7%3A0xe3292c08d5c61fd8!2sBraslas%20iela%2016%2C%20Vidzemes%20priek%C5%A1pils%C4%93ta%2C%20R%C4%ABga%2C%20LV-1084!5e0!3m2!1sru!2slv!4v1766488860387!5m2!1sru!2slv"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                class="absolute inset-0"
+              >
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="form-section" class="p-6 md:p-8 lg:p-14"></section>
+
+      <section id="" class="pt-8 pb-16 md:pb-20 lg:pb-24">
+        <div class="mx-auto max-w-7xl px-4">
+          <div
+            class="border-graphite grid grid-cols-1 gap-0 overflow-hidden rounded-2xl border-1 bg-white shadow-2xl md:grid-cols-2"
+          >
+            <div
+              class="order-2 flex flex-col justify-center p-6 md:order-1 md:p-8 lg:p-12"
+            >
+              <h3
+                class="mb-2 text-2xl font-light tracking-tight uppercase md:text-3xl lg:text-4xl"
+              >
+                Nosūtīt <span class="font-bold">ziņu</span>
+              </h3>
+              <p class="mb-8 text-sm text-gray-500 md:text-base">
+                Atbildēsim 24 stundu laikā.
+              </p>
+
+              <form id="contact-form" action="#" class="space-y-5">
+                <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                  <div class="flex flex-col gap-2">
+                    <label for="name" class="text-sm font-medium">Vārds</label>
+                    <input
+                      type="text"
+                      id="name"
+                      placeholder="Jānis"
+                      class="w-full rounded-lg border border-gray-300 bg-white p-3 transition focus:border-black focus:ring-1 focus:ring-black focus:outline-none"
+                    />
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <label for="surname" class="text-sm font-medium"
+                      >Uzvārds</label
+                    >
+                    <input
+                      type="text"
+                      id="surname"
+                      placeholder="Bērziņš"
+                      class="w-full rounded-lg border border-gray-300 bg-white p-3 transition focus:border-black focus:ring-1 focus:ring-black focus:outline-none"
+                    />
+                  </div>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <label for="email" class="text-sm font-medium">E-pasts</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="janis@epasts.lv"
+                    class="w-full rounded-lg border border-gray-300 bg-white p-3 transition focus:border-black focus:ring-1 focus:ring-black focus:outline-none"
+                  />
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <label for="subject" class="text-sm font-medium">Tēma</label>
+                  <select
+                    id="subject"
+                    class="w-full rounded-lg border border-gray-300 bg-white p-3 transition focus:border-black focus:ring-1 focus:ring-black focus:outline-none"
+                  >
+                    <option>Servisa pieteikums</option>
+                    <option>Vispārīgs jautājums</option>
+                    <option>Par pasūtījumu</option>
+                    <option>Sadarbība</option>
+                  </select>
+                </div>
+
+                <div class="flex flex-col gap-2">
+                  <label for="message" class="text-sm font-medium">Ziņa</label>
+                  <textarea
+                    id="message"
+                    rows="4"
+                    placeholder="Kā mēs varam palīdzēt?"
+                    class="w-full resize-none rounded-lg border border-gray-300 bg-white p-3 transition focus:border-black focus:ring-1 focus:ring-black focus:outline-none"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  id="submit-btn"
+                  class="bg-graphite w-full transform cursor-pointer rounded-lg py-4 font-medium text-white transition duration-200 hover:bg-black"
+                >
+                  Nosūtīt ziņu
+                </button>
+              </form>
+            </div>
+
+            <div
+              class="relative order-1 h-64 overflow-hidden bg-black md:order-2 md:h-auto"
+            >
+              <img
+                src="images/contacts_01.avif"
+                alt="PC"
+                class="absolute inset-0 h-full w-full object-cover opacity-80 transition-transform duration-700 hover:scale-105"
+              />
+
+              <div
+                class="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent p-12 text-white"
+              >
+                <p
+                  class="mb-2 text-sm font-bold tracking-widest text-white/70 uppercase"
+                >
+                  Vai zvaniet mums
+                </p>
+                <p class="text-4xl font-bold">+371 2000 0000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer class="bg-black text-white">
+      <div class="mx-auto max-w-7xl px-4 py-12 lg:py-16">
+        <!-- main grid -->
+        <div
+          class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12"
+        >
+          <!-- logo  -->
+          <div class="sm:col-span-2 lg:col-span-1">
+            <a href="index.html" class="text-2xl font-bold">UniServiss</a>
+            <p class="mt-4 text-sm leading-relaxed text-gray-400">
+              Remonts, datora komplektēšana un datortehnikas tirdzniecība.
+            </p>
+            <div class="mt-6 flex gap-4">
+              <a
+                href="https://www.facebook.com"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+              >
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://www.instagram.com"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com"
+                class="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition hover:bg-white/20"
+              >
+                <i class="fa-brands fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- navigation -->
+          <div>
+            <h3 class="mb-4 font-semibold">Navigācija</h3>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li>
+                <a href="shop.html" class="transition hover:text-white"
+                  >Veikals</a
+                >
+              </li>
+              <li>
+                <a href="faq.html" class="transition hover:text-white">BUJ</a>
+              </li>
+              <li>
+                <a href="about.html" class="transition hover:text-white"
+                  >Par mums</a
+                >
+              </li>
+              <li>
+                <a href="contacts.html" class="transition hover:text-white"
+                  >Kontakti</a
+                >
+              </li>
+              <li>
+                <a href="cart.html" class="transition hover:text-white"
+                  >Grozs</a
+                >
+              </li>
             </ul>
           </div>
-          <!-- search -->
-          <form action="" class="hidden lg:block ms-auto w-full max-w-120" role="search" aria-label="Meklēšana">
-            <div class="relative">
-              <span class="absolute inset-y-0 left-4 flex items-center">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </span>
-              <input
-                id="search"
-                type="search"
-                placeholder="Meklēt preces..."
-                class="w-full pl-10 pr-4 py-2 text-sm rounded-lg border border-graphite"
-                autocomplete="off"
-              />
-            </div>
-          </form>
-        </div>
-      </div>
-    </nav>
-  </header>
 
-  <main class="flex-grow">
-    
-    <section class="pt-12 md:pt-16 lg:pt-20 pb-2">
-      <div class="mx-auto max-w-7xl px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-1 border-graphite shadow-2xl rounded-2xl overflow-hidden bg-white">
-            
-            <div class="p-6 md:p-8 lg:p-12 flex flex-col justify-center">
-                <h1 class="tracking-wider uppercase text-3xl md:text-4xl lg:text-5xl font-extralight mb-8">Kur mūs <span class="font-semibold">atrast</span></h1>
-                
-                <div class="space-y-8">
-                    <div class="flex items-start gap-4">
-                        <div class="mt-1 text-2xl text-graphite"><i class="fa-solid fa-location-dot"></i></div>
-                        <div>
-                            <h4 class="font-bold text-lg">Adrese</h4>
-                            <p class="text-gray-600">Rīga, Braslas iela 16, LV-1084</p>
-                        </div>
-                    </div>
+          <!-- support -->
+          <div>
+            <h3 class="mb-4 font-semibold">Atbalsts</h3>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li>
+                <a
+                  href="contacts.html#form-section"
+                  class="transition hover:text-white"
+                  >Garantijas</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contacts.html#form-section"
+                  class="transition hover:text-white"
+                  >Piegāde</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contacts.html#form-section"
+                  class="transition hover:text-white"
+                  >Atgriešana</a
+                >
+              </li>
+              <li>
+                <a href="faq.html" class="transition hover:text-white"
+                  >Jautājumi</a
+                >
+              </li>
+            </ul>
+          </div>
 
-                    <div class="flex items-start gap-4">
-                        <div class="mt-1 text-2xl text-graphite"><i class="fa-regular fa-clock"></i></div>
-                        <div>
-                            <h4 class="font-bold text-lg">Darba laiks</h4>
-                            <ul class="text-gray-600 text-sm mt-1 space-y-1">
-
-                                <li class="flex justify-between w-40"><span>P. - Pk.:</span> <span class="font-medium">9:00 - 18:00</span></li>
-                                <li class="flex justify-between w-40"><span>S.:</span> <span class="font-medium">9:00 - 16:00</span></li>
-                                <li class="flex justify-between w-40"><span>Sv.:</span> <span class="font-medium">Slēgts</span></li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4">
-                        <div class="mt-1 text-2xl text-graphite"><i class="fa-solid fa-phone"></i></div>
-                        <div>
-                            <h4 class="font-bold text-lg">Saziņa</h4>
-                            <p class="text-gray-600">+371 2000 0000</p>
-                            <p class="text-gray-600">info@uniserviss.lv</p>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="#form-section" class="mt-10 inline-flex justify-center items-center w-full md:w-auto px-8 py-4 bg-graphite text-white font-medium rounded-lg hover:bg-black transition duration-300">
-                    Rakstīt mums
-                </a>
-            </div>
-
-            <div class="h-[300px] sm:h-[400px] md:h-auto w-full bg-gray-200 relative">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2175.1379883865534!2d24.161513977528223!3d56.963568773556304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46eece45b3f988e7%3A0xe3292c08d5c61fd8!2sBraslas%20iela%2016%2C%20Vidzemes%20priek%C5%A1pils%C4%93ta%2C%20R%C4%ABga%2C%20LV-1084!5e0!3m2!1sru!2slv!4v1766488860387!5m2!1sru!2slv" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade"
-                    class="absolute inset-0">
-                </iframe>
-            </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section id="form-section" class="p-6 md:p-8 lg:p-14">
-    </section>
-
-    <section id="" class="pb-16 md:pb-20 lg:pb-24 pt-8">
-      <div class="mx-auto max-w-7xl px-4">
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-0 border-1 border-graphite shadow-2xl rounded-2xl overflow-hidden bg-white">
-            
-            <div class="p-6 md:p-8 lg:p-12 flex flex-col justify-center order-2 md:order-1">
-                <h3 class="tracking-tight text-2xl md:text-3xl lg:text-4xl font-light uppercase mb-2">Nosūtīt <span class="font-bold">ziņu</span></h3>
-                <p class="text-sm md:text-base text-gray-500 mb-8">Atbildēsim 24 stundu laikā.</p>
-                
-                <form id="contact-form" action="#" class="space-y-5">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                        <div class="flex flex-col gap-2">
-                            <label for="name" class="text-sm font-medium">Vārds</label>
-                            <input type="text" id="name" placeholder="Jānis" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black focus:ring-1 focus:ring-black bg-white transition">
-                        </div>
-                        <div class="flex flex-col gap-2">
-                            <label for="surname" class="text-sm font-medium">Uzvārds</label>
-                            <input type="text" id="surname" placeholder="Bērziņš" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black focus:ring-1 focus:ring-black bg-white transition">
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col gap-2">
-                        <label for="email" class="text-sm font-medium">E-pasts</label>
-                        <input type="email" id="email" placeholder="janis@epasts.lv" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black focus:ring-1 focus:ring-black bg-white transition">
-                    </div>
-
-                    <div class="flex flex-col gap-2">
-                        <label for="subject" class="text-sm font-medium">Tēma</label>
-                        <select id="subject" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black focus:ring-1 focus:ring-black bg-white transition">
-                            <option>Servisa pieteikums</option>
-                            <option>Vispārīgs jautājums</option>
-                            <option>Par pasūtījumu</option>
-                            <option>Sadarbība</option>
-                        </select>
-                    </div>
-
-                    <div class="flex flex-col gap-2">
-                        <label for="message" class="text-sm font-medium">Ziņa</label>
-                        <textarea id="message" rows="4" placeholder="Kā mēs varam palīdzēt?" class="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:border-black focus:ring-1 focus:ring-black bg-white transition resize-none"></textarea>
-                    </div>
-
-                    <button type="submit" id="submit-btn" class="w-full py-4 bg-graphite text-white rounded-lg font-medium hover:bg-black transition transform duration-200 cursor-pointer">
-                        Nosūtīt ziņu
-                    </button>
-                </form>
-            </div>
-
-            <div class="relative order-1 md:order-2 h-64 md:h-auto overflow-hidden bg-black">
-                <img src="images/contacts_01.avif" 
-                     alt="PC" 
-                     class="absolute inset-0 w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-700">
-                
-                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-12 text-white">
-                     <p class="text-sm font-bold uppercase tracking-widest text-white/70 mb-2">Vai zvaniet mums</p>
-                     <p class="text-4xl font-bold">+371 2000 0000</p>
-                </div>
-            </div>
-
-        </div>
-      </div>
-    </section>
-            
-  </main>
-
-<!-- footer -->
-  <footer class="bg-black text-white">
-    <div class="mx-auto max-w-7xl px-4 py-12 lg:py-16">
-      <!-- main grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-        
-        <!-- logo  -->
-        <div class="sm:col-span-2 lg:col-span-1">
-          <a href="index.html" class="text-2xl font-bold">UniServiss</a>
-          <p class="mt-4 text-gray-400 text-sm leading-relaxed">
-            Remonts, datora komplektēšana un datortehnikas tirdzniecība.
-          </p>
-          <div class="flex gap-4 mt-6">
-            <a href="https://www.facebook.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://www.instagram.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://www.tiktok.com" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition">
-              <i class="fa-brands fa-tiktok"></i>
-            </a>
+          <!-- contact -->
+          <div>
+            <h3 class="mb-4 font-semibold">Saziņa</h3>
+            <ul class="space-y-3 text-sm text-gray-400">
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-phone text-xs"></i>
+                +371 2000 0000
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-envelope text-xs"></i>
+                info@uniserviss.lv
+              </li>
+              <li class="flex items-center gap-2">
+                <i class="fa-solid fa-location-dot text-xs"></i>
+                Braslas iela 16, Rīga
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- navigation -->
-        <div>
-          <h3 class="font-semibold mb-4">Navigācija</h3>
-          <ul class="space-y-3 text-sm text-gray-400">
-            <li><a href="shop.html" class="hover:text-white transition">Veikals</a></li>
-            <li><a href="faq.html" class="hover:text-white transition">BUJ</a></li>
-            <li><a href="about.html" class="hover:text-white transition">Par mums</a></li>
-            <li><a href="contacts.html" class="hover:text-white transition">Kontakti</a></li>
-            <li><a href="cart.html" class="hover:text-white transition">Grozs</a></li>
-          </ul>
+        <!-- bottom heart -->
+        <div
+          class="mt-10 flex flex-col items-center justify-center gap-4 border-t border-white/10 pt-6 text-sm text-gray-500 sm:flex-row"
+        >
+          <p>Izstrādāts ar ❤️ Latvijā</p>
         </div>
-
-        <!-- support -->
-        <div>
-          <h3 class="font-semibold mb-4">Atbalsts</h3>
-          <ul class="space-y-3 text-sm text-gray-400">
-            <li><a href="contacts.html#form-section" class="hover:text-white transition">Garantijas</a></li>
-            <li><a href="contacts.html#form-section" class="hover:text-white transition">Piegāde</a></li>
-            <li><a href="contacts.html#form-section" class="hover:text-white transition">Atgriešana</a></li>
-            <li><a href="faq.html" class="hover:text-white transition">Jautājumi</a></li>
-          </ul>
-        </div>
-
-        <!-- contact -->
-        <div>
-          <h3 class="font-semibold mb-4">Saziņa</h3>
-          <ul class="space-y-3 text-sm text-gray-400">
-            <li class="flex items-center gap-2">
-              <i class="fa-solid fa-phone text-xs"></i>
-              +371 2000 0000
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fa-solid fa-envelope text-xs"></i>
-              info@uniserviss.lv
-            </li>
-            <li class="flex items-center gap-2">
-              <i class="fa-solid fa-location-dot text-xs"></i>
-              Braslas iela 16, Rīga
-            </li>
-          </ul>
-        </div>
-
       </div>
-
-      <!-- bottom heart -->
-      <div class="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row justify-center items-center gap-4 text-sm text-gray-500">
-        <p>Izstrādāts ar ❤️ Latvijā</p>
-      </div>
-    </div>
-  </footer>
-
+    </footer>
 
     <!-- form validator -->
-<script type="module" src="./search.js"></script>
+    <script type="module" src="./search.js"></script>
 
-<script>
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const name = document.getElementById('name');
-    const surname = document.getElementById('surname');
-    const email = document.getElementById('email');
-    const message = document.getElementById('message');
-    const btn = document.getElementById('submit-btn');
-    
-    let isValid = true;
-    const inputs = [name, surname, email, message];
-    
-    // remove errors
-    inputs.forEach(input => {
-      input.classList.remove('border-red-500', 'ring-1', 'ring-red-500');
-      input.classList.add('border-gray-300');
-    });
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
-    // valid
-    if (!name.value.trim()) {
-      markError(name);
-      isValid = false;
-    }
-    if (!surname.value.trim()) {
-      markError(surname);
-      isValid = false;
-    }
-    if (!email.value.trim() || !email.value.includes('@')) {
-      markError(email);
-      isValid = false;
-    }
-    if (!message.value.trim()) {
-      markError(message);
-      isValid = false;
-    }
+          const name = document.getElementById("name");
+          const surname = document.getElementById("surname");
+          const email = document.getElementById("email");
+          const message = document.getElementById("message");
+          const btn = document.getElementById("submit-btn");
 
-    if (isValid) {
-      // send
-      const originalText = btn.textContent;
-      const originalBg = btn.className; 
-      
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sūta...';
-      
-      setTimeout(() => {
-        btn.className = "w-full py-4 bg-[#43A047] text-white rounded-lg font-medium transition transform duration-200 scale-100 cursor-default";
-        btn.innerHTML = '<i class="fa-solid fa-check"></i> Nosūtīts!';
-        
-        // clear form
-        this.reset();
-        
-      }, 1000);
-    }
+          let isValid = true;
+          const inputs = [name, surname, email, message];
 
-    function markError(element) {
-      element.classList.remove('border-gray-300');
-      element.classList.add('border-red-500', 'ring-1', 'ring-red-500');
-    }
-  });
-</script>
+          // remove errors
+          inputs.forEach((input) => {
+            input.classList.remove("border-red-500", "ring-1", "ring-red-500");
+            input.classList.add("border-gray-300");
+          });
 
-<script>
-  // burger menu
-  const burgerBtn = document.getElementById('burger-btn');
-  const closeBtn = document.getElementById('close-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
+          // valid
+          if (!name.value.trim()) {
+            markError(name);
+            isValid = false;
+          }
+          if (!surname.value.trim()) {
+            markError(surname);
+            isValid = false;
+          }
+          if (!email.value.trim() || !email.value.includes("@")) {
+            markError(email);
+            isValid = false;
+          }
+          if (!message.value.trim()) {
+            markError(message);
+            isValid = false;
+          }
 
-  burgerBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('hidden');
-  });
+          if (isValid) {
+            // send
+            const originalText = btn.textContent;
+            const originalBg = btn.className;
 
-  closeBtn.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-  });
-</script>
-</body>
+            btn.disabled = true;
+            btn.innerHTML =
+              '<i class="fa-solid fa-spinner fa-spin"></i> Sūta...';
+
+            setTimeout(() => {
+              btn.className =
+                "w-full py-4 bg-[#43A047] text-white rounded-lg font-medium transition transform duration-200 scale-100 cursor-default";
+              btn.innerHTML = '<i class="fa-solid fa-check"></i> Nosūtīts!';
+
+              // clear form
+              this.reset();
+            }, 1000);
+          }
+
+          function markError(element) {
+            element.classList.remove("border-gray-300");
+            element.classList.add("border-red-500", "ring-1", "ring-red-500");
+          }
+        });
+    </script>
+
+    <script>
+      // burger menu
+      const burgerBtn = document.getElementById("burger-btn");
+      const closeBtn = document.getElementById("close-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      burgerBtn.addEventListener("click", () => {
+        mobileMenu.classList.remove("hidden");
+      });
+
+      closeBtn.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    </script>
+  </body>
 </html>
